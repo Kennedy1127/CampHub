@@ -1,0 +1,106 @@
+@import "./../base/base.css";
+@import "./../base/navigation.css";
+@import "./../base/footer.css";
+
+.membership {
+  display: flex;
+}
+
+.membership_navigation_wrapper {
+  width: 23%;
+  height: 100vh;
+}
+
+.membership_navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 23%;
+  height: 100%;
+  padding-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.membership_navigation_content {
+  padding: 40px;
+}
+
+.membership_navigation_group:nth-child(1) {
+  margin-bottom: 30px;
+}
+
+.membership_navigation_title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.membership_navigation_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.membership_navigation_item {
+  margin-bottom: 15px;
+}
+
+.membership_navigation_item:last-child {
+  margin-bottom: 0;
+}
+
+.membership_navigation_button,
+.membership_navigation_contact {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-grey-2);
+}
+
+.membership_navigation_button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.membership_navigation_button:hover,
+.membership_navigation_button.membership_navigation_button--active {
+  color: var(--color-green-1);
+}
+
+.membership_navigation_button.membership_navigation_button--active {
+  font-weight: 600;
+}
+
+.membership_navigation_signout {
+  margin-top: auto;
+}
+
+.membership_navigation_signout_button {
+  width: 100%;
+  margin-top: auto;
+  padding: 20px;
+  background-color: var(--color-green-1);
+  transition: all 0.3s;
+
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.membership_navigation_signout_button:hover {
+  background-color: var(--color-green-2);
+}
+
+.membership_content {
+  flex-grow: 1;
+
+  padding-top: 80px;
+  background-color: var(--color-yellow-1);
+}
+
+.membership_bookings {
+  padding: 40px;
+}

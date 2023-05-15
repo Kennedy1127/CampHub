@@ -1,0 +1,565 @@
+@import "./base/base.css";
+@import "./base/navigation.css";
+@import "./base/footer.css";
+
+/* Landing */
+.header-landing {
+  height: 100vh;
+  padding: 80px 0 0;
+  background-color: var(--color-yellow-1);
+}
+
+.landing {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.landing_content {
+  flex-grow: 1;
+  padding: 0 40px;
+
+  display: flex;
+  gap: 40px;
+}
+
+.landing_intro_title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.landing_intro_title span {
+  color: var(--color-green-1);
+}
+
+.landing_intro_campground {
+  margin-bottom: 20px;
+}
+
+.landing_intro_campground_title {
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--color-orange-1);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.landing_intro_campground_text {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.landing_pic {
+  width: 55%;
+  flex-shrink: 0;
+}
+/* Landing */
+
+.section-rooms {
+  padding: 200px 0;
+}
+
+.rooms {
+  display: flex;
+  flex-direction: column;
+}
+
+.room {
+  display: flex;
+}
+
+.room:nth-child(1) {
+  margin-bottom: 200px;
+}
+
+.room_carousel {
+  width: 65%;
+
+  position: relative;
+}
+
+.room_carousel_pic {
+  height: 500px;
+  border-top-right-radius: 50px;
+  overflow: hidden;
+}
+
+.room_carousel_pic--right {
+  border-top-right-radius: 0;
+  border-top-left-radius: 50px;
+}
+
+.room_carousel_pic picture {
+  height: 100%;
+}
+
+.room_carousel_slogan {
+  position: absolute;
+  top: -30px;
+  left: 20%;
+}
+
+.room_carousel_slogan--right {
+  left: initial;
+  right: 20%;
+}
+
+.room_carousel_slogan_text {
+  box-shadow: var(--box-shadow-1);
+  background-color: var(--color-yellow-1);
+  padding: 10px 40px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  transform-origin: left bottom;
+  transition: transform 0.3s;
+}
+
+.room_carousel_slogan_text--right {
+  transform-origin: right bottom;
+}
+
+.room_carousel_slogan:hover .room_carousel_slogan_text {
+  transform: rotate(-10deg);
+}
+
+.room_carousel_slogan:hover
+  .room_carousel_slogan_text.room_carousel_slogan_text--right {
+  transform: rotate(10deg);
+}
+
+.room_carousel_slogan span {
+  color: var(--color-orange-1);
+}
+
+.room_carousel_bar {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 10px;
+}
+
+.room_carousel_bar--right {
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.room_carousel_bar_numbers {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.room_carousel_bar_number {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-green-1);
+  cursor: pointer;
+}
+
+.room_carousel_bar_number--active {
+  color: var(--color-orange-1);
+}
+
+.room_carousel_bar_arrows {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+
+  color: var(--color-green-1);
+}
+
+.room_carousel_bar_arrow {
+  cursor: pointer;
+}
+
+.room_carousel_bar_border {
+  padding: 0 1px;
+  margin: 0 10px;
+  height: 30px;
+  background-color: var(--color-green-1);
+}
+
+.room_carousel_bar_arrow:hover,
+.room_carousel_bar_number:hover {
+  color: var(--color-orange-1);
+}
+
+.room_content {
+  flex-grow: 1;
+  position: relative;
+}
+
+.room_card {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+
+  width: 110%;
+  min-height: 300px;
+  padding: 20px 40px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: var(--box-shadow-1);
+  background-color: var(--color-yellow-1);
+}
+
+.room_card--right {
+  right: initial;
+  left: 0;
+
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.room_card_title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-orange-1);
+
+  margin-bottom: 10px;
+}
+
+.room_card_price {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.room_card_price span {
+  font-size: 14px;
+}
+
+.room_card_features {
+  display: flex;
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.room_card_feature {
+  width: 20px;
+  height: 20px;
+}
+
+.room_card_text {
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.room_card_button {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--color-green-1);
+  transition: background-color 0.3s;
+
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.room_card_button:hover {
+  background-color: var(--color-orange-1);
+}
+/* Rooms */
+
+/* Gallery */
+.section-gallery {
+  padding: 100px 0;
+  background-color: var(--color-yellow-1);
+}
+
+.gallery_content {
+  display: grid;
+  grid-template-areas:
+    "gallery-5 gallery-7 gallery-3 gallery-1 gallery-1 gallery-6"
+    "gallery-2 gallery-10 gallery-3 gallery-1 gallery-1 gallery-4"
+    "gallery-2 gallery-9 gallery-8 gallery-1 gallery-1 gallery-4";
+  gap: 5px;
+}
+
+.gallery_pic {
+  overflow: hidden;
+}
+
+.gallery_pic picture {
+  height: 100%;
+}
+
+.gallery_pic picture img {
+  transition: transform 0.3s;
+}
+
+.gallery_pic:hover picture img {
+  transform: scale(1.05);
+}
+
+.gallery_pic--1 {
+  grid-area: gallery-1;
+}
+
+.gallery_pic--2 {
+  grid-area: gallery-2;
+}
+
+.gallery_pic--3 {
+  grid-area: gallery-3;
+}
+
+.gallery_pic--4 {
+  grid-area: gallery-4;
+}
+
+.gallery_pic--5 {
+  grid-area: gallery-5;
+}
+
+.gallery_pic--6 {
+  grid-area: gallery-6;
+}
+
+.gallery_pic--7 {
+  grid-area: gallery-7;
+}
+
+.gallery_pic--8 {
+  grid-area: gallery-8;
+}
+
+.gallery_pic--9 {
+  grid-area: gallery-9;
+}
+
+.gallery_pic--10 {
+  grid-area: gallery-10;
+}
+/* Gallery */
+
+/* Comment */
+.section-comment {
+  padding: 50px 0 100px;
+  background-color: var(--color-yellow-1);
+}
+
+.comment_header_bubble {
+  margin-left: 0;
+}
+
+.comment {
+  padding: 0 20px;
+}
+
+.comment_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.comment_card {
+  padding: 25px 40px;
+  min-height: 200px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-1);
+  background-color: #fff;
+
+  position: relative;
+}
+
+.comment_card--col-span-2 {
+  grid-column: 1 / -1;
+}
+
+.comment_card--row-span-2 {
+  grid-row: span 2;
+}
+
+.comment_card_banner {
+  width: 200px;
+  padding: 5px 10px;
+  background-color: var(--color-green-1);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transform: translate(-25%, -50%);
+}
+
+.comment_card_banner span {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.comment_card_header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.comment_card_header_pic {
+  width: 50px;
+  height: 50px;
+}
+
+.comment_card_header_title {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-black-1);
+
+  padding-left: 30px;
+}
+
+.comment_card_content {
+  width: 80%;
+}
+
+.comment_card--col-span-2 .comment_card_content {
+  width: 60%;
+}
+
+.comment_card_content_text {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.comment_load {
+  padding: 0 20px;
+  padding-top: 100px;
+}
+
+.comment_load_button {
+  margin: 0 auto;
+  padding: 10px 50px;
+  border-radius: 20px;
+  background-color: var(--color-green-1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.comment_load_button:hover {
+  background-color: var(--color-orange-1);
+}
+/* Comment */
+
+/* RWD */
+@media (min-width: 1600px) {
+  /* Landing */
+  .landing_intro_title {
+    font-size: 32px;
+  }
+
+  .landing_intro_campground {
+    margin-bottom: 40px;
+  }
+
+  .landing_intro_campground_title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .landing_intro_campground_text {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* Rooms */
+  .room_carousel_pic {
+    height: 800px;
+  }
+
+  .room_carousel_slogan {
+    min-width: 300px;
+  }
+
+  .room_carousel_slogan_text {
+    font-size: 24px;
+  }
+
+  .room_carousel_bar_number {
+    font-size: 24px;
+  }
+
+  .room_carousel_bar_arrow {
+    font-size: 20px;
+  }
+
+  .room_card {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .room_card_title {
+    font-size: 32px;
+  }
+
+  .room_card_price {
+    font-size: 28px;
+  }
+
+  .room_card_price span {
+    font-size: 18px;
+  }
+
+  .room_card_feature {
+    width: 30px;
+    height: 30px;
+  }
+
+  .room_card_text {
+    font-size: 18px;
+  }
+
+  .room_card_button {
+    margin-top: auto;
+  }
+
+  /* Comment */
+  .comment {
+    padding: 0;
+  }
+
+  .comment_card_banner span {
+    font-size: 18px;
+  }
+
+  .comment_card_header_pic {
+    width: 60px;
+    height: 60px;
+  }
+
+  .comment_card_header_title {
+    font-size: 24px;
+  }
+
+  .comment_card_content_text {
+    font-size: 16px;
+  }
+
+  .comment_load_button {
+    padding: 10px 60px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
