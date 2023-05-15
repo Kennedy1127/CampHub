@@ -94,6 +94,10 @@ button {
   border-top: 10px solid var(--color-orange-1);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* RWD */
 @media (min-width: 1600px) {
   .container {
