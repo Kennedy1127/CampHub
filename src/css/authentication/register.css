@@ -21,8 +21,14 @@
   grid-column: 1 / -1;
 }
 
-.authentication_group:nth-child(3) {
-  width: 70%;
+.authentication_group:nth-child(3),
+.authentication_group:nth-child(5),
+.authentication_group:nth-child(6) {
+  width: 60%;
+}
+
+.authentication_group:nth-child(4) {
+  width: 80%;
 }
 
 .authentication_button {
@@ -32,4 +38,14 @@
 .authentication_info {
   width: fit-content;
   border-bottom: none;
+}
+
+@media (min-width: 1600px) {
+  .authentication_signup {
+    column-gap: 30px;
+  }
+
+  .authentication_group {
+    margin-bottom: 20px;
+  }
 }

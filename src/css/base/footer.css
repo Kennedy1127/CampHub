@@ -87,4 +87,9 @@
     max-width: 300px;
     font-size: 20px;
   }
+
+  .footer_copyright {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
 }

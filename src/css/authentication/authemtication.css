@@ -33,82 +33,88 @@
 }
 
 .authentication_header {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .authentication_header_title {
   font-size: 24px;
   font-weight: 500;
   color: var(--color-black-1);
-  margin-bottom: 5px;
+
+  width: fit-content;
+  position: relative;
 }
 
 .authentication_header_title span {
   color: var(--color-green-1);
 }
 
-.authentication_header_title + span {
+.authentication_header_title span:last-child {
   display: block;
-  font-size: 16px;
-  text-align: right;
+  font-size: 14px;
   color: var(--color-grey-4);
+
+  position: absolute;
+  top: 110%;
+  right: -30%;
 }
 
 .authentication_group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .authentication_group label {
-  font-size: 16px;
+  width: fit-content;
+  font-size: 12px;
   margin-bottom: 5px;
-  color: var(--color-black-1);
 }
 
 .authentication_group input {
   width: 100%;
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 6px;
   border: 1px solid var(--color-grey-2);
 
-  font-size: 16px;
+  font-size: 14px;
   color: var(--color-grey-1);
 }
 
 .authentication_group input::placeholder {
-  font-size: 14px;
+  font-size: 12px;
+  color: var(--color-grey-opacity-1);
 }
 
 .authentication_button {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .authentication_button button {
-  width: 50%;
-  padding: 10px 20px;
+  width: 35%;
+  padding: 6px 10px;
   border-radius: 6px;
   background-color: var(--color-green-1);
   transition: all 0.3s;
 
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
 
   cursor: pointer;
 }
 
-.authentication_button:hover button {
+.authentication_button button:hover {
   background-color: var(--color-green-2);
 }
 
 .authentication_info {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: -0.2px;
-  color: var(--color-black-1);
+  color: var(--color-grey-1);
 
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--color-black-1);
 }
 
@@ -147,34 +153,48 @@
 .authentication_info a i {
   padding-left: 5px;
 }
+
 /* RWD */
 @media (min-width: 1600px) {
+  .authentication_content {
+    padding: 50px 100px;
+  }
+
+  .authentication_header {
+    margin-bottom: 50px;
+  }
+
   .authentication_header_title {
-    font-size: 36px;
-  }
-
-  .authentication_header_title + span {
-    font-size: 24px;
-  }
-
-  .authentication_group label {
-    font-size: 24px;
-  }
-
-  .authentication_group input {
-    padding: 10px 20px;
-    font-size: 24px;
-  }
-
-  .authentication_button {
-    margin-bottom: 30px;
-  }
-
-  .authentication_button button {
     font-size: 32px;
   }
 
+  .authentication_header_title span:last-child {
+    font-size: 18px;
+  }
+
+  .authentication_group label {
+    font-size: 18px;
+  }
+
+  .authentication_group input {
+    font-size: 20px;
+  }
+
+  .authentication_group input::placeholder {
+    font-size: 16px;
+  }
+
+  .authentication_button {
+    margin-bottom: 20px;
+  }
+
+  .authentication_button button {
+    padding: 10px;
+    font-size: 22px;
+  }
+
   .authentication_info {
-    font-size: 24px;
+    font-size: 18px;
+    padding-bottom: 40px;
   }
 }
