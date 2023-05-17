@@ -51,8 +51,8 @@
 
 .authentication_header_title span:last-child {
   display: block;
-  font-size: 14px;
-  color: var(--color-grey-4);
+  font-size: 16px;
+  color: var(--color-grey-1);
 
   position: absolute;
   top: 110%;
@@ -67,7 +67,7 @@
 
 .authentication_group label {
   width: fit-content;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 5px;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .authentication_info {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.2px;
   color: var(--color-grey-1);
@@ -157,7 +157,7 @@
 /* RWD */
 @media (min-width: 1600px) {
   .authentication_content {
-    padding: 50px 100px;
+    padding: 100px;
   }
 
   .authentication_header {
@@ -165,23 +165,23 @@
   }
 
   .authentication_header_title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .authentication_header_title span:last-child {
-    font-size: 18px;
-  }
-
-  .authentication_group label {
-    font-size: 18px;
-  }
-
-  .authentication_group input {
     font-size: 20px;
   }
 
+  .authentication_group label {
+    font-size: 20px;
+  }
+
+  .authentication_group input {
+    font-size: 22px;
+  }
+
   .authentication_group input::placeholder {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .authentication_button {
@@ -190,11 +190,11 @@
 
   .authentication_button button {
     padding: 10px;
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .authentication_info {
-    font-size: 18px;
+    font-size: 22px;
     padding-bottom: 40px;
   }
 }

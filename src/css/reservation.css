@@ -4,7 +4,7 @@
 
 /* Landing */
 .header-landing {
-  padding: 130px 0 50px;
+  padding: 110px 0 50px;
   background-color: var(--color-yellow-1);
 }
 
@@ -12,9 +12,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 
-  padding: 0 40px;
+  padding: 0 100px;
 }
 
 .landing_pic:nth-child(1) {
@@ -40,9 +40,6 @@
 }
 
 .reserve {
-  width: 80%;
-  margin: 0 auto;
-
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
@@ -63,7 +60,7 @@
 
 .reserve_intro_header_title {
   text-align: center;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--color-orange-1);
 }
@@ -72,14 +69,14 @@
   display: flex;
   flex-direction: column;
 
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--color-black-1);
 }
 
 .reserve_intro_content_feature {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .reserve_intro_content_feature:nth-child(6) {
@@ -87,8 +84,8 @@
 }
 
 .reserve_intro_content_feature_icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .reserve_intro_content_feature_text {
@@ -98,12 +95,12 @@
 }
 
 .reserve_intro_content_group {
-  padding: 20px 0 30px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--color-black-1);
 }
 
 .reserve_intro_content_group_title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
 
@@ -111,7 +108,7 @@
 }
 
 .reserve_intro_content_group_text {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.25;
 }
 
@@ -129,7 +126,7 @@
 }
 
 .reserve_intro_content_calender {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .reserve_intro_content_calender:last-child {
@@ -137,7 +134,7 @@
 }
 
 .reserve_intro_content_calender_title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -156,7 +153,7 @@
 }
 
 .fc .fc-toolbar-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -165,12 +162,12 @@
 }
 
 .fc .fc-button {
-  padding: 0px 6px;
+  padding: 4px 8px;
   border: none;
 }
 
 .fc .fc-button .fc-icon {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .fc .fc-col-header-cell-cushion {
@@ -212,7 +209,7 @@
 }
 
 .reserve_payment_header_price span {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -237,7 +234,7 @@
   margin-left: 4px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--color-black-1);
+  color: var(--color-grey-1);
 }
 
 .reserve_payment_content_order {
@@ -304,7 +301,7 @@
   background-color: var(--color-orange-1);
   transition: all 0.3s;
 
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #fff;
 
@@ -326,11 +323,12 @@
 }
 
 .reserve_payment_content_price_item {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .reserve_payment_content_price_item_subtotal {
   font-weight: 500;
+  font-size: 14px;
 }
 
 .reserve_payment_content_price_subtotal {
@@ -339,9 +337,7 @@
 
   display: flex;
   justify-content: space-between;
-}
 
-.reserve_payment_content_price_subtotal {
   font-size: 14px;
 }
 
@@ -362,6 +358,10 @@
 
 .rental_header .header_bubble {
   margin-bottom: 30px;
+}
+
+.rental_title {
+  font-size: 20px;
 }
 
 .rental_text {
@@ -470,7 +470,8 @@
 .summary_products {
   flex-grow: 1;
   padding: 30px;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   box-shadow: var(--box-shadow-1);
   background-color: #fff;
 }
@@ -490,7 +491,7 @@
   text-align: left;
   padding-bottom: 5px;
 
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--color-black-1);
 }
@@ -507,6 +508,7 @@
 
 .summary_products tbody tr td:nth-child(1) {
   display: flex;
+  gap: 20px;
 }
 
 .summary_product_pic {
@@ -521,12 +523,10 @@
 .summary_products tbody tr span {
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-black-1);
 }
 
 .summary_products tbody tr td:nth-child(1) span {
   width: 50%;
-  margin-left: 10px;
   font-size: 12px;
   font-weight: 400;
 }
@@ -554,7 +554,7 @@
   position: sticky;
   top: 80px;
 
-  width: 550px;
+  width: 45%;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: var(--box-shadow-1);
@@ -569,14 +569,14 @@
 }
 
 .summary_checkout_header_title {
-  width: 80%;
-  padding: 5px 0;
+  width: 60%;
+  padding: 8px;
   margin: 0 auto;
   border-radius: 10px;
   background-color: var(--color-orange-1);
 
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #fff;
   text-transform: uppercase;
@@ -590,6 +590,7 @@
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--color-black-1);
+  margin-bottom: 5px;
 }
 
 .summary_checkout_body_item {
@@ -597,7 +598,6 @@
   justify-content: space-between;
 
   font-size: 12px;
-  color: var(--color-black-1);
 
   padding: 15px 0;
   border-bottom: 1px solid var(--color-grey-3);
@@ -612,11 +612,12 @@
 }
 
 .summary_checkout_body_item_price {
+  font-size: 14px;
   font-weight: 500;
 }
 
 .summary_checkout_body_total {
-  padding: 5px 0 15px;
+  padding: 5px 0 20px;
 
   display: flex;
   justify-content: flex-end;
@@ -636,7 +637,7 @@
   transition: all 0.3s;
 
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
 
   cursor: pointer;
@@ -649,6 +650,10 @@
 
 /* RWD */
 @media (min-width: 1600px) {
+  .header-landing {
+    padding: 130px 0 50px;
+  }
+
   /* Reserve */
   .reserve {
     width: 100%;
@@ -656,7 +661,7 @@
   }
 
   .reserve_intro_header_title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .reserve_intro_content_feature_icon {
@@ -665,7 +670,7 @@
   }
 
   .reserve_intro_content_feature_text {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .reserve_intro_content_group_title {
@@ -704,6 +709,14 @@
     font-size: 16px;
   }
 
+  .reserve_payment {
+    padding: 40px;
+  }
+
+  .reserve_payment_header {
+    margin-bottom: 25px;
+  }
+
   .reserve_payment_header_price {
     font-size: 28px;
   }
@@ -722,15 +735,16 @@
 
   .reserve_payment_content_order_date span:nth-child(1),
   .reserve_payment_content_order_guest span:nth-child(1) {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .reserve_payment_content_order_date span:nth-child(2),
   .reserve_payment_content_order_guest span:nth-child(2) {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .reserve_payment_content_submit {
+    padding: 15px;
     font-size: 24px;
   }
 
@@ -738,13 +752,29 @@
     font-size: 18px;
   }
 
-  .reserve_payment_content_price_subtotal {
+  .reserve_payment_content_price_item_subtotal {
     font-size: 18px;
   }
 
+  .reserve_payment_content_price_subtotal {
+    font-size: 20px;
+  }
+
   /* Rental */
+  .rental_header {
+    margin-bottom: 350px;
+  }
+
+  .rental_header .header_bubble {
+    margin-bottom: 40px;
+  }
+
+  .rental_title {
+    font-size: 24px;
+  }
+
   .rental_text {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .rental_content_cards {
@@ -752,12 +782,8 @@
   }
 
   .rental_content_card {
-    width: 400px;
-    padding-bottom: 30px;
-  }
-
-  .rental_header {
-    margin-bottom: 350px;
+    width: 450px;
+    padding: 60px 40px 30px;
   }
 
   .rental_content_card_pic {
@@ -769,11 +795,12 @@
   }
 
   .rental_content_card_text {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.4;
   }
 
   .rental_content_card_rent_price {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .rental_content_card_rent_price span {
@@ -781,21 +808,25 @@
   }
 
   .rental_content_card_rent_button {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   /* Summary */
+  .summary_products {
+    padding: 50px 80px 50px 20px;
+  }
+
   .summary_products thead tr th {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .summary_product_pic {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 
   .summary_products tbody tr span {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .summary_products tbody tr td:nth-child(1) span {
@@ -810,15 +841,24 @@
   }
 
   .summary_checkout {
-    width: 650px;
+    width: 40%;
   }
 
   .summary_checkout_header_title {
-    font-size: 28px;
+    padding: 10px;
+    font-size: 24px;
+  }
+
+  .summary_checkout_body_items {
+    margin-bottom: 10px;
   }
 
   .summary_checkout_body_item {
     font-size: 18px;
+  }
+
+  .summary_checkout_body_item_price {
+    font-size: 20px;
   }
 
   .summary_checkout_body_total {
@@ -826,6 +866,6 @@
   }
 
   .summary_checkout_footer_button {
-    font-size: 28px;
+    font-size: 24px;
   }
 }

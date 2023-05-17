@@ -11,7 +11,7 @@
   display: flex;
 }
 
-.navigation--short {
+.navigation.navigation--short {
   height: 0;
 }
 
@@ -240,8 +240,33 @@
 
 /* RWD */
 @media (min-width: 1600px) {
+  .navigation {
+    height: 80px;
+  }
+
   .navigation_title {
     font-size: 32px;
+  }
+
+  .navigation_button {
+    width: 80px;
+    height: 80px;
+    gap: 15px;
+  }
+
+  .navigation_button_bar {
+    height: 4px;
+  }
+
+  .navigation_button.navigation_button--active
+    .navigation_button_bar:nth-child(1) {
+    transform: translateX(8.5px) rotate(45deg);
+  }
+
+  .navigation_button.navigation_button--active
+    .navigation_button_bar:nth-child(3) {
+    transform-origin: left;
+    transform: translateX(8.5px) rotate(-45deg);
   }
 
   .navigation_header_content_title {

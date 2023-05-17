@@ -1,0 +1,175 @@
+@import "./base/base.css";
+@import "./base/navigation.css";
+@import "./base/footer.css";
+
+/* Steps */
+.section-guide {
+  padding: 160px 0 50px;
+  background-color: var(--color-yellow-1);
+}
+
+.guide {
+  margin: 0 auto;
+}
+
+.guide_steps {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.guide_step {
+  min-width: 150px;
+  min-height: 150px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-grey-2);
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+}
+
+.guide_line {
+  width: 5%;
+  height: 2px;
+  background-color: var(--color-grey-1);
+  align-self: center;
+
+  position: relative;
+}
+
+.guide_line--flip {
+  position: absolute;
+  top: 1%;
+  right: 0;
+
+  width: 50%;
+  height: 2px;
+  background-color: inherit;
+
+  transform-origin: right;
+  transform: rotate(30deg);
+}
+
+.guide_step_icon {
+  font-size: 40px;
+}
+
+.guide_step_text {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.guide_step_text span:nth-child(1) {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.guide_step_text span:last-child {
+  font-size: 12px;
+}
+
+/* Steps */
+.section-steps {
+  padding: 50px 0;
+  background-color: var(--color-yellow-1);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.step {
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-2);
+  background-color: #fff;
+}
+
+.step_header {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.step_header_title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-green-1);
+  text-transform: uppercase;
+}
+
+.step_header_title span {
+  padding-left: 5px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.step_header_arrows {
+  font-size: 20px;
+  color: var(--color-green-1);
+}
+
+.step_content {
+  max-height: 0;
+  overflow: hidden;
+
+  transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+}
+
+.step_header.step_header--active + .step_content {
+  max-height: 500px;
+  padding-top: 20px;
+}
+
+.step_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  list-style: decimal;
+}
+
+.step_item {
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.step_item span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.step_access_title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-green-2);
+  margin-bottom: 10px;
+}
+
+.step_access_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding-left: 20px;
+}
+
+.step_access_item {
+  font-size: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.step_access_item span {
+  font-size: 14px;
+}

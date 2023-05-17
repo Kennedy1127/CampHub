@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./../src/css/guide.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      type="module"
+      defer
+      src="./../src/js/controller/guideController.js"
+    ></script>
+  </head>
+  <body>
+    <div class="navigation">
+      <h2 class="navigation_title">
+        <a href="./../index.html">CampHub</a>
+      </h2>
+
+      <button class="navigation_button">
+        <div class="navigation_button_bar"></div>
+        <div class="navigation_button_bar"></div>
+        <div class="navigation_button_bar"></div>
+      </button>
+
+      <nav class="navigation_overlay">
+        <ul class="navigation_list">
+          <li class="navigation_item">
+            <picture>
+              <source
+                media="(min-width:1000px)"
+                srcset="./../src/img/navigation/navigation-map.jpg"
+              />
+              <source
+                media="(min-width:400px)"
+                srcset="./../src/img/navigation/navigation-map.webp"
+              />
+              <img src="./../src/img/navigation/navigation-map.jpg" alt="" />
+            </picture>
+          </li>
+
+          <li class="navigation_item">
+            <div class="navigation_header">
+              <div class="navigation_header_content">
+                <div class="navigation_header_content_logo">
+                  <img src="./../src/img/logo/logo-black.png" alt="" />
+                </div>
+                <h2 class="navigation_header_content_title">CampHub</h2>
+              </div>
+            </div>
+          </li>
+
+          <li class="navigation_item">
+            <a href="./../index.html" class="navigation_link">
+              <picture>
+                <source
+                  media="(min-width:1000px)"
+                  srcset="./../src/img/navigation/navigation-home.png"
+                />
+                <source
+                  media="(min-width:400px)"
+                  srcset="./../src/img/navigation/navigation-home.webp"
+                />
+                <img src="./../src/img/navigation/navigation-home.jpg" alt="" />
+              </picture>
+              <div class="navigation_link_content">
+                <h2 class="navigation_link_content_title">Home</h2>
+                <span class="navigation_link_content_text"
+                  >Welcome to CampHub</span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="navigation_item">
+            <a href="./campgrounds.html" class="navigation_link">
+              <picture>
+                <source
+                  media="(min-width:1000px)"
+                  srcset="./../src/img/navigation/navigation-rooms.png"
+                />
+                <source
+                  media="(min-width:400px)"
+                  srcset="./../src/img/navigation/navigation-rooms.webp"
+                />
+                <img
+                  src="./../src/img/navigation/navigation-rooms.png"
+                  alt=""
+                />
+              </picture>
+              <div class="navigation_link_content">
+                <h2 class="navigation_link_content_title">Rooms</h2>
+                <span class="navigation_link_content_text"
+                  >Upper Valley & Sunset Lodge</span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="navigation_item">
+            <a href="./authentication/login.html" class="navigation_link">
+              <picture>
+                <source
+                  media="(min-width:1000px)"
+                  srcset="./../src/img/navigation/navigation-authentication.png"
+                />
+                <source
+                  media="(min-width:400px)"
+                  srcset="
+                    ./../src/img/navigation/navigation-authentication.webp
+                  "
+                />
+                <img
+                  src="./../src/img/navigation/navigation-authentication.png"
+                  alt=""
+                />
+              </picture>
+              <div class="navigation_link_content">
+                <h2 class="navigation_link_content_title">Authentication</h2>
+                <span class="navigation_link_content_text"
+                  >Register or Sign in</span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="navigation_item">
+            <a href="./membership/membership.html" class="navigation_link">
+              <picture>
+                <source
+                  media="(min-width:1000px)"
+                  srcset="./../src/img/navigation/navigation-account.png"
+                />
+                <source
+                  media="(min-width:400px)"
+                  srcset="./../src/img/navigation/navigation-account.webp"
+                />
+                <img
+                  src="./../src/img/navigation/navigation-account.png"
+                  alt=""
+                />
+              </picture>
+              <div class="navigation_link_content">
+                <h2 class="navigation_link_content_title">Membership</h2>
+                <span class="navigation_link_content_text"
+                  >Manage your account</span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="navigation_item">
+            <a href="./guide.html" class="navigation_link">
+              <picture>
+                <source
+                  media="(min-width:1000px)"
+                  srcset="./../src/img/navigation/navigation-guide.png"
+                />
+                <source
+                  media="(min-width:400px)"
+                  srcset="./../src/img/navigation/navigation-guide.webp"
+                />
+                <img
+                  src="./../src/img/navigation/navigation-guide.png"
+                  alt=""
+                />
+              </picture>
+              <div class="navigation_link_content">
+                <h2 class="navigation_link_content_title">Guide</h2>
+                <span class="navigation_link_content_text"
+                  >Check information and FAQ</span
+                >
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <section class="section-guide">
+        <div class="container">
+          <div class="guide">
+            <div class="guide_header">
+              <div class="header_bubble">
+                <h2 class="guide_header_title">Guide</h2>
+                <div class="header_bubble_triangle"></div>
+              </div>
+            </div>
+            <div class="guide_content">
+              <div class="guide_steps">
+                <div class="guide_step">
+                  <div class="guide_step_icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                  </div>
+                  <div class="guide_step_text">
+                    <span>Step 01</span> <br />
+                    <span>Reservation</span>
+                  </div>
+                </div>
+
+                <div class="guide_line">
+                  <div class="guide_line--flip"></div>
+                </div>
+
+                <div class="guide_step">
+                  <div class="guide_step_icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </div>
+                  <div class="guide_step_text">
+                    <span>Step 02</span> <br />
+                    <span>Access</span>
+                  </div>
+                </div>
+
+                <div class="guide_line">
+                  <div class="guide_line--flip"></div>
+                </div>
+
+                <div class="guide_step">
+                  <div class="guide_step_icon">
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                  <div class="guide_step_text">
+                    <span>Step 03</span> <br />
+                    <span>Check-in</span>
+                  </div>
+                </div>
+
+                <div class="guide_line">
+                  <div class="guide_line--flip"></div>
+                </div>
+
+                <div class="guide_step">
+                  <div class="guide_step_icon">
+                    <i class="fa-solid fa-campground"></i>
+                  </div>
+                  <div class="guide_step_text">
+                    <span>Step 04</span> <br />
+                    <span>Camping</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-steps">
+        <div class="container">
+          <div class="steps">
+            <div class="step">
+              <div class="step_header step_header--active">
+                <h2 class="step_header_title">
+                  STEP 01 .
+                  <span>Reservation</span>
+                </h2>
+                <div class="step_header_arrows">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </div>
+              </div>
+              <div class="step_content">
+                <ol class="step_list">
+                  <li class="step_item">
+                    <span>1.</span>
+                    <p>
+                      Choose a campground: Look for campgrounds that fit your
+                      needs, such as tent camping, RV camping, and price of each
+                      campground.
+                    </p>
+                  </li>
+
+                  <li class="step_item">
+                    <span>2.</span>
+                    <p>
+                      Make a reservation: Provide your personal information,
+                      such as your name, address, and phone number, as well as
+                      the dates you want to stay and the type of camping you
+                      prefer.
+                    </p>
+                  </li>
+
+                  <li class="step_item">
+                    <span>3.</span>
+                    <p>
+                      Pay for your reservation: We require full payment at the
+                      time of reservation. Pay for your reservation according to
+                      the CampHub's policies.
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step_header">
+                <h2 class="step_header_title">
+                  STEP 02 .
+                  <span>Access</span>
+                </h2>
+                <div class="step_header_arrows">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </div>
+              </div>
+              <div class="step_content">
+                <ol class="step_list">
+                  <li class="step_item">
+                    <div class="step_access">
+                      <h3 class="step_access_title">＃ACCESSED BY CAR</h3>
+                      <ol class="step_access_list">
+                        <li class="step_access_item">
+                          <span>1.</span>
+                          <p>
+                            Plan your route: Use a GPS or map to determine the
+                            best way to get here.
+                          </p>
+                        </li>
+
+                        <li class="step_access_item">
+                          <span>2.</span>
+                          <p>
+                            Check the weather: Preparing for any weather-related
+                            hazards or concerns.
+                          </p>
+                        </li>
+
+                        <li class="step_access_item">
+                          <span>3.</span>
+                          <p>
+                            Pack your gear: Pack all the gear and supplies you
+                            will need for your camping trip.
+                          </p>
+                        </li>
+                      </ol>
+                    </div>
+                  </li>
+
+                  <li class="step_item">
+                    <div class="step_access">
+                      <h3 class="step_access_title">＃ACCESSED BY TRAIN</h3>
+                      <ol class="step_access_list">
+                        <li class="step_access_item">
+                          <span>1.</span>
+                          <p>
+                            Research train schedules: Determine the best time to
+                            arrive and depart, and plan your trip accordingly.
+                          </p>
+                        </li>
+
+                        <li class="step_access_item">
+                          <span>2.</span>
+                          <p>
+                            Walk to the CampHub: Follow any walking or hiking
+                            trails that lead to the CampHub.
+                          </p>
+                        </li>
+                      </ol>
+                    </div>
+                  </li>
+
+                  <li class="step_item">
+                    <div class="step_access">
+                      <h3 class="step_access_title">＃ACCESSED BY BUS</h3>
+                      <ol class="step_access_list">
+                        <li class="step_access_item">
+                          <span>1.</span>
+                          <p>
+                            Take the bus: Take the bus to the nearest bus stop
+                            to the CampHub.
+                          </p>
+                        </li>
+
+                        <li class="step_access_item">
+                          <span>2.</span>
+                          <p>
+                            Follow any walking or hiking trails that lead to the
+                            CampHub, and be sure to stay on designated trails to
+                            avoid damaging the environment.
+                          </p>
+                        </li>
+                      </ol>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-faq"></section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer_logo">
+        <div class="footer_logo_pic">
+          <img src="./../src/img/logo/logo-white.png" alt="" />
+        </div>
+        <h2 class="footer_logo_title">CampHub</h2>
+      </div>
+      <div class="footer_content">
+        <span class="footer_content_text">
+          900 Jamieson Pkwy, Cambridge, ON N3C 4N6, Canada
+        </span>
+
+        <span class="footer_content_text"> camping@camphub.com </span>
+
+        <span class="footer_content_text"> 111-222-3333 </span>
+      </div>
+      <div class="footer_copyright">&#169; Camphub.com all rights reserved</div>
+    </footer>
+  </body>
+</html>

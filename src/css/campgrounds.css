@@ -3,18 +3,13 @@
 @import "./base/footer.css";
 
 /* Landing */
-.header-landing {
-  padding: 60px 0 0;
-  background-color: var(--color-yellow-1);
-}
-
 .landing {
-  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .landing_main_pic {
+  padding-top: 60px;
   width: 100%;
   height: 100vh;
   position: relative;
@@ -22,8 +17,8 @@
 
 .landing_main_pic_text {
   position: absolute;
-  bottom: 12%;
-  left: 2%;
+  bottom: 5%;
+  left: 5%;
   font-size: 36px;
   font-weight: 600;
   color: #fff;
@@ -385,10 +380,6 @@
   font-size: 20px;
 }
 
-.comment {
-  padding: 0 20px;
-}
-
 .comment_cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -490,6 +481,15 @@
 /* RWD */
 @media (min-width: 1600px) {
   /* Landing */
+
+  .landing_main_pic {
+    padding-top: 80px;
+  }
+
+  .landing_main_pic_text {
+    font-size: 48px;
+  }
+
   .landing_intro_title {
     font-size: 32px;
   }
@@ -561,10 +561,6 @@
   }
 
   /* Comment */
-  .comment {
-    padding: 0;
-  }
-
   .comment_card_banner span {
     font-size: 18px;
   }

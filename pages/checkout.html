@@ -161,7 +161,7 @@
           </li>
 
           <li class="navigation_item">
-            <a href="#" class="navigation_link">
+            <a href="./guide.html" class="navigation_link">
               <picture>
                 <source
                   media="(min-width:1000px)"
@@ -187,6 +187,26 @@
         </ul>
       </nav>
     </div>
+
+    <header class="header-landing">
+      <div class="landing">
+        <div class="landing_pic">
+          <picture>
+            <source
+              media="min-width:1000px"
+              srcset="./../src/img/checkout/landing.webp"
+            />
+            <source
+              media="min-width:300px"
+              srcset="./../src/img/checkout/landing-min.webp"
+            />
+
+            <img src="./../src/img/checkout/landing.webp" alt="" />
+          </picture>
+          <div class="landing_text">Checkout</div>
+        </div>
+      </div>
+    </header>
 
     <main>
       <section class="section-steps">
@@ -407,17 +427,21 @@
                   <div class="information_fill_payment_content">
                     <div class="information_fill_payment_group">
                       <label for="purchaserCard">Credit card number:</label>
-                      <input type="text" id="purchaserCard" />
+                      <input
+                        type="text"
+                        id="purchaserCard"
+                        placeholder="0000-1111-2222-3333"
+                      />
                     </div>
 
                     <div class="information_fill_payment_group">
-                      <label for="purchaserDate">Expiration Date:</label>
-                      <input type="text" id="purchaserDate" />
+                      <label for="expiredDate">Expiration Date:</label>
+                      <input type="text" id="expiredDate" placeholder="01/30" />
                     </div>
 
                     <div class="information_fill_payment_group">
                       <label for="purchaserCode">Security Code:</label>
-                      <input type="text" id="purchaserCode" />
+                      <input type="text" id="purchaserCode" placeholder="000" />
                     </div>
                   </div>
                 </div>

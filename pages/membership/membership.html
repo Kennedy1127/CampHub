@@ -165,7 +165,7 @@
           </li>
 
           <li class="navigation_item">
-            <a href="#" class="navigation_link">
+            <a href="./../guide.html" class="navigation_link">
               <picture>
                 <source
                   media="(min-width:1000px)"
@@ -201,27 +201,22 @@
               <ul class="membership_navigation_list">
                 <li class="membership_navigation_item">
                   <button
+                    href="#"
                     class="membership_navigation_button membership_navigation_button--active"
                   >
+                    Profile
+                  </button>
+                </li>
+
+                <li class="membership_navigation_item">
+                  <button class="membership_navigation_button">
                     Bookings & Trips
                   </button>
                 </li>
 
                 <li class="membership_navigation_item">
                   <button href="#" class="membership_navigation_button">
-                    Manage Account
-                  </button>
-                </li>
-
-                <li class="membership_navigation_item">
-                  <button href="#" class="membership_navigation_button">
                     Reviews
-                  </button>
-                </li>
-
-                <li class="membership_navigation_item">
-                  <button href="#" class="membership_navigation_button">
-                    Rewards and Wallet
                   </button>
                 </li>
               </ul>
@@ -254,7 +249,98 @@
       </div>
 
       <div class="membership_content">
-        <div class="membership_bookings membership_content--active">
+        <div class="membership_profile membership_content--active">
+          <div class="membership_profile_content">
+            <div class="membership_profile_header">
+              <div class="membership_profile_header_icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="membership_profile_header_content">
+                <div class="membership_profile_header_text">
+                  Image must be 256 x 256 - MAX 1MB
+                </div>
+                <div class="membership_profile_header_buttons">
+                  <button class="membership_profile_header_button">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    <span>Upload Image</span>
+                  </button>
+
+                  <button class="membership_profile_header_button">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <span>Delete Image</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="membership_profile_body">
+              <div class="membership_profile_group">
+                <label for="email" class="membership_profile_label"
+                  >Email Address:</label
+                >
+                <input
+                  id="email"
+                  type="email"
+                  class="membership_profile_input"
+                  placeholder="USER001@mail.com"
+                  disabled
+                />
+              </div>
+
+              <div class="membership_profile_group">
+                <label for="username" class="membership_profile_label"
+                  >Username:</label
+                >
+                <input
+                  id="username"
+                  type="text"
+                  class="membership_profile_input"
+                  placeholder="USER001"
+                />
+              </div>
+
+              <div class="membership_profile_group">
+                <label for="Fistname" class="membership_profile_label"
+                  >First name:</label
+                >
+                <input
+                  id="Fistname"
+                  type="text"
+                  class="membership_profile_input"
+                  placeholder="Jacob"
+                />
+              </div>
+
+              <div class="membership_profile_group">
+                <label for="lastname" class="membership_profile_label"
+                  >Last name:</label
+                >
+                <input
+                  id="lastname"
+                  type="text"
+                  class="membership_profile_input"
+                  placeholder="Hakins"
+                />
+              </div>
+
+              <div class="membership_profile_group">
+                <label for="about" class="membership_profile_label"
+                  >About me:</label
+                >
+                <textarea
+                  id="about"
+                  class="membership_profile_input membership_profile_textarea"
+                ></textarea>
+              </div>
+
+              <div class="membership_profile_group">
+                <button class="membership_profile_save-button">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="membership_bookings">
           <div class="membership_booking">
             <div class="membership_booking_gallery">
               <div class="membership_booking_pic">
@@ -704,10 +790,6 @@
         </div>
 
         <div class="membership_reviews">
-          <div class="membership_review"></div>
-        </div>
-
-        <div class="membership_reviews">
           <div class="membership_review">
             <div class="membership_review_banner">Upper Valley</div>
 
@@ -715,6 +797,13 @@
               <div class="membership_review_user-pic">U</div>
               <div class="membership_review_user-name">USER001</div>
               <div class="membership_review_date">5/10/2023</div>
+              <div class="membership_reivew_rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
             </div>
 
             <div class="membership_review_content">
@@ -745,20 +834,17 @@
           <div class="membership_review">
             <div class="membership_review_banner">Upper Valley</div>
 
-            <div class="membership_features">
-              <div class="membership_feature">
-                <i class="fa-solid fa-pen-to-square"></i>
-              </div>
-
-              <div class="membership_feature">
-                <i class="fa-solid fa-trash-can"></i>
-              </div>
-            </div>
-
             <div class="membership_review_header">
               <div class="membership_review_user-pic">U</div>
               <div class="membership_review_user-name">USER001</div>
               <div class="membership_review_date">5/10/2023</div>
+              <div class="membership_reivew_rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
             </div>
 
             <div class="membership_review_content">
@@ -768,13 +854,12 @@
                 doloribus nemo alias odit.
                 <br />
                 <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+                repudiandae dolor eveniet numquam cum nihil voluptatibus iusto
+                blanditiis aut, laborum consectetur quas similique recusandae
+                voluptate beatae adipisci quibusdam reiciendis! Velit?
               </p>
             </div>
-          </div>
-
-          <div class="membership_review">
-            <div class="membership_review_banner">Upper Valley</div>
 
             <div class="membership_features">
               <div class="membership_feature">
@@ -785,11 +870,22 @@
                 <i class="fa-solid fa-trash-can"></i>
               </div>
             </div>
+          </div>
+
+          <div class="membership_review">
+            <div class="membership_review_banner">Upper Valley</div>
 
             <div class="membership_review_header">
               <div class="membership_review_user-pic">U</div>
               <div class="membership_review_user-name">USER001</div>
               <div class="membership_review_date">5/10/2023</div>
+              <div class="membership_reivew_rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
             </div>
 
             <div class="membership_review_content">
@@ -797,12 +893,14 @@
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Delectus eius pariatur ipsa reiciendis quaerat nobis sequi
                 doloribus nemo alias odit.
+                <br />
+                <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+                repudiandae dolor eveniet numquam cum nihil voluptatibus iusto
+                blanditiis aut, laborum consectetur quas similique recusandae
+                voluptate beatae adipisci quibusdam reiciendis! Velit?
               </p>
             </div>
-          </div>
-
-          <div class="membership_review">
-            <div class="membership_review_banner">Upper Valley</div>
 
             <div class="membership_features">
               <div class="membership_feature">
@@ -813,31 +911,89 @@
                 <i class="fa-solid fa-trash-can"></i>
               </div>
             </div>
+          </div>
+
+          <div class="membership_review">
+            <div class="membership_review_banner">Upper Valley</div>
 
             <div class="membership_review_header">
               <div class="membership_review_user-pic">U</div>
               <div class="membership_review_user-name">USER001</div>
               <div class="membership_review_date">5/10/2023</div>
+              <div class="membership_reivew_rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
             </div>
 
             <div class="membership_review_content">
               <p class="membership_review_text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Delectus eius pariatur ipsa reiciendis.
+                Delectus eius pariatur ipsa reiciendis quaerat nobis sequi
+                doloribus nemo alias odit.
                 <br />
                 <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+                repudiandae dolor eveniet numquam cum nihil voluptatibus iusto
+                blanditiis aut, laborum consectetur quas similique recusandae
+                voluptate beatae adipisci quibusdam reiciendis! Velit?
               </p>
             </div>
+
+            <div class="membership_features">
+              <div class="membership_feature">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+
+              <div class="membership_feature">
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="membership_reviews">
-          <div class="membership_review"></div>
-        </div>
+          <div class="membership_review">
+            <div class="membership_review_banner">Upper Valley</div>
 
-        <div class="membership_reviews">
-          <div class="membership_review"></div>
+            <div class="membership_review_header">
+              <div class="membership_review_user-pic">U</div>
+              <div class="membership_review_user-name">USER001</div>
+              <div class="membership_review_date">5/10/2023</div>
+              <div class="membership_reivew_rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <div class="membership_review_content">
+              <p class="membership_review_text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Delectus eius pariatur ipsa reiciendis quaerat nobis sequi
+                doloribus nemo alias odit.
+                <br />
+                <br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+                repudiandae dolor eveniet numquam cum nihil voluptatibus iusto
+                blanditiis aut, laborum consectetur quas similique recusandae
+                voluptate beatae adipisci quibusdam reiciendis! Velit?
+              </p>
+            </div>
+
+            <div class="membership_features">
+              <div class="membership_feature">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+
+              <div class="membership_feature">
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
