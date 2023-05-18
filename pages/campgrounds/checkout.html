@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="./../src/css/checkout.css" />
+    <link rel="stylesheet" href="./../../src/css/campgrounds/checkout.css" />
 
     <link
       rel="stylesheet"
@@ -19,13 +19,13 @@
     <script
       type="module"
       defer
-      src="./../src/js/controller/checkoutController.js"
+      src="./../../src/js/controller/checkoutController.js"
     ></script>
   </head>
   <body>
     <div class="navigation">
       <h2 class="navigation_title">
-        <a href="./../index.html">CampHub</a>
+        <a href="./../../index.html">CampHub</a>
       </h2>
 
       <button class="navigation_button">
@@ -40,13 +40,13 @@
             <picture>
               <source
                 media="(min-width:1000px)"
-                srcset="./../src/img/navigation/navigation-map.jpg"
+                srcset="./../../src/img/navigation/navigation-map.jpg"
               />
               <source
                 media="(min-width:400px)"
-                srcset="./../src/img/navigation/navigation-map.webp"
+                srcset="./../../src/img/navigation/navigation-map.webp"
               />
-              <img src="./../src/img/navigation/navigation-map.jpg" alt="" />
+              <img src="./../../src/img/navigation/navigation-map.jpg" alt="" />
             </picture>
           </li>
 
@@ -54,7 +54,7 @@
             <div class="navigation_header">
               <div class="navigation_header_content">
                 <div class="navigation_header_content_logo">
-                  <img src="./../src/img/logo/logo-black.png" alt="" />
+                  <img src="./../../src/img/logo/logo-black.png" alt="" />
                 </div>
                 <h2 class="navigation_header_content_title">CampHub</h2>
               </div>
@@ -62,17 +62,20 @@
           </li>
 
           <li class="navigation_item">
-            <a href="./../index.html" class="navigation_link">
+            <a href="./../../index.html" class="navigation_link">
               <picture>
                 <source
                   media="(min-width:1000px)"
-                  srcset="./../src/img/navigation/navigation-home.png"
+                  srcset="./../../src/img/navigation/navigation-home.png"
                 />
                 <source
                   media="(min-width:400px)"
-                  srcset="./../src/img/navigation/navigation-home.webp"
+                  srcset="./../../src/img/navigation/navigation-home.webp"
                 />
-                <img src="./../src/img/navigation/navigation-home.jpg" alt="" />
+                <img
+                  src="./../../src/img/navigation/navigation-home.png"
+                  alt=""
+                />
               </picture>
               <div class="navigation_link_content">
                 <h2 class="navigation_link_content_title">Home</h2>
@@ -88,14 +91,14 @@
               <picture>
                 <source
                   media="(min-width:1000px)"
-                  srcset="./../src/img/navigation/navigation-rooms.png"
+                  srcset="./../../src/img/navigation/navigation-rooms.png"
                 />
                 <source
                   media="(min-width:400px)"
-                  srcset="./../src/img/navigation/navigation-rooms.webp"
+                  srcset="./../../src/img/navigation/navigation-rooms.webp"
                 />
                 <img
-                  src="./../src/img/navigation/navigation-rooms.png"
+                  src="./../../src/img/navigation/navigation-rooms.png"
                   alt=""
                 />
               </picture>
@@ -109,20 +112,22 @@
           </li>
 
           <li class="navigation_item">
-            <a href="./authentication/login.html" class="navigation_link">
+            <a href="./../authentication/login.html" class="navigation_link">
               <picture>
                 <source
                   media="(min-width:1000px)"
-                  srcset="./../src/img/navigation/navigation-authentication.png"
+                  srcset="
+                    ./../../src/img/navigation/navigation-authentication.png
+                  "
                 />
                 <source
                   media="(min-width:400px)"
                   srcset="
-                    ./../src/img/navigation/navigation-authentication.webp
+                    ./../../src/img/navigation/navigation-authentication.webp
                   "
                 />
                 <img
-                  src="./../src/img/navigation/navigation-authentication.png"
+                  src="./../../src/img/navigation/navigation-authentication.png"
                   alt=""
                 />
               </picture>
@@ -136,18 +141,18 @@
           </li>
 
           <li class="navigation_item">
-            <a href="./membership/membership.html" class="navigation_link">
+            <a href="./../membership/membership.html" class="navigation_link">
               <picture>
                 <source
                   media="(min-width:1000px)"
-                  srcset="./../src/img/navigation/navigation-account.png"
+                  srcset="./../../src/img/navigation/navigation-account.png"
                 />
                 <source
                   media="(min-width:400px)"
-                  srcset="./../src/img/navigation/navigation-account.webp"
+                  srcset="./../../src/img/navigation/navigation-account.webp"
                 />
                 <img
-                  src="./../src/img/navigation/navigation-account.png"
+                  src="./../../src/img/navigation/navigation-account.png"
                   alt=""
                 />
               </picture>
@@ -161,18 +166,18 @@
           </li>
 
           <li class="navigation_item">
-            <a href="./guide.html" class="navigation_link">
+            <a href="./../guide.html" class="navigation_link">
               <picture>
                 <source
                   media="(min-width:1000px)"
-                  srcset="./../src/img/navigation/navigation-guide.png"
+                  srcset="./../../src/img/navigation/navigation-guide.png"
                 />
                 <source
                   media="(min-width:400px)"
-                  srcset="./../src/img/navigation/navigation-guide.webp"
+                  srcset="./../../src/img/navigation/navigation-guide.webp"
                 />
                 <img
-                  src="./../src/img/navigation/navigation-guide.png"
+                  src="./../../src/img/navigation/navigation-guide.png"
                   alt=""
                 />
               </picture>
@@ -194,14 +199,17 @@
           <picture>
             <source
               media="min-width:1000px"
-              srcset="./../src/img/checkout/landing.webp"
+              srcset="./../../src/img/campgrounds/checkout/landing.webp"
             />
             <source
               media="min-width:300px"
-              srcset="./../src/img/checkout/landing-min.webp"
+              srcset="./../../src/img/campgrounds/checkout/landing-min.webp"
             />
 
-            <img src="./../src/img/checkout/landing.webp" alt="" />
+            <img
+              src="./../../src/img/campgrounds/checkout/landing.webp"
+              alt=""
+            />
           </picture>
           <div class="landing_text">Checkout</div>
         </div>
@@ -503,7 +511,7 @@
     <footer class="footer">
       <div class="footer_logo">
         <div class="footer_logo_pic">
-          <img src="./../src/img/logo/logo-white.png" alt="" />
+          <img src="./../../src/img/logo/logo-white.png" alt="" />
         </div>
         <h2 class="footer_logo_title">CampHub</h2>
       </div>

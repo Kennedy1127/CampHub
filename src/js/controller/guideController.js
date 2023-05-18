@@ -3,6 +3,6 @@ import stepView from "../views/guide/stepView.js";
 
 const init = () => {
   navigationView.init();
-  stepView.init();
+  stepView.setupStepHeaders();
 };
 init();

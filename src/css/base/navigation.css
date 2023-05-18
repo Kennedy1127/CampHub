@@ -42,6 +42,7 @@
   cursor: pointer;
 }
 
+.navigation_button.navigation_button--active,
 .navigation.navigation--short .navigation_button {
   box-shadow: var(--box-shadow-1);
   border-left: none;
@@ -92,13 +93,13 @@
 
 .navigation_button.navigation_button--active
   .navigation_button_bar:nth-child(1) {
-  transform: translateX(5px) rotate(45deg);
+  transform: translate(6.5px) rotate(45deg);
 }
 
 .navigation_button.navigation_button--active
   .navigation_button_bar:nth-child(3) {
   transform-origin: left;
-  transform: translateX(5px) rotate(-45deg);
+  transform: translate(6.5px) rotate(-45deg);
 }
 
 .navigation_overlay {

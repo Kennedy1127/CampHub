@@ -1,6 +1,6 @@
-@import "./base/base.css";
-@import "./base/navigation.css";
-@import "./base/footer.css";
+@import "./../base/base.css";
+@import "./../base/navigation.css";
+@import "./../base/footer.css";
 
 /* Landing */
 .landing {
@@ -21,7 +21,7 @@
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;
-  text-shadow: 3px 3px rgba(255, 255, 255, 0.25);
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.25);
 }
 
 /* Steps */

@@ -498,7 +498,7 @@
   width: 100%;
   padding: 5px 10px;
   margin-top: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: var(--color-green-1);
   transition: background-color 0.3s;
 
@@ -701,6 +701,8 @@
   flex-direction: column;
 
   margin: 0 auto;
+
+  position: relative;
 }
 
 .tourism_header_title {
@@ -728,10 +730,80 @@
   margin-right: auto;
 }
 
+.tourism_content_card_header {
+  position: relative;
+}
+
 .tourism_content_card_pic {
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
+
+  position: relative;
+  z-index: 1;
+}
+
+.tourism_content_card_pic_bar-1 {
+  position: absolute;
+  top: 0;
+  left: -4%;
+
+  width: 7%;
+  height: 110%;
+  background-color: var(--color-green-1);
+
+  transform: translateY(-5%);
+}
+
+.tourism_content_card_pic_bar-2 {
+  position: absolute;
+  top: 95%;
+  right: 0;
+
+  width: 110%;
+  height: 10%;
+  background-color: var(--color-green-1);
+}
+
+.tourism_content_card:nth-child(2) .tourism_content_card_pic_bar-1,
+.tourism_content_card:nth-child(5) .tourism_content_card_pic_bar-1 {
+  top: initial;
+  bottom: 0;
+
+  transform: translateY(0);
+}
+
+.tourism_content_card:nth-child(2) .tourism_content_card_pic_bar-2,
+.tourism_content_card:nth-child(5) .tourism_content_card_pic_bar-2 {
+  top: initial;
+  bottom: 95%;
+  right: 0%;
+  transform: translateX(6.5%);
+
+  width: 115%;
+}
+
+.tourism_content_card:nth-child(2) .tourism_content_card_pic_bar-3,
+.tourism_content_card:nth-child(5) .tourism_content_card_pic_bar-3 {
+  position: absolute;
+  bottom: 0%;
+  right: -4%;
+
+  width: 7%;
+  height: 110%;
+  background-color: var(--color-green-1);
+}
+
+.tourism_content_card:nth-child(3) .tourism_content_card_pic_bar-1,
+.tourism_content_card:nth-child(6) .tourism_content_card_pic_bar-1 {
+  left: initial;
+  right: -4%;
+}
+
+.tourism_content_card:nth-child(3) .tourism_content_card_pic_bar-2,
+.tourism_content_card:nth-child(6) .tourism_content_card_pic_bar-2 {
+  right: initial;
+  left: 0;
 }
 
 .tourism_content_card_content {
@@ -1057,7 +1129,7 @@
 
   /* Tourism */
   .tourism_header_title {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .tourism_content_cards {

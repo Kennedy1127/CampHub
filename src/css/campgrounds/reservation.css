@@ -1,6 +1,6 @@
-@import "./base/base.css";
-@import "./base/navigation.css";
-@import "./base/footer.css";
+@import "./../base/base.css";
+@import "./../base/navigation.css";
+@import "./../base/footer.css";
 
 /* Landing */
 .header-landing {
