@@ -51,6 +51,7 @@
   align-items: center;
   justify-content: center;
 
+  cursor: pointer;
   position: relative;
 }
 
@@ -114,6 +115,8 @@
   border-radius: 8px;
   box-shadow: var(--box-shadow-2);
   background-color: #fff;
+
+  scroll-margin-top: 100px;
 }
 
 .step_header {
