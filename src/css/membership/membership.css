@@ -529,6 +529,10 @@
   cursor: pointer;
 }
 
+.membership_overlay_card_rate i.active {
+  color: var(--color-orange-1);
+}
+
 .membership_overlay_card_content {
   height: 50%;
   padding: 0 40px;

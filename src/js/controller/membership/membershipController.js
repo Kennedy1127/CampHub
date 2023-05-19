@@ -3,7 +3,7 @@ import membershipNavigationView from "../../views/membership/membershipNavigatio
 import membershipOverlayView from "../../views/membership/membershipOverlayView.js";
 
 const init = () => {
-  navigationView.init();
+  navigationView.clickMenuButton();
   membershipNavigationView.init();
   membershipOverlayView.init();
 };

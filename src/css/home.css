@@ -1,4 +1,5 @@
 @import "./base/base.css";
+@import "./base/animation.css";
 @import "./base/navigation.css";
 @import "./base/footer.css";
 
@@ -299,18 +300,26 @@
   position: relative;
 }
 
-.room_carousel_pic {
+.room_carousel_pics {
   height: 500px;
   border-top-right-radius: 50px;
   overflow: hidden;
 }
 
-.room_carousel_pic--right {
+.room_carousel_pics--right {
   border-top-right-radius: 0;
   border-top-left-radius: 50px;
 }
 
-.room_carousel_pic picture {
+.room_carousel_pics_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.room_carousel_pic {
+  flex: 1 0 100%;
+  width: 100%;
   height: 100%;
 }
 
@@ -517,27 +526,51 @@
 .section-recommend {
   padding: 0 0 80px;
   background-color: var(--color-yellow-1);
+  overflow: clip;
 }
 
 .recommend_background-map {
   height: 300px;
 }
 
-.recommend_background-border {
+.recommend_background-borders {
   position: sticky;
   top: 0;
+  z-index: 2;
+}
+
+.recommend_background-borders--background {
+  z-index: 0;
 }
 
 .recommend_background-border_pic {
   position: absolute;
   top: 0;
 
-  width: 200px;
-  height: auto;
+  width: 50%;
+  height: 200vh;
+}
+
+.recommend_background-border_pic--left {
+  left: 0;
+  transform-origin: top right;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .recommend_background-border_pic--right {
+  transform-origin: top left;
   right: 0;
+  box-shadow: -2px -2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.recommend_background-border_pic--left--animation {
+  transform: translateX(-63%) rotate(30deg);
+  animation: curtain-left 1.2s;
+}
+
+.recommend_background-border_pic--draw-right {
+  transform: translateX(63%) rotate(-30deg);
+  animation: curtain-right 1.2s;
 }
 
 .recommend {
@@ -1021,7 +1054,7 @@
   }
 
   /* Rooms */
-  .room_carousel_pic {
+  .room_carousel_pics {
     height: 800px;
   }
 
@@ -1076,15 +1109,11 @@
 
   /* Recommends */
   .recommend_background-map {
-    height: 600px;
+    /* height: 600px; */
   }
 
   .recommend {
     grid-template-columns: 500px 750px;
-  }
-
-  .recommend_background-border_pic {
-    width: 300px;
   }
 
   .recommend_intro_card {

@@ -56,9 +56,75 @@ class RecommendationsView {
     );
   }
 
+  _darwCurtains() {
+    const sectionRecommend = document.querySelector(".section-recommend");
+
+    const callback = (entries, _) => {
+      if (!entries[0].isIntersecting) return;
+      const borders = document.querySelectorAll(
+        ".recommend_background-border_pic"
+      );
+      borders[0].classList.add(
+        "recommend_background-border_pic--left--animation"
+      );
+      borders[1].classList.add("recommend_background-border_pic--draw-right");
+    };
+    const option = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver(callback, option);
+    observer.observe(sectionRecommend);
+  }
+
+  _removeOverflowClipOnBorders() {
+    const sectionRecommend = document.querySelector(".section-recommend");
+    const sectionTourism = document.querySelector(".section-tourism");
+
+    const callback = (entries, _) => {
+      sectionRecommend.style.overflowY = "";
+      if (!entries[0].isIntersecting) return;
+      sectionRecommend.style.overflowY = "initial";
+    };
+    const option = {
+      root: null,
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver(callback, option);
+    observer.observe(sectionTourism);
+  }
+
+  _changeBordersIndex() {
+    const firstRecommendCard = document.querySelector(".recommend_card");
+
+    const callback = (entries, _) => {
+      if (!entries[0].isIntersecting) return;
+
+      const stickyBorders = document.querySelectorAll(
+        ".recommend_background-borders"
+      );
+
+      stickyBorders.forEach((border) => {
+        border.style.zIndex = "1";
+      });
+    };
+    const option = {
+      root: null,
+      threshold: 1,
+    };
+
+    const observer = new IntersectionObserver(callback, option);
+    observer.observe(firstRecommendCard);
+  }
+
   init() {
     this._recommendCardObservation();
     this._clickOrderCardScroll();
+    this._darwCurtains();
+    this._removeOverflowClipOnBorders();
+    this._changeBordersIndex();
   }
 }
 

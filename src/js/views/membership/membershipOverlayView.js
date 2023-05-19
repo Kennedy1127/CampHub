@@ -35,10 +35,18 @@ class MembershipOverlayView {
     });
   }
 
+  _setupRating() {
+    const stars = document.querySelectorAll(
+      ".membership_overlay_card_rate .fa-star"
+    );
+    console.log(stars);
+  }
+
   init() {
     this._checkOverlay();
     this._showOverlay();
     this._hiddenOverlay();
+    this._setupRating();
   }
 }
 

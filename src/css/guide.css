@@ -3,6 +3,10 @@
 @import "./base/footer.css";
 
 /* Landing */
+.section-landing {
+  padding: 60px 0;
+}
+
 .landing_main_pic {
   padding-top: 60px;
   width: 100%;
@@ -24,7 +28,7 @@
 
 /* Steps */
 .section-guide {
-  padding: 160px 0 50px;
+  padding: 80px 0;
   background-color: var(--color-yellow-1);
 }
 
@@ -216,7 +220,7 @@
   padding: 20px;
   border-radius: 8px;
   background-color: var(--color-green-1);
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .faq_ask_title {
@@ -441,7 +445,7 @@
   /* FAQ */
   .faq_ask {
     padding: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
   }
 
   .faq_ask_title {

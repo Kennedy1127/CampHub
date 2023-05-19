@@ -1,6 +1,6 @@
 import navigationView from "../views/navigationView.js";
 
 const init = () => {
-  navigationView.init();
+  navigationView.clickMenuButton();
 };
 init();

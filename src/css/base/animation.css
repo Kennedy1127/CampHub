@@ -1,0 +1,19 @@
+@keyframes curtain-left {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+
+  100% {
+    transform: translateX(-63%) rotate(30deg);
+  }
+}
+
+@keyframes curtain-right {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+
+  100% {
+    transform: translateX(63%) rotate(-30deg);
+  }
+}

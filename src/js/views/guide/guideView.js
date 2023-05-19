@@ -1,9 +1,7 @@
 class GuideView {
-  init() {
+  scrollGuideStep() {
     const guides = document.querySelectorAll(".guide_step");
     const steps = document.querySelectorAll(".step");
-    console.log(guides);
-    console.log(steps);
 
     guides.forEach((guide, i) =>
       guide.addEventListener("click", (e) => {

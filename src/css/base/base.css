@@ -14,8 +14,8 @@
   --color-black-1: #291306;
 
   --color-grey-opacity-1: rgb(85, 85, 85, 0.5);
-  --color-green-opacity-1: rgb(137, 141, 102, 0.6);
-  --color-green-opacity-2: rgb(137, 141, 102, 0.35);
+  --color-green-opacity-1: rgba(137, 141, 102, 0.6);
+  --color-green-opacity-2: rgba(137, 141, 102, 0.349);
   --color-orange-opacity-1: rgb(252, 151, 128, 0.8);
 
   --box-shadow-1: 1px 2px 6px rgba(0, 0, 0, 0.3);
