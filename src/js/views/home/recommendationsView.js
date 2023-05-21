@@ -61,17 +61,15 @@ class RecommendationsView {
 
     const callback = (entries, _) => {
       if (!entries[0].isIntersecting) return;
-      const borders = document.querySelectorAll(
-        ".recommend_background-border_pic"
-      );
-      borders[0].classList.add(
-        "recommend_background-border_pic--left--animation"
-      );
-      borders[1].classList.add("recommend_background-border_pic--draw-right");
+      const borders = document.querySelectorAll(".recommend_background-border");
+      borders[0].classList.add("recommend_background-border--left--draw");
+      borders[1].classList.add("recommend_background-border--right--draw");
     };
+
     const option = {
       root: null,
-      threshold: 0.1,
+      rootMargin: "-300px",
+      threshold: 0,
     };
 
     const observer = new IntersectionObserver(callback, option);
@@ -83,7 +81,6 @@ class RecommendationsView {
     const sectionTourism = document.querySelector(".section-tourism");
 
     const callback = (entries, _) => {
-      sectionRecommend.style.overflowY = "";
       if (!entries[0].isIntersecting) return;
       sectionRecommend.style.overflowY = "initial";
     };
@@ -119,12 +116,45 @@ class RecommendationsView {
     observer.observe(firstRecommendCard);
   }
 
+  _setupCarAnimation() {
+    const sectionRecommend = document.querySelector(".section-recommend");
+    const sectionRooms = document.querySelector(".section-rooms");
+    const tourismGallery = document.querySelector(".tourism_gallery");
+    const backgroundCar = document.querySelector(".recommend_background-car");
+
+    const addCar = (entries, _) => {
+      if (!entries[0].isIntersecting) return;
+      backgroundCar.classList.add("recommend_background-car--active");
+    };
+    const option = {
+      root: null,
+      rootMargin: "-50%",
+      threshold: 0,
+    };
+
+    const recommendObserver = new IntersectionObserver(addCar, option);
+    recommendObserver.observe(sectionRecommend);
+
+    const removeCar = (entries, _) => {
+      if (!entries[0].isIntersecting) return;
+      backgroundCar.classList.remove("recommend_background-car--active");
+    };
+
+    const sectionRoomsObserver = new IntersectionObserver(removeCar, {
+      threshold: 0.3,
+    });
+    sectionRoomsObserver.observe(sectionRooms);
+
+    const galleryObserver = new IntersectionObserver(removeCar);
+    galleryObserver.observe(tourismGallery);
+  }
+
   init() {
     this._recommendCardObservation();
     this._clickOrderCardScroll();
     this._darwCurtains();
     this._removeOverflowClipOnBorders();
-    this._changeBordersIndex();
+    this._setupCarAnimation();
   }
 }
 

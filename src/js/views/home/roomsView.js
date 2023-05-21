@@ -126,22 +126,25 @@ class RoomsView {
         })
       )
     );
+  }
 
-    // this._barNumbers.forEach((numbers, roomIndex) => {
-    //   const carouselNumbers = numbers.querySelectorAll(
-    //     ".room_carousel_bar_number"
-    //   );
+  _setupSectionRoomsAnimation() {
+    const sectionRooms = document.querySelector(".section-rooms");
+    const rooms = document.querySelector(".rooms");
 
-    //   carouselNumbers.forEach((number, i) =>
-    //     number.addEventListener("click", () => {
-    //       this._removeActiveCarouselNumbers(carouselNumbers);
-    //       this._activeSelectedCarouselNumber(number);
+    const callback = (entries) => {
+      if (!entries[0].isIntersecting) return;
+      rooms.classList.add("rooms--animation");
+    };
 
-    //       this._carouselTask(this._roomWrappers[roomIndex], i);
-    //       this._currentIndex[roomIndex] = i;
-    //     })
-    //   );
-    // });
+    const option = {
+      root: null,
+      rootMargin: "-100px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver(callback, option);
+    observer.observe(sectionRooms);
   }
 
   init() {

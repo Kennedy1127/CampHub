@@ -96,8 +96,23 @@
 .membership_content {
   flex-grow: 1;
 
+  height: 100vh;
+  overflow: auto;
   padding-top: 60px;
   background-color: var(--color-yellow-1);
+}
+
+.membership_content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.membership_content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.membership_content::-webkit-scrollbar-thumb {
+  background-color: var(--color-grey-1);
+  border-radius: 8px;
 }
 
 /* Profile */

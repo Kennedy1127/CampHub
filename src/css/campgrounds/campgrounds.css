@@ -1,4 +1,5 @@
 @import "./../base/base.css";
+@import "./../base/animation.css";
 @import "./../base/navigation.css";
 @import "./../base/footer.css";
 
@@ -78,6 +79,7 @@
 
 .rooms {
   padding: 0 80px;
+  opacity: 0;
 }
 
 .room {
@@ -186,6 +188,13 @@
 .section-gallery {
   padding: 100px 0;
   background-color: var(--color-yellow-1);
+
+  position: relative;
+  z-index: 2;
+}
+
+.gallery {
+  opacity: 0;
 }
 
 .gallery_header_title {
@@ -262,6 +271,10 @@
 .section-comment {
   padding: 50px 0 100px;
   background-color: var(--color-yellow-1);
+}
+
+.comment {
+  opacity: 1;
 }
 
 .comment_header_bubble {
@@ -369,6 +382,11 @@
   background-color: var(--color-orange-1);
 }
 /* Comment */
+
+.section-animation {
+  opacity: 1;
+  animation: section-bottom-to-top 1s;
+}
 
 /* RWD */
 @media (min-width: 1600px) {

@@ -187,9 +187,16 @@
 }
 
 .concept_header {
-  margin-bottom: 30px;
   color: var(--color-black-1);
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.concept_header span {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--color-green-1);
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .concept_text:last-child {
@@ -238,6 +245,13 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.6px;
+
+  opacity: 0;
+}
+
+.concept_content_card_title.concept_content_card_title--animation {
+  animation: card-title-move-down 1s;
+  opacity: 1;
 }
 
 .concept_content_card_triangle {
@@ -271,6 +285,16 @@
   margin: 0 auto;
 }
 
+.concept_content_card_pic img {
+  height: 0;
+  transform-origin: bottom;
+}
+
+.concept_content_card_pic.concept_content_card_pic--animation img {
+  animation: card-img-opacity 1s;
+  height: 100%;
+}
+
 .concept_content_card_text {
   font-size: 12px;
 }
@@ -278,7 +302,7 @@
 
 /* Rooms */
 .section-rooms {
-  padding: 100px 0 200px;
+  padding: 80px 0 100px;
 }
 
 .rooms {
@@ -291,7 +315,7 @@
 }
 
 .room:nth-child(1) {
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 
 .room_carousel {
@@ -526,6 +550,7 @@
 .section-recommend {
   padding: 0 0 80px;
   background-color: var(--color-yellow-1);
+
   overflow: clip;
 }
 
@@ -539,38 +564,51 @@
   z-index: 2;
 }
 
-.recommend_background-borders--background {
-  z-index: 0;
-}
-
-.recommend_background-border_pic {
+.recommend_background-border {
   position: absolute;
   top: 0;
 
   width: 50%;
-  height: 200vh;
+  transition: all 1s;
 }
 
-.recommend_background-border_pic--left {
+.recommend_background-border--left {
   left: 0;
-  transform-origin: top right;
-  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.recommend_background-border_pic--right {
-  transform-origin: top left;
+.recommend_background-border--left--draw {
+  transform: translateX(-55%);
+}
+
+.recommend_background-border--right {
   right: 0;
-  box-shadow: -2px -2px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.recommend_background-border_pic--left--animation {
-  transform: translateX(-63%) rotate(30deg);
-  animation: curtain-left 1.2s;
+.recommend_background-border--right--draw {
+  transform: translateX(55%);
 }
 
-.recommend_background-border_pic--draw-right {
-  transform: translateX(63%) rotate(-30deg);
-  animation: curtain-right 1.2s;
+.recommend_background-car {
+  position: fixed;
+  bottom: 3%;
+  left: 0;
+  z-index: 3;
+
+  width: 120px;
+
+  display: none;
+}
+
+.recommend_background-car--active {
+  display: flex;
+  animation: drive-car 8s linear infinite, bouncing-car 0.4s linear infinite;
+}
+
+.recommend_background-car_smoke {
+  width: 25px;
+  height: 20px;
+  align-self: flex-end;
+  padding-right: 2px;
 }
 
 .recommend {
@@ -1023,6 +1061,10 @@
     font-size: 28px;
   }
 
+  .concept_header span {
+    font-size: 20px;
+  }
+
   .concept_text {
     font-size: 16px;
   }
@@ -1110,6 +1152,10 @@
   /* Recommends */
   .recommend_background-map {
     /* height: 600px; */
+  }
+
+  .recommend_background-car {
+    width: 200px;
   }
 
   .recommend {
