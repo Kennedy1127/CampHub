@@ -193,7 +193,19 @@
 
         <div class="landing_video">
           <div class="landing_video_frame">
-            <img src="./src/img/home/landing/landing-test.png" alt="" />
+            <picture>
+              <source
+                media="(min-width:1000px)"
+                srcset="./src/img/home/landing/landing.png"
+              />
+
+              <source
+                media="(min-width:300px)"
+                srcset="./src/img/home/landing/landing.webp"
+              />
+
+              <img src="/src/img/home/landing/landing.png" alt="" />
+            </picture>
           </div>
 
           <div class="landing_socials">
@@ -248,10 +260,9 @@
         </div>
         <div class="container">
           <div class="concept">
-            <div class="concept_title">
-              <h2 class="concept_header">
+            <div class="concept_header">
+              <h2 class="concept_title">
                 <span>Concept</span>
-                <br />
                 Gateway to Adventure and Exploration
                 <br />
                 Journey to Unforgettable Experiences
