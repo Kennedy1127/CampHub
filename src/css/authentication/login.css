@@ -23,13 +23,8 @@
   color: var(--color-green-1);
 
   margin-top: 5px;
-  padding-bottom: 1px;
 
   position: relative;
-}
-
-.authentication_group a:hover {
-  color: var(--color-green-2);
 }
 
 .authentication_group a::after {
@@ -97,6 +92,10 @@
     letter-spacing: -0.2px;
   }
 
+  .authentication_group a:hover {
+    color: var(--color-green-2);
+  }
+
   .authentication_group a::after {
     transform: scale(1);
     transform-origin: right;
@@ -123,10 +122,19 @@
 
 @media screen and (min-width: 1600px) {
   .authentication_group a {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .authentication_socials {
     padding-top: 25px;
+  }
+
+  .authentication_social {
+    margin-bottom: 20px;
+  }
+
+  .authentication_social_button {
+    padding: 8px 16px;
+    font-size: 18px;
   }
 }

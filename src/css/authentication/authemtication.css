@@ -7,9 +7,6 @@
 }
 
 .authentication {
-  width: 80%;
-  height: 80%;
-  box-shadow: var(--box-shadow-1);
   border-radius: 10px;
   overflow: hidden;
 
@@ -22,7 +19,6 @@
 }
 
 .authentication_content {
-  height: 100%;
   background-color: var(--color-yellow-1);
 }
 
@@ -118,6 +114,11 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .authentication {
+    width: 80%;
+    height: 80%;
+  }
+
   .authentication_pic {
     flex-grow: 1;
   }
@@ -125,10 +126,11 @@
   .authentication_pic picture,
   .authentication_pic picture img {
     height: 100%;
+    object-position: 50% 80%;
   }
 
   .authentication_content {
-    width: 45%;
+    width: 40%;
     padding: 30px;
   }
 
@@ -137,19 +139,19 @@
   }
 
   .authentication_header_title {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .authentication_header_title span:last-child {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .authentication_group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .authentication_group label {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .authentication_group input {
@@ -162,13 +164,14 @@
   }
 
   .authentication_button {
+    margin-top: 15px;
     margin-bottom: 10px;
   }
 
   .authentication_button button {
-    width: 40%;
-    padding: 6px 10px;
-    font-size: 16px;
+    width: 30%;
+    padding: 8px;
+    font-size: 14px;
     transition: all 0.3s;
   }
 
@@ -177,7 +180,7 @@
   }
 
   .authentication_info {
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: -0.2px;
     padding-bottom: 15px;
   }
@@ -215,42 +218,41 @@
   }
 
   .authentication_header_title {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .authentication_header_title span:last-child {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .authentication_group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .authentication_group label {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .authentication_group input {
-    padding: 10px 20px;
-    font-size: 22px;
-  }
-
-  .authentication_group input::placeholder {
     font-size: 20px;
   }
 
+  .authentication_group input::placeholder {
+    font-size: 18px;
+  }
+
   .authentication_button {
+    margin-top: 25px;
     margin-bottom: 20px;
   }
 
   .authentication_button button {
-    width: 40%;
-    padding: 10px 20px;
+    padding: 12px;
     font-size: 22px;
   }
 
   .authentication_info {
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 25px;
   }
 }

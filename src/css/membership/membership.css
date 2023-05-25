@@ -8,9 +8,6 @@
 
 .membership_navigation_wrapper {
   flex-shrink: 0;
-
-  width: 20%;
-  height: 100vh;
 }
 
 .membership_navigation {
@@ -18,42 +15,32 @@
   top: 0;
   left: 0;
 
-  width: 20%;
   height: 100%;
-  padding-top: 60px;
-
   display: flex;
   flex-direction: column;
 }
 
 .membership_navigation_content {
-  padding: 40px;
 }
 
 .membership_navigation_group:nth-child(1) {
-  margin-bottom: 30px;
 }
 
 .membership_navigation_title {
-  font-size: 20px;
   font-weight: 500;
-  margin-bottom: 20px;
 }
 
 .membership_navigation_list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
 .membership_navigation_button {
-  font-size: 14px;
   font-weight: 500;
   color: var(--color-grey-2);
 }
 
 .membership_navigation_contact {
-  font-size: 12px;
   color: var(--color-grey-2);
 }
 
@@ -62,7 +49,6 @@
   cursor: pointer;
 }
 
-.membership_navigation_button:hover,
 .membership_navigation_button.membership_navigation_button--active {
   color: var(--color-green-1);
 }
@@ -77,20 +63,85 @@
 
 .membership_navigation_signout_button {
   width: 100%;
-  margin-top: auto;
-  padding: 12px;
   background-color: var(--color-green-1);
-  transition: all 0.3s;
 
   color: #fff;
-  font-size: 20px;
   font-weight: 500;
 
   cursor: pointer;
 }
 
-.membership_navigation_signout_button:hover {
-  background-color: var(--color-green-2);
+@media screen and (min-width: 1200px) {
+  .membership_navigation_wrapper {
+    width: 20%;
+  }
+
+  .membership_navigation {
+    width: 20%;
+    padding-top: 60px;
+  }
+
+  .membership_navigation_content {
+    padding: 40px;
+  }
+
+  .membership_navigation_group:nth-child(1) {
+    margin-bottom: 30px;
+  }
+
+  .membership_navigation_title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .membership_navigation_list {
+    gap: 15px;
+  }
+
+  .membership_navigation_button {
+    font-size: 14px;
+  }
+
+  .membership_navigation_contact {
+    font-size: 12px;
+  }
+
+  .membership_navigation_button:hover {
+    color: var(--color-green-1);
+  }
+
+  .membership_navigation_signout_button {
+    font-size: 20px;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+
+  .membership_navigation_signout_button:hover {
+    background-color: var(--color-green-2);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .membership_navigation {
+    padding-top: 80px;
+  }
+
+  .membership_navigation_title {
+    font-size: 28px;
+  }
+
+  .membership_navigation_button {
+    font-size: 20px;
+  }
+
+  .membership_navigation_contact {
+    font-size: 18px;
+  }
+
+  .membership_navigation_signout_button {
+    font-size: 28px;
+    padding: 15px;
+  }
 }
 
 .membership_content {
@@ -115,6 +166,18 @@
   border-radius: 8px;
 }
 
+@media screen and (min-width: 1200px) {
+  .membership_content {
+    padding-top: 60px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .membership_content {
+    padding-top: 80px;
+  }
+}
+
 /* Profile */
 .membership_profile {
   padding: 40px;
@@ -128,7 +191,6 @@
 .membership_profile_content {
   width: 80%;
   margin: 0 auto;
-  padding: 50px;
   border-radius: 8px;
   border: 1px solid var(--color-grey-3);
   background-color: #fff;
@@ -259,6 +321,20 @@
 .membership_profile_save-button:hover {
   background-color: var(--color-orange-2);
 }
+
+@media screen and (min-width: 1200px) {
+  .membership_profile {
+    padding: 40px;
+  }
+
+  .membership_profile_content {
+    padding: 50px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+}
+
 /* Bookings */
 .membership_bookings {
   padding: 40px;
@@ -447,6 +523,12 @@
   color: var(--color-orange-1);
 }
 
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1600px) {
+}
+
 /* Overlay */
 .membership_overlay {
   position: fixed;
@@ -592,6 +674,12 @@
   background-color: var(--color-orange-2);
 }
 
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1600px) {
+}
+
 /* Reviews */
 .membership_reviews {
   padding: 40px;
@@ -695,216 +783,9 @@
 .membership_review_text {
   font-size: 14px;
 }
-/* RWD */
-@media (min-width: 1600px) {
-  .membership_navigation {
-    padding-top: 80px;
-  }
 
-  .membership_navigation_title {
-    font-size: 28px;
-  }
+@media screen and (min-width: 1200px) {
+}
 
-  .membership_navigation_list {
-    gap: 25px;
-  }
-
-  .membership_navigation_button {
-    font-size: 20px;
-  }
-
-  .membership_navigation_contact {
-    font-size: 16px;
-  }
-
-  .membership_navigation_signout_button {
-    font-size: 24px;
-  }
-
-  .membership_content {
-    padding-top: 80px;
-  }
-
-  /* Profile */
-  .membership_profile_header {
-    padding: 40px;
-    min-height: 200px;
-    margin-bottom: 30px;
-  }
-
-  .membership_profile_header_icon {
-    width: 100px;
-    height: 100px;
-  }
-
-  .membership_profile_header_icon i {
-    font-size: 32px;
-  }
-
-  .membership_profile_header_text {
-    padding: 20px;
-    font-size: 18px;
-  }
-
-  .membership_profile_header_buttons button {
-    padding: 12px 24px;
-    font-size: 20px;
-  }
-
-  .membership_profile_body {
-    column-gap: 100px;
-    row-gap: 40px;
-  }
-
-  .membership_profile_group {
-    gap: 10px;
-  }
-
-  .membership_profile_label {
-    font-size: 20px;
-  }
-
-  .membership_profile_input {
-    padding: 8px 16px;
-    font-size: 22px;
-  }
-
-  .membership_profile_input::placeholder {
-    font-size: 20px;
-  }
-
-  .membership_profile_textarea {
-    padding: 15px 30px;
-    min-height: 200px;
-  }
-
-  .membership_profile_save-button {
-    padding: 10px 20px;
-    font-size: 24px;
-  }
-  /* Bookings */
-  .membership_booking {
-    gap: 40px;
-  }
-
-  .membership_booking_info_title {
-    font-size: 28px;
-  }
-
-  .membership_booking_info_date i,
-  .membership_booking_info_guests i {
-    padding-right: 20px;
-    font-size: 24px;
-  }
-
-  .membership_booking_info_date,
-  .membership_booking_info_guests {
-    margin-bottom: 25px;
-    font-size: 16px;
-  }
-
-  .membership_booking_info_product {
-    margin-bottom: 25px;
-  }
-
-  .membership_booking_info_product_pic {
-    width: 100px;
-    height: 100px;
-  }
-
-  .membership_booking_info_product_name {
-    font-size: 18px;
-  }
-
-  .membership_booking_info_product_price {
-    font-size: 20px;
-  }
-
-  .membership_booking_info_rental_title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .membership_booking_info_products {
-    max-height: 400px;
-    margin-bottom: 20px;
-  }
-
-  .membership_booking_info_total span {
-    font-size: 22px;
-  }
-
-  .membership_booking_info_comment_button {
-    font-size: 24px;
-  }
-
-  /* Overlay */
-  .membership_overlay_card_header_banner {
-    padding: 10px 20px;
-    font-size: 18px;
-  }
-
-  .membership_overlay_card_cancel {
-    font-size: 24px;
-  }
-
-  .membership_overlay_card_header {
-    padding: 40px;
-  }
-
-  .membership_overlay_card_user-pic {
-    width: 50px;
-    height: 50px;
-    font-size: 32px;
-    font-size: 28px;
-  }
-
-  .membership_overlay_card_user-name {
-    font-size: 28px;
-    padding-right: 50px;
-  }
-
-  .membership_overlay_card_rate {
-    font-size: 20px;
-  }
-
-  .membership_overlay_card_textarea textarea {
-    padding: 20px 40px;
-    font-size: 20px;
-  }
-
-  .membership_overlay_submit_button {
-    padding: 10px 20px;
-    font-size: 24px;
-  }
-  /* Reviews */
-  .membership_reviews {
-    padding: 80px;
-  }
-
-  .membership_review_banner {
-    font-size: 20px;
-  }
-
-  .membership_features {
-    font-size: 28px;
-  }
-
-  .membership_review_user-pic {
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-  }
-
-  .membership_review_user-name {
-    font-size: 28px;
-  }
-
-  .membership_review_date {
-    font-size: 16px;
-  }
-
-  .membership_review_text {
-    font-size: 18px;
-  }
+@media screen and (min-width: 1600px) {
 }
