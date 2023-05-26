@@ -2,6 +2,7 @@
 @import "./base/animation.css";
 @import "./base/navigation.css";
 @import "./base/footer.css";
+@import "./base/carousel.css";
 
 /* Landing */
 .header-landing {
@@ -401,17 +402,11 @@
 .section-rooms {
 }
 
-.room_carousel_pics_wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-.room_carousel_pic {
+/* .room_carousel_pic {
   flex: 1 0 100%;
   width: 100%;
   height: 100%;
-}
+} */
 
 .room_carousel_slogan {
   position: absolute;

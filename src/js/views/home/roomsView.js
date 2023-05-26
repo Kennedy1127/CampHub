@@ -1,3 +1,5 @@
+import carousel from "./../../utilities/carousel.js";
+
 class RoomsView {
   _roomWrappers = document.querySelectorAll(".room_carousel_pics_wrapper");
   _barNumbers = document.querySelectorAll(".room_carousel_bar_numbers");
@@ -148,10 +150,13 @@ class RoomsView {
   }
 
   init() {
-    this._setupCarousel();
-    this._setupCarouselArrow();
-    this._setupCarouselButton();
-    this._infiniteCarousel();
+    // this._setupCarousel();
+    // this._setupCarouselArrow();
+    // this._setupCarouselButton();
+    // this._infiniteCarousel();
+
+    const slider1 = document.querySelector(".myCarousel_slider");
+    const upperValleyCarousel = new carousel(slider1);
   }
 }
 
