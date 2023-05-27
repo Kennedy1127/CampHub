@@ -1,4 +1,4 @@
-import carousel from "./../../utilities/carousel.js";
+import myCarousel from "./../../utilities/carousel.js";
 
 class RoomsView {
   _sliders = document.querySelectorAll(".myCarousel_slider");
@@ -6,14 +6,14 @@ class RoomsView {
   _numbers = document.querySelectorAll(".myCarousel_numbers");
 
   init() {
-    const upperValleyCarousel = new carousel(
+    const upperValleyCarousel = new myCarousel(
       this._sliders[0],
       this._arrows[0],
       this._numbers[0]
     );
     upperValleyCarousel.init();
 
-    const sunsetLodge = new carousel(
+    const sunsetLodge = new myCarousel(
       this._sliders[1],
       this._arrows[1],
       this._numbers[1]

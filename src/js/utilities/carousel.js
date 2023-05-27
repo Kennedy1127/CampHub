@@ -1,15 +1,21 @@
-class Carousel {
+class myCarousel {
   constructor(slider, arrows, numbers) {
     this._slider = slider;
     this._arrows = arrows;
-    this._numbers = numbers.querySelectorAll(".myCarousel_number");
     this._currentIndex = 0;
+    this._numbers = numbers.querySelectorAll(".myCarousel_number");
     this._slides = slider.querySelectorAll(".myCarousel_slide");
   }
 
   _carouselTask(currentIndex, transitionMS = 500) {
     this._slider.style.transitionDuration = `${transitionMS}ms`;
     this._slider.style.transform = `translateX(${(-currentIndex - 1) * 100}%)`;
+
+    if (transitionMS === 0) {
+      setTimeout(() => {
+        this._slider.style.transitionDuration = "500ms";
+      }, 1);
+    }
   }
 
   _removeActiveCarouselNumber() {
@@ -77,31 +83,145 @@ class Carousel {
     const myCarousel = this._slider.closest(".myCarousel");
     let pressed = false;
     let startX;
-    let x;
+    let distance;
 
-    myCarousel.addEventListener("mousedown", (e) => {
-      console.log("down");
-      pressed = true;
-      startX = e.offsetX - this._slider.offsetLeft;
-    });
+    ["mousedown", "touchstart"].forEach((event) =>
+      myCarousel.addEventListener(event, (e) => {
+        pressed = true;
+        startX = event === "mousedown" ? e.offsetX : e.touches[0].clientX;
+        console.log(event);
+      })
+    );
+
+    // myCarousel.addEventListener("mousedown", (e) => {
+    //   pressed = true;
+    //   startX = e.offsetX;
+    // });
+
+    // myCarousel.addEventListener("touchstart", (e) => {
+    //   pressed = true;
+    //   console.log(e.touches[0].clientX);
+    // });
 
     myCarousel.addEventListener("mouseenter", () => {
       myCarousel.style.cursor = "grab";
     });
 
-    myCarousel.addEventListener("mouseup", () => {
-      console.log("release");
-      pressed = false;
-    });
+    ["mouseup", "mouseleave", "touchend"].forEach((event) =>
+      myCarousel.addEventListener(event, () => {
+        console.log(event);
+        pressed = false;
 
-    myCarousel.addEventListener("mousemove", (e) => {
-      if (!pressed) return;
-      e.preventDefault();
+        if (Math.abs(distance) < 15) {
+          distance = null;
+          return this._carouselTask(this._currentIndex);
+        }
 
-      x = e.offsetX;
+        if (distance >= 15) {
+          distance = null;
+          if (this._currentIndex === -1) return;
 
-      this._slider.style.transform = `translateX(${x - startX}px)`;
-    });
+          this._currentIndex--;
+          this._removeActiveCarouselNumber();
+          if (this._currentIndex > -1)
+            this._numbers[this._currentIndex].classList.add(
+              "myCarousel_number--active"
+            );
+          return this._carouselTask(this._currentIndex);
+        }
+
+        if (distance <= 15) {
+          distance = null;
+          if (this._currentIndex === this._slides.length) return;
+
+          this._currentIndex++;
+          this._removeActiveCarouselNumber();
+          if (this._currentIndex < this._slides.length)
+            this._numbers[this._currentIndex].classList.add(
+              "myCarousel_number--active"
+            );
+          return this._carouselTask(this._currentIndex);
+        }
+      })
+    );
+
+    // ["mouseup", "mouseleave"].forEach((event) =>
+    //   myCarousel.addEventListener(event, () => {
+    //     pressed = false;
+
+    //     if (Math.abs(distance) < 15) {
+    //       return this._carouselTask(this._currentIndex);
+    //     }
+
+    //     if (distance >= 15) {
+    //       if (this._currentIndex === -1) return;
+
+    //       this._currentIndex--;
+    //       this._removeActiveCarouselNumber();
+    //       if (this._currentIndex > -1)
+    //         this._numbers[this._currentIndex].classList.add(
+    //           "myCarousel_number--active"
+    //         );
+    //       return this._carouselTask(this._currentIndex);
+    //     }
+
+    //     if (distance <= 15) {
+    //       if (this._currentIndex === this._slides.length) return;
+    //       this._currentIndex++;
+    //       this._removeActiveCarouselNumber();
+    //       if (this._currentIndex < this._slides.length)
+    //         this._numbers[this._currentIndex].classList.add(
+    //           "myCarousel_number--active"
+    //         );
+    //       return this._carouselTask(this._currentIndex);
+    //     }
+    //   })
+    // );
+
+    ["mousemove", "touchmove"].forEach((event) =>
+      myCarousel.addEventListener(event, (e) => {
+        console.log(event);
+        if (
+          !pressed ||
+          this._currentIndex === this._slides.length ||
+          this._currentIndex === -1
+        )
+          return;
+
+        e.preventDefault();
+        distance =
+          (((event === "mousemove" ? e.offsetX : e.touches[0].clientX) -
+            startX) /
+            myCarousel.getBoundingClientRect().width) *
+          100;
+
+        let maxSlideDistance =
+          Math.abs(distance) > 15 ? (distance > 0 ? -10 : 10) : distance;
+
+        this._slider.style.transform = `translateX(${
+          (-this._currentIndex - 1) * 100 - maxSlideDistance
+        }%)`;
+      })
+    );
+
+    // myCarousel.addEventListener("mousemove", (e) => {
+    //   if (
+    //     !pressed ||
+    //     this._currentIndex === this._slides.length ||
+    //     this._currentIndex === -1
+    //   )
+    //     return;
+    //   e.preventDefault();
+    //   distance =
+    //     ((e.offsetX - startX) / myCarousel.getBoundingClientRect().width) * 100;
+
+    //   let maxSlideDistance =
+    //     Math.abs(distance) > 15 ? (distance > 0 ? -10 : 10) : distance;
+
+    //   this._slider.style.transform = `translateX(${
+    //     (-this._currentIndex - 1) * 100 - maxSlideDistance
+    //   }%)`;
+    // });
   }
 
   _setupInfiniteCarousel() {
@@ -133,4 +253,4 @@ class Carousel {
   }
 }
 
-export default Carousel;
+export default myCarousel;

@@ -10,7 +10,7 @@ class NavigationView {
   }
 
   init() {
-    this._clickMenuButton;
+    this._clickMenuButton();
   }
 }
 
