@@ -150,11 +150,11 @@ class RecommendationsView {
   }
 
   init() {
-    this._recommendCardObservation();
-    this._clickOrderCardScroll();
-    this._darwCurtains();
-    this._removeOverflowClipOnBorders();
-    this._setupCarAnimation();
+    // this._recommendCardObservation();
+    // this._clickOrderCardScroll();
+    // this._darwCurtains();
+    // this._removeOverflowClipOnBorders();
+    // this._setupCarAnimation();
   }
 }
 

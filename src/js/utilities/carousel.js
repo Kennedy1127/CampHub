@@ -89,19 +89,8 @@ class myCarousel {
       myCarousel.addEventListener(event, (e) => {
         pressed = true;
         startX = event === "mousedown" ? e.offsetX : e.touches[0].clientX;
-        console.log(event);
       })
     );
-
-    // myCarousel.addEventListener("mousedown", (e) => {
-    //   pressed = true;
-    //   startX = e.offsetX;
-    // });
-
-    // myCarousel.addEventListener("touchstart", (e) => {
-    //   pressed = true;
-    //   console.log(e.touches[0].clientX);
-    // });
 
     myCarousel.addEventListener("mouseenter", () => {
       myCarousel.style.cursor = "grab";
@@ -109,7 +98,6 @@ class myCarousel {
 
     ["mouseup", "mouseleave", "touchend"].forEach((event) =>
       myCarousel.addEventListener(event, () => {
-        console.log(event);
         pressed = false;
 
         if (Math.abs(distance) < 15) {
@@ -145,42 +133,8 @@ class myCarousel {
       })
     );
 
-    // ["mouseup", "mouseleave"].forEach((event) =>
-    //   myCarousel.addEventListener(event, () => {
-    //     pressed = false;
-
-    //     if (Math.abs(distance) < 15) {
-    //       return this._carouselTask(this._currentIndex);
-    //     }
-
-    //     if (distance >= 15) {
-    //       if (this._currentIndex === -1) return;
-
-    //       this._currentIndex--;
-    //       this._removeActiveCarouselNumber();
-    //       if (this._currentIndex > -1)
-    //         this._numbers[this._currentIndex].classList.add(
-    //           "myCarousel_number--active"
-    //         );
-    //       return this._carouselTask(this._currentIndex);
-    //     }
-
-    //     if (distance <= 15) {
-    //       if (this._currentIndex === this._slides.length) return;
-    //       this._currentIndex++;
-    //       this._removeActiveCarouselNumber();
-    //       if (this._currentIndex < this._slides.length)
-    //         this._numbers[this._currentIndex].classList.add(
-    //           "myCarousel_number--active"
-    //         );
-    //       return this._carouselTask(this._currentIndex);
-    //     }
-    //   })
-    // );
-
     ["mousemove", "touchmove"].forEach((event) =>
       myCarousel.addEventListener(event, (e) => {
-        console.log(event);
         if (
           !pressed ||
           this._currentIndex === this._slides.length ||
@@ -203,25 +157,6 @@ class myCarousel {
         }%)`;
       })
     );
-
-    // myCarousel.addEventListener("mousemove", (e) => {
-    //   if (
-    //     !pressed ||
-    //     this._currentIndex === this._slides.length ||
-    //     this._currentIndex === -1
-    //   )
-    //     return;
-    //   e.preventDefault();
-    //   distance =
-    //     ((e.offsetX - startX) / myCarousel.getBoundingClientRect().width) * 100;
-
-    //   let maxSlideDistance =
-    //     Math.abs(distance) > 15 ? (distance > 0 ? -10 : 10) : distance;
-
-    //   this._slider.style.transform = `translateX(${
-    //     (-this._currentIndex - 1) * 100 - maxSlideDistance
-    //   }%)`;
-    // });
   }
 
   _setupInfiniteCarousel() {
