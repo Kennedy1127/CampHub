@@ -20,12 +20,11 @@
   z-index: 1;
 
   width: 20%;
-  background-color: var(--color-green-1);
   border-bottom-right-radius: 8px;
+  background-color: var(--color-green-1);
   box-shadow: var(--box-shadow-1);
 
-  height: 50%;
-  padding-top: 10px;
+  height: 45%;
 }
 
 .landing_logo_title {
@@ -94,8 +93,9 @@
 .landing_card_text {
   flex-grow: 1;
   font-size: 8px;
-  padding-left: 8%;
-  padding-right: 4%;
+  font-weight: 500;
+  padding-left: 6%;
+  padding-right: 3%;
 }
 
 .landing_card_text a {
@@ -107,8 +107,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 3px solid var(--color-green-1);
-  padding: 3% 4%;
+  border-left: 2px solid var(--color-green-1);
+  padding: 2.5% 4%;
 }
 
 .landing_card_link_icon {
@@ -132,7 +132,6 @@
 
 @media screen and (min-width: 1200px) {
   .landing {
-    position: relative;
     height: 100vh;
   }
 
@@ -184,11 +183,16 @@
 
   .landing_card_text {
     font-size: 16px;
-    font-weight: 500;
+    padding-left: 8%;
+    padding-right: 4%;
   }
 
   .landing_card_text a:hover {
     color: var(--color-orange-1);
+  }
+
+  .landing_card_link {
+    border-left: 4px solid var(--color-green-1);
   }
 
   .landing_card_link_icon {
@@ -241,7 +245,7 @@
 /* Concept */
 
 .section-concept {
-  padding: 80px 0 0;
+  padding: 60px 0 0;
   background-color: var(--color-yellow-1);
 }
 
@@ -258,13 +262,13 @@
   color: var(--color-black-1);
   text-transform: uppercase;
 
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .concept_title span {
   display: block;
   color: var(--color-green-1);
-  font-size: 6px;
+  font-size: 8px;
   margin-bottom: 1.5%;
 }
 
@@ -274,14 +278,14 @@
 }
 
 .concept_content_cards {
-  margin-top: 60px;
+  margin-top: 70px;
 }
 
 .concept_content_card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .col:last-child .concept_content_card {
@@ -290,12 +294,10 @@
 
 .concept_content_card_header {
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .concept_content_card_title {
-  width: 100%;
-  border-radius: 12px;
   background-color: var(--color-orange-1);
   text-align: center;
   color: #fff;
@@ -307,6 +309,7 @@
 
   width: 80%;
   padding: 5px;
+  border-radius: 8px;
   font-size: 8px;
 }
 
@@ -324,7 +327,7 @@
 }
 
 .concept_content_card_text {
-  font-size: 6px;
+  font-size: 8px;
   text-align: center;
 }
 
@@ -335,6 +338,7 @@
   }
 
   .concept_background-tree {
+    display: initial;
     width: 16%;
     opacity: 0.45;
     position: absolute;
@@ -378,10 +382,12 @@
   .concept_content_card_title {
     width: 100%;
     padding: 10px 20px;
+    border-radius: 16px;
     font-size: 12px;
     letter-spacing: 0.6px;
     opacity: 0;
 
+    top: -30%;
     left: initial;
     transform: translateX(0);
   }
@@ -389,6 +395,12 @@
   .concept_content_card_title.concept_content_card_title--animation {
     animation: card-title-move-down 1s;
     opacity: 1;
+  }
+
+  .concept_content_card_triangle {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid var(--color-orange-1);
   }
 
   .concept_content_card_pic img {
@@ -399,10 +411,6 @@
   .concept_content_card_pic.concept_content_card_pic--animation img {
     animation: card-img-opacity 1s;
     height: 100%;
-  }
-
-  .concept_content_card_header {
-    margin-bottom: 10px;
   }
 
   .col:nth-child(2) .concept_content_card {
@@ -453,26 +461,21 @@
 
 /* Rooms */
 .section-rooms {
-  padding: 50px 0;
+  padding: 60px 0;
 }
 
-/* .rooms {
-  width: 100%;
-  margin: 0 auto;
-} */
-
 .room:nth-child(1) {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .room_carousel {
   position: relative;
+  padding-right: 30px;
 }
 
 .room_carousel_pics {
   max-height: 250px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-right-radius: 25px;
   overflow: hidden;
 }
 
@@ -488,8 +491,8 @@
   background-color: var(--color-yellow-1);
   font-weight: 600;
 
-  padding: 2.5px 15px;
-  font-size: 8px;
+  padding: 3px 15px;
+  font-size: 14px;
   line-height: 1.1;
 }
 
@@ -497,19 +500,14 @@
   color: var(--color-orange-1);
 }
 
-.room_carousel_bar {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 100%;
-}
-
 .room_carousel_bar_arrows {
   display: flex;
-  justify-content: space-between;
-  /* color: #fff;
-  font-size: 10px; */
+
+  justify-content: flex-end;
+  margin-top: 5px;
+  gap: 15px;
+  font-size: 16px;
+  color: var(--color-green-opacity-1);
 }
 
 .room_carousel_bar_numbers {
@@ -522,8 +520,9 @@
 }
 
 .room_background-text {
+  display: none;
   position: absolute;
-  bottom: 25%;
+  bottom: 30%;
   right: 0;
   z-index: 1;
 
@@ -531,64 +530,56 @@
   font-weight: 600;
   color: var(--color-green-opacity-2);
 
-  font-size: 48px;
-  letter-spacing: 1px;
+  font-size: 42px;
+  letter-spacing: 2px;
 
   transform: rotate(30deg);
 }
 
 .room_card {
-  /* box-shadow: var(--box-shadow-1); */
-  background-color: var(--color-yellow-1);
   display: flex;
   flex-direction: column;
-
-  padding: 10px 15px;
-  min-height: 160px;
-  width: 100%;
-
+  min-height: 200px;
   position: relative;
-}
 
-.room:last-child .room_card {
-  margin-left: auto;
+  padding: 0 30px;
 }
 
 .room_card_title {
   font-weight: 600;
   color: var(--color-orange-1);
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .room_card_price {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 0;
+  right: 25px;
   font-weight: 500;
-
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .room_card_price span {
-  font-size: 6px;
+  font-size: 10px;
 }
 
 .room_card_features {
   display: flex;
-  gap: 5px;
-  margin-bottom: 6px;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .room_card_feature {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
 }
 
 .room_card_text {
-  width: 65%;
-  font-size: 6px;
+  width: 80%;
+  font-size: 10px;
+  margin-bottom: 20px;
 }
 
 .room_card_button {
@@ -600,17 +591,13 @@
   font-weight: 500;
   color: #fff;
 
-  font-size: 10px;
-  padding: 1px;
+  font-size: 14px;
+  padding: 2px;
 }
 
 @media screen and (min-width: 1200px) {
   .section-rooms {
     padding: 80px 0 100px;
-  }
-
-  .rooms {
-    width: 100%;
   }
 
   .room {
@@ -631,7 +618,6 @@
 
   .room_carousel_pics {
     max-height: 500px;
-    border-top-left-radius: 0;
     border-top-right-radius: 50px;
   }
 
@@ -671,9 +657,6 @@
   }
 
   .room_carousel_bar {
-    position: initial;
-    transform: translateY(0);
-
     width: 90%;
     display: flex;
     align-items: center;
@@ -705,10 +688,10 @@
   }
 
   .room_carousel_bar_arrows {
+    justify-content: space-between;
+    margin-top: 0;
     margin-left: 25px;
-    gap: 10px;
-
-    color: var(--color-green-opacity-1);
+    font-size: 16px;
   }
 
   .room_carousel_bar_arrow {
@@ -744,6 +727,7 @@
 
   .room_card {
     box-shadow: var(--box-shadow-1);
+    background-color: var(--color-yellow-1);
 
     position: absolute;
     bottom: 0;
@@ -770,10 +754,10 @@
 
   .room_card_title {
     font-size: 22px;
-    margin-bottom: 5px;
   }
 
   .room_card_price {
+    top: 10px;
     font-size: 18px;
   }
 
@@ -783,7 +767,6 @@
 
   .room_card_features {
     gap: 12px;
-    margin-bottom: 15px;
   }
 
   .room_card_feature {
@@ -792,6 +775,7 @@
   }
 
   .room_card_text {
+    width: 100%;
     font-size: 12px;
     line-height: 1.6;
   }
@@ -878,7 +862,7 @@
 /* Recommends */
 .section-recommend {
   background-color: var(--color-yellow-1);
-  padding: 0 0 40px;
+  padding: 0 0 60px;
 }
 
 .section-recommend {
@@ -908,7 +892,7 @@
 }
 
 .recommend_background-border--left--draw {
-  transform: translateX(-65%);
+  transform: translateX(-70%);
 }
 
 .recommend_background-border--right {
@@ -916,14 +900,46 @@
 }
 
 .recommend_background-border--right--draw {
-  transform: translateX(65%);
+  transform: translateX(70%);
 }
 
 .recommend_background-car {
+  display: none;
+}
+
+/* .recommend_background-car_smoke {
+  width: 25px;
+  height: 20px;
+  align-self: flex-end;
+  padding-right: 2px;
+}  */
+
+.recommend_background-map {
+  height: 50px;
+}
+
+.recommend_intro_header {
+  margin-bottom: 20px;
 }
 
 .recommend_intro_title {
   text-align: center;
+  font-weight: 500;
+  color: var(--color-orange-1);
+
+  font-size: 14px;
+}
+
+.recommend_intro_dashs {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.recommend_intro_dash {
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-green-1);
 }
 
 .recommend_intro_body {
@@ -934,10 +950,18 @@
   display: none;
 }
 
+.recommend_cards {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .recommend_card {
+  border-radius: 6px;
   overflow: hidden;
   background-color: #fff;
   box-shadow: var(--box-shadow-1);
+
+  margin-bottom: 60px;
 }
 
 .recommend_card:last-child {
@@ -945,6 +969,7 @@
 }
 
 .recommend_card_body {
+  padding: 10px 15px;
 }
 
 .recommend_card_title {
@@ -953,10 +978,14 @@
 
   display: flex;
   align-items: center;
+
+  font-family: "Courgette", cursive;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 
 .recommend_card_title span {
-  font-family: "Courgette", cursive;
+  margin-right: 8px;
 }
 
 .recommend_card--active .recommend_card_title {
@@ -964,6 +993,7 @@
 }
 
 .recommend_card_text {
+  font-size: 7px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -971,12 +1001,16 @@
     padding: 0 0 80px;
   }
 
+  .recommend_background-border {
+    height: 100vh;
+  }
+
   .recommend_background-border--left--draw {
-    transform: translateX(-74%);
+    transform: translateX(-73%);
   }
 
   .recommend_background-border--right--draw {
-    transform: translateX(74%);
+    transform: translateX(73%);
   }
 
   .recommend_background-car {
@@ -1030,10 +1064,7 @@
   }
 
   .recommend_intro_title {
-    text-align: center;
     font-size: 20px;
-    font-weight: 500;
-    color: var(--color-orange-1);
     margin-bottom: 5px;
   }
 
@@ -1081,9 +1112,14 @@
   }
 
   .recommend_intro_bottom {
+    display: block;
     margin-top: auto;
     height: 15px;
     background-color: var(--color-green-1);
+  }
+
+  .recommend_cards {
+    width: 100%;
   }
 
   .recommend_card {

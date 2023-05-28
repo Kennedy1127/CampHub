@@ -39,7 +39,7 @@
 
 .navigation_button_bar {
   width: 80%;
-  height: 1.5px;
+  height: 2px;
   background-color: #f0f0f0;
   position: absolute;
   left: 50%;
@@ -48,16 +48,16 @@
 }
 
 .navigation_button_bar:nth-child(1) {
-  top: calc(100% / 5);
+  top: calc(19px / 4);
 }
 
 .navigation_button_bar:nth-child(2) {
-  top: calc(100% / 5 * 2 + 1.5px);
+  top: calc(19px / 4 * 2 + 2px);
   opacity: 1;
 }
 
 .navigation_button_bar:nth-child(3) {
-  top: calc(100% / 5 * 3 + 3px);
+  top: calc(19px / 4 * 3 + 4px);
 }
 
 .navigation_button.navigation_button--active
@@ -80,7 +80,7 @@
   .navigation_button_bar:nth-child(1),
 .navigation_button.navigation_button--active
   .navigation_button_bar:nth-child(3) {
-  top: calc(100% / 5 * 2 + 1.5px);
+  top: calc(19px / 4 * 2 + 2px);
 }
 
 .navigation_overlay {
@@ -185,16 +185,16 @@
   }
 
   .navigation_button_bar:nth-child(1) {
-    top: calc(100% / 5);
+    top: calc(48px / 4);
     transform-origin: left;
   }
 
   .navigation_button_bar:nth-child(2) {
-    top: calc(100% / 5 * 2 + 4px);
+    top: calc(48px / 4 * 2 + 4px);
   }
 
   .navigation_button_bar:nth-child(3) {
-    top: calc(100% / 5 * 3 + 8px);
+    top: calc(48px / 4 * 3 + 8px);
     transform-origin: right;
   }
 
@@ -230,7 +230,7 @@
     .navigation_button_bar:nth-child(1),
   .navigation_button.navigation_button--active
     .navigation_button_bar:nth-child(3) {
-    top: calc(100% / 5 * 2 + 4px);
+    top: calc(48px / 4 * 2 + 4px);
   }
 
   .navigation_list {

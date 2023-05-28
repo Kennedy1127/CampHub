@@ -61,6 +61,7 @@ class RecommendationsView {
 
     const callback = (entries, _) => {
       if (!entries[0].isIntersecting) return;
+      console.log("asdasd");
       const borders = document.querySelectorAll(".recommend_background-border");
       borders[0].classList.add("recommend_background-border--left--draw");
       borders[1].classList.add("recommend_background-border--right--draw");
@@ -152,8 +153,8 @@ class RecommendationsView {
   init() {
     // this._recommendCardObservation();
     // this._clickOrderCardScroll();
-    // this._darwCurtains();
-    // this._removeOverflowClipOnBorders();
+    this._darwCurtains();
+    this._removeOverflowClipOnBorders();
     // this._setupCarAnimation();
   }
 }
