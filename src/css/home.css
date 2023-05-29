@@ -19,12 +19,12 @@
   left: 0;
   z-index: 1;
 
-  width: 20%;
+  width: 22%;
   border-bottom-right-radius: 8px;
   background-color: var(--color-green-1);
   box-shadow: var(--box-shadow-1);
 
-  height: 45%;
+  height: 50%;
 }
 
 .landing_logo_title {
@@ -32,7 +32,7 @@
   color: #fff;
   font-weight: 600;
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .landing_video {
@@ -85,17 +85,16 @@
   display: flex;
   align-items: center;
 
-  width: 60%;
+  width: 65%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
 
 .landing_card_text {
   flex-grow: 1;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 500;
-  padding-left: 6%;
-  padding-right: 3%;
+  padding-left: 4%;
 }
 
 .landing_card_text a {
@@ -127,7 +126,7 @@
 
 .landing_card_link_text {
   font-weight: 500;
-  font-size: 6px;
+  font-size: 8px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -136,6 +135,8 @@
   }
 
   .landing_logo {
+    width: 20%;
+    height: 45%;
     border-bottom-right-radius: 20px;
   }
 
@@ -262,7 +263,7 @@
   color: var(--color-black-1);
   text-transform: uppercase;
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .concept_title span {
@@ -307,10 +308,10 @@
   left: 50%;
   transform: translateX(-50%);
 
-  width: 80%;
+  width: 90%;
   padding: 5px;
   border-radius: 8px;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .concept_content_card_triangle {
@@ -461,11 +462,15 @@
 
 /* Rooms */
 .section-rooms {
-  padding: 60px 0;
+  padding: 80px 0;
+}
+
+.room {
+  position: relative;
 }
 
 .room:nth-child(1) {
-  margin-bottom: 60px;
+  margin-bottom: 150px;
 }
 
 .room_carousel {
@@ -473,10 +478,20 @@
   padding-right: 30px;
 }
 
+.room:last-child .room_carousel {
+  padding-right: 0;
+  padding-left: 30px;
+}
+
 .room_carousel_pics {
   max-height: 250px;
   border-top-right-radius: 25px;
   overflow: hidden;
+}
+
+.room:last-child .room_carousel_pics {
+  border-top-right-radius: 0;
+  border-top-left-radius: 25px;
 }
 
 .room_carousel_slogan {
@@ -486,13 +501,18 @@
   transform: translateY(-50%);
 }
 
+.room:last-child .room_carousel_slogan {
+  left: initial;
+  right: 10%;
+}
+
 .room_carousel_slogan_text {
   box-shadow: var(--box-shadow-1);
   background-color: var(--color-yellow-1);
   font-weight: 600;
 
-  padding: 3px 15px;
-  font-size: 14px;
+  padding: 5px 15px;
+  font-size: 12px;
   line-height: 1.1;
 }
 
@@ -510,21 +530,23 @@
   color: var(--color-green-opacity-1);
 }
 
+.room:last-child .room_carousel_bar_arrows {
+  justify-content: flex-start;
+}
+
 .room_carousel_bar_numbers {
   display: none;
 }
 
 .room_content {
-  position: relative;
   overflow: hidden;
 }
 
 .room_background-text {
-  display: none;
   position: absolute;
-  bottom: 30%;
-  right: 0;
-  z-index: 1;
+  top: -10%;
+  right: 2%;
+  z-index: -1;
 
   font-family: "Courgette", cursive;
   font-weight: 600;
@@ -533,7 +555,13 @@
   font-size: 42px;
   letter-spacing: 2px;
 
-  transform: rotate(30deg);
+  transform: rotate(20deg);
+}
+
+.room:last-child .room_background-text {
+  right: initial;
+  left: 2%;
+  transform: rotate(-20deg);
 }
 
 .room_card {
@@ -542,7 +570,13 @@
   min-height: 200px;
   position: relative;
 
-  padding: 0 30px;
+  padding-right: 30px;
+  padding-left: 5px;
+}
+
+.room:last-child .room_card {
+  padding-right: 5px;
+  padding-left: 30px;
 }
 
 .room_card_title {
@@ -556,7 +590,7 @@
 .room_card_price {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 30px;
   font-weight: 500;
   font-size: 14px;
 }
@@ -577,7 +611,7 @@
 }
 
 .room_card_text {
-  width: 80%;
+  width: 100%;
   font-size: 10px;
   margin-bottom: 20px;
 }
@@ -585,19 +619,19 @@
 .room_card_button {
   width: 100%;
   margin-top: auto;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: var(--color-green-1);
   text-align: center;
   font-weight: 500;
   color: #fff;
 
   font-size: 14px;
-  padding: 2px;
+  padding: 4px;
 }
 
 @media screen and (min-width: 1200px) {
   .section-rooms {
-    padding: 80px 0 100px;
+    padding: 100px 0;
   }
 
   .room {
@@ -614,6 +648,11 @@
 
   .room_carousel {
     width: 65%;
+    padding-right: 0;
+  }
+
+  .room:last-child .room_carousel {
+    padding-left: 0;
   }
 
   .room_carousel_pics {
@@ -627,16 +666,16 @@
   }
 
   .room_carousel_slogan {
-    left: 20%;
+    left: 15%;
   }
 
-  .room_carousel_slogan--right {
+  .room:last-child .room_carousel_slogan {
     left: initial;
-    right: 20%;
+    right: 15%;
   }
 
   .room_carousel_slogan_text {
-    padding: 10px 30px;
+    padding: 5px 30px;
     font-size: 16px;
     line-height: 1.2;
     transform-origin: left bottom;
@@ -664,9 +703,9 @@
     margin-top: 10px;
   }
 
-  .room_carousel_bar--right {
+  .room:last-child .room_carousel_bar {
+    flex-direction: row-reverse;
     margin-left: auto;
-    justify-content: flex-start;
   }
 
   .room_carousel_bar_numbers {
@@ -688,10 +727,13 @@
   }
 
   .room_carousel_bar_arrows {
-    justify-content: space-between;
     margin-top: 0;
     margin-left: 25px;
-    font-size: 16px;
+  }
+
+  .room:last-child .room_carousel_bar_arrows {
+    margin-left: 0;
+    margin-right: 25px;
   }
 
   .room_carousel_bar_arrow {
@@ -704,16 +746,16 @@
   }
 
   .room_content {
+    position: relative;
     flex-grow: 1;
     overflow: visible;
   }
 
   .room_background-text {
+    right: initial;
     top: -10%;
     left: -5%;
-    z-index: -1;
-    bottom: initial;
-    right: initial;
+
     transform: rotate(0);
     font-size: 100px;
     letter-spacing: 10px;
@@ -723,6 +765,7 @@
     left: initial;
     right: -5%;
     text-align: right;
+    transform: rotate(0);
   }
 
   .room_card {
@@ -742,7 +785,8 @@
     border-bottom-right-radius: 0;
   }
 
-  .room_card--right {
+  .room:last-child .room_card {
+    padding: 20px 40px;
     right: initial;
     left: 0;
 
@@ -781,6 +825,7 @@
   }
 
   .room_card_button {
+    border-radius: 8px;
     padding: 5px 10px;
     transition: background-color 0.3s;
     font-size: 20px;
@@ -862,7 +907,13 @@
 /* Recommends */
 .section-recommend {
   background-color: var(--color-yellow-1);
-  padding: 0 0 60px;
+  padding: 0 0 80px;
+
+  background-image: url("./../img/home/recommend/background-map.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .section-recommend {
@@ -879,7 +930,8 @@
   position: absolute;
   top: 0;
 
-  width: 50%;
+  width: 80vh;
+  height: 80vh;
   transition: all 1s;
 }
 
@@ -892,7 +944,7 @@
 }
 
 .recommend_background-border--left--draw {
-  transform: translateX(-70%);
+  transform: translateX(-85%);
 }
 
 .recommend_background-border--right {
@@ -900,22 +952,32 @@
 }
 
 .recommend_background-border--right--draw {
-  transform: translateX(70%);
+  transform: translateX(85%);
 }
 
 .recommend_background-car {
+  position: fixed;
+  bottom: 3%;
+  left: 0;
+  z-index: 3;
+  width: 90px;
   display: none;
 }
 
-/* .recommend_background-car_smoke {
+.recommend_background-car--active {
+  display: flex;
+  animation: drive-car 5s linear infinite, bouncing-car 0.4s linear infinite;
+}
+
+.recommend_background-car_smoke {
   width: 25px;
   height: 20px;
   align-self: flex-end;
   padding-right: 2px;
-}  */
+}
 
 .recommend_background-map {
-  height: 50px;
+  height: 250px;
 }
 
 .recommend_intro_header {
@@ -927,7 +989,7 @@
   font-weight: 500;
   color: var(--color-orange-1);
 
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .recommend_intro_dashs {
@@ -956,12 +1018,12 @@
 }
 
 .recommend_card {
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   background-color: #fff;
   box-shadow: var(--box-shadow-1);
 
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .recommend_card:last-child {
@@ -969,23 +1031,21 @@
 }
 
 .recommend_card_body {
-  padding: 10px 15px;
+  padding: 10px 20px;
 }
 
 .recommend_card_title {
-  text-align: center;
-  font-weight: 500;
-
   display: flex;
   align-items: center;
 
+  font-weight: 500;
   font-family: "Courgette", cursive;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
 .recommend_card_title span {
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 .recommend_card--active .recommend_card_title {
@@ -993,15 +1053,16 @@
 }
 
 .recommend_card_text {
-  font-size: 7px;
+  font-size: 9px;
 }
 
 @media screen and (min-width: 1200px) {
   .section-recommend {
-    padding: 0 0 80px;
+    padding: 0 0 100px;
   }
 
   .recommend_background-border {
+    width: 50%;
     height: 100vh;
   }
 
@@ -1018,26 +1079,15 @@
     bottom: 3%;
     left: 0;
     z-index: 3;
-
     width: 120px;
-
-    display: none;
   }
 
   .recommend_background-car--active {
-    display: flex;
-    animation: drive-car 8s linear infinite, bouncing-car 0.4s linear infinite;
-  }
-
-  .recommend_background-car_smoke {
-    width: 25px;
-    height: 20px;
-    align-self: flex-end;
-    padding-right: 2px;
+    animation: drive-car 10s linear infinite, bouncing-car 0.4s linear infinite;
   }
 
   .recommend_background-map {
-    height: 300px;
+    height: 500px;
   }
 
   .recommend {
@@ -1123,7 +1173,6 @@
   }
 
   .recommend_card {
-    border-radius: 8px;
     margin-bottom: 100px;
   }
 
@@ -1145,7 +1194,6 @@
 
   .recommend_card_title {
     font-size: 20px;
-    margin-bottom: 10px;
   }
 
   .recommend_card_title span {
@@ -1228,6 +1276,7 @@
 
 /* Tourism */
 .section-tourism {
+  padding: 40px 0 0;
   background-color: var(--color-yellow-1);
 }
 
@@ -1235,97 +1284,39 @@
   position: relative;
 }
 
+.tourism_header_title {
+  font-size: 20px;
+}
+
+.tourism_content_card {
+  margin-bottom: 60px;
+}
+
 .tourism_content_card_header {
   position: relative;
 }
 
 .tourism_content_card_pic {
+  margin-bottom: 10px;
+  border-radius: 8px;
   overflow: hidden;
 
   position: relative;
   z-index: 1;
 }
 
-.tourism_content_card_pic_bar-1 {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-
-  transform: translate(-50%, -4.5%);
-
-  width: 7%;
-  height: 110%;
-  background-color: var(--color-green-1);
-}
-
-.tourism_content_card_pic_bar-2 {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  transform: translateY(-50%);
-
-  width: 110%;
-  height: 10%;
-  background-color: var(--color-green-1);
-}
-
-.col:nth-child(2) .tourism_content_card .tourism_content_card_pic_bar-2,
-.col:nth-child(5) .tourism_content_card .tourism_content_card_pic_bar-2 {
-  right: 50%;
-  width: 115%;
-}
-
-.col:nth-child(2) .tourism_content_card .tourism_content_card_pic_bar-2 {
-  top: initial;
-  bottom: 100%;
-  transform: translate(50%, 45%);
-}
-
-.col:nth-child(5) .tourism_content_card .tourism_content_card_pic_bar-2 {
-  transform: translate(50%, -45%);
-}
-
-.col:nth-child(2) .tourism_content_card .tourism_content_card_pic_bar-3,
-.col:nth-child(5) .tourism_content_card .tourism_content_card_pic_bar-3 {
-  position: absolute;
-  top: 0%;
-  right: 0%;
-
-  transform: translate(50%, -5%);
-
-  width: 7%;
-  height: 110%;
-  background-color: var(--color-green-1);
-}
-
-.col:nth-child(3) .tourism_content_card .tourism_content_card_pic_bar-1,
-.col:nth-child(6) .tourism_content_card .tourism_content_card_pic_bar-1 {
-  left: initial;
-  right: 0%;
-  transform: translate(50%, -4.5%);
-}
-
-.col:nth-child(3) .tourism_content_card .tourism_content_card_pic_bar-2,
-.col:nth-child(6) .tourism_content_card .tourism_content_card_pic_bar-2 {
-  right: initial;
-  left: 0;
-}
-
-.col:nth-child(4) .tourism_content_card .tourism_content_card_pic_bar-2,
-.col:nth-child(6) .tourism_content_card .tourism_content_card_pic_bar-2 {
-  top: initial;
-  bottom: 100%;
-  transform: translateY(50%);
-}
-
 .tourism_content_card_content_title {
+  font-size: 16px;
   text-align: center;
   font-weight: 500;
   color: var(--color-black-1);
   text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
 .tourism_content_card_content_text {
+  font-size: 10px;
+  text-align: center;
 }
 
 @media screen and (min-width: 1200px) {
@@ -1348,8 +1339,6 @@
 
   .tourism_content_card_pic {
     margin-bottom: 10px;
-    border-radius: 8px;
-    overflow: hidden;
 
     position: relative;
     z-index: 1;
@@ -1357,12 +1346,12 @@
 
   .tourism_content_card_content_title {
     font-size: 16px;
-    margin-bottom: 5px;
   }
 
   .tourism_content_card_content_text {
     line-height: 1.4;
     font-size: 12px;
+    text-align: left;
   }
 }
 
@@ -1391,11 +1380,6 @@
   .tourism_content_card_content_text {
     font-size: 18px;
   }
-}
-
-.tourism_gallery {
-  padding: 0 50px;
-  margin: 100px auto 0;
 }
 
 .tourism_gallery_pics {
@@ -1476,11 +1460,18 @@
 .tourism_gallery_pic--fishing-2 {
   grid-area: fishing-2;
 }
+
+@media screen and (min-width: 1200px) {
+  .tourism_gallery {
+    padding: 0 50px;
+    margin: 100px auto 0;
+  }
+}
 /* Tourism */
 
 /* Booking */
 .section-booking {
-  padding: 70px 0 100px;
+  padding: 50px 0;
 }
 
 .booking {
@@ -1489,7 +1480,10 @@
 
 .booking_button {
   background-color: var(--color-green-1);
+  padding: 5px 20px;
+  border-radius: 5px;
 
+  font-size: 14px;
   text-align: center;
   font-weight: 600;
   text-transform: uppercase;
@@ -1497,13 +1491,15 @@
 }
 
 .booking_button i {
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 1200px) {
   .booking_button {
     width: 400px;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 10px;
+
     transition: background-color 0.3s;
 
     font-size: 18px;
@@ -1511,10 +1507,6 @@
 
   .booking_button:hover {
     background-color: var(--color-orange-1);
-  }
-
-  .booking_button i {
-    margin-left: 10px;
   }
 }
 

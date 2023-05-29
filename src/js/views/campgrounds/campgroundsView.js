@@ -57,7 +57,10 @@ class CampgroundsView {
   }
 
   init() {
-    this._setupClickCampgroundPic();
+    if (window.innerWidth <= 450) {
+      this._setupClickCampgroundPic();
+    }
+
     this._setupSectionsAnimation();
   }
 }
