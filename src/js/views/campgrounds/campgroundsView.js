@@ -57,7 +57,7 @@ class CampgroundsView {
   }
 
   init() {
-    if (window.innerWidth <= 500) {
+    if (window.innerWidth <= 450) {
       this._setupClickCampgroundPic();
     }
 
