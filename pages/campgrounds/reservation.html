@@ -25,7 +25,7 @@
     <script
       type="module"
       defer
-      src="./../../src/js/controller/reservationController.js"
+      src="./../../src/js/controller/campgrounds/reservationController.js"
     ></script>
   </head>
   <body>
@@ -46,13 +46,13 @@
             <picture>
               <source
                 media="(min-width:1000px)"
-                srcset="./../../src/img/navigation/navigation-map.jpg"
+                srcset="./../../src/img/navigation/map.png"
               />
               <source
                 media="(min-width:400px)"
-                srcset="./../../src/img/navigation/navigation-map.webp"
+                srcset="./../../src/img/navigation/map.png"
               />
-              <img src="./../../src/img/navigation/navigation-map.jpg" alt="" />
+              <img src="./../../src/img/navigation/map.png" alt="" />
             </picture>
           </li>
 
@@ -447,6 +447,9 @@
 
             <div class="col-12 col-xl-5">
               <div class="reserve_payment">
+                <div class="reserve_intro_header">
+                  <h2 class="reserve_intro_header_title">Reservation</h2>
+                </div>
                 <div class="reserve_payment_header">
                   <div class="reserve_payment_header_price">
                     $99.99 <span>/ night</span>
@@ -530,7 +533,7 @@
             </div>
 
             <div class="rental_content">
-              <div class="rental_content_cards row row-cols-3">
+              <div class="rental_content_cards row-col-1 row row-cols-xl-3">
                 <div class="col">
                   <div class="rental_content_card">
                     <div class="rental_content_card_pic">
@@ -544,7 +547,7 @@
                         <source
                           media="(min-width:300px)"
                           srcset="
-                            ./../../src/img/campgrounds/rental/rental-lantern.webp
+                            ./../../src/img/campgrounds/rental/rental-lantern-min.png
                           "
                         />
                         <img
@@ -587,7 +590,7 @@
                         <source
                           media="(min-width:300px)"
                           srcset="
-                            ./../../src/img/campgrounds/rental/rental-tent.webp
+                            ./../../src/img/campgrounds/rental/rental-tent-min.png
                           "
                         />
                         <img
@@ -629,7 +632,7 @@
                         <source
                           media="(min-width:300px)"
                           srcset="
-                            ./../../src/img/campgrounds/rental/rental-sleepingbag.webp
+                            ./../../src/img/campgrounds/rental/rental-sleepingbag-min.png
                           "
                         />
                         <img
@@ -671,6 +674,9 @@
           <div class="summary row">
             <div class="col-12 col-xl-7">
               <div class="summary_products">
+                <div class="summary_checkout_header">
+                  <h2 class="summary_checkout_header_title">Summary</h2>
+                </div>
                 <table>
                   <thead>
                     <tr>
@@ -805,6 +811,9 @@
                     </tr>
                   </tbody>
                 </table>
+                <a href="./checkout.html" class="summary_checkout_footer_button"
+                  >Checkout</a
+                >
               </div>
             </div>
             <div class="col-12 col-xl-5">
