@@ -20,7 +20,7 @@
     <script
       type="module"
       defer
-      src="./../../../src/js/controller/campgroundsController.js"
+      src="./../../src/js/controller/campgrounds/campgroundsController.js"
     ></script>
   </head>
   <body>
@@ -261,6 +261,10 @@
             </picture>
           </div>
         </div>
+
+        <div class="background-wave">
+          <img src="./../../src/img/logo/wave/wave-2.svg" alt="" />
+        </div>
       </div>
     </header>
 
@@ -354,6 +358,40 @@
           </div>
 
           <div class="room">
+            <div class="room_header">
+              <h2 class="room_header_title">
+                <div class="room_header_title_line-1">
+                  <img
+                    src="./../../src/img/campgrounds/rooms/icon/icon-1.png"
+                    alt=""
+                  />
+                  <span>CampHub</span>
+                </div>
+                <span>Sunset Lodge</span>
+                <span>Present</span>
+              </h2>
+              <div class="room_header_pic">
+                <picture>
+                  <source
+                    media="min-width:1000px"
+                    srcset="
+                      ./../../src/img/campgrounds/rooms/room-2/room-2-2-min.jpg
+                    "
+                  />
+                  <source
+                    media="min-width:300px"
+                    srcset="
+                      ./../../src/img/campgrounds/rooms/room-2/room-2-2-min.webp
+                    "
+                  />
+                  <img
+                    src="./../../src/img/campgrounds/rooms/room-2/room-2-2-min.jpg"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+
             <div class="room_content">
               <div class="room_content_pic">
                 <picture>
@@ -408,40 +446,6 @@
                 <a href="./reservation.html">Book Now</a>
               </div>
             </div>
-
-            <div class="room_header">
-              <h2 class="room_header_title">
-                <div class="room_header_title_line-1">
-                  <img
-                    src="./../../src/img/campgrounds/rooms/icon/icon-1.png"
-                    alt=""
-                  />
-                  <span>CampHub</span>
-                </div>
-                <span>Sunset Lodge</span>
-                <span>Present</span>
-              </h2>
-              <div class="room_header_pic">
-                <picture>
-                  <source
-                    media="min-width:1000px"
-                    srcset="
-                      ./../../src/img/campgrounds/rooms/room-2/room-2-2-min.jpg
-                    "
-                  />
-                  <source
-                    media="min-width:300px"
-                    srcset="
-                      ./../../src/img/campgrounds/rooms/room-2/room-2-2-min.webp
-                    "
-                  />
-                  <img
-                    src="./../../src/img/campgrounds/rooms/room-2/room-2-2-min.jpg"
-                    alt=""
-                  />
-                </picture>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -450,8 +454,11 @@
         <div class="gallery">
           <div class="gallery_header">
             <div class="header_bubble">
-              <h2 class="gallery_header_title">Gallery</h2>
+              <h2 class="gallery_header_title">Community</h2>
               <div class="header_bubble_triangle"></div>
+            </div>
+            <div class="gallery_header_text">
+              See how campers enjoy their time at <span>CampHub</span>
             </div>
           </div>
           <div class="gallery_content">
@@ -673,13 +680,13 @@
           <div class="comment">
             <div class="commnet_header">
               <div class="header_bubble comment_header_bubble">
-                <h2 class="commnet_header_title">Comment</h2>
+                <h2 class="commnet_header_title">Feedback</h2>
                 <div class="header_bubble_triangle"></div>
               </div>
             </div>
             <div class="comment_content">
               <div class="comment_cards">
-                <div class="comment_card rellax">
+                <div class="comment_card">
                   <div class="comment_card_header">
                     <div class="comment_card_header_pic">
                       <img
@@ -702,7 +709,7 @@
                   </div>
                 </div>
 
-                <div class="comment_card rellax">
+                <div class="comment_card">
                   <div class="comment_card_header">
                     <div class="comment_card_header_pic">
                       <img
@@ -760,7 +767,7 @@
                   </div>
                 </div>
 
-                <div class="comment_card rellax">
+                <div class="comment_card">
                   <div class="comment_card_header">
                     <div class="comment_card_header_pic">
                       <img
@@ -848,7 +855,7 @@
                   </div>
                 </div>
 
-                <div class="comment_card rellax">
+                <div class="comment_card">
                   <div class="comment_card_header">
                     <div class="comment_card_header_pic">
                       <img
@@ -870,7 +877,7 @@
                   </div>
                 </div>
 
-                <div class="comment_card rellax">
+                <div class="comment_card">
                   <div class="comment_card_header">
                     <div class="comment_card_header_pic">
                       <img
@@ -919,15 +926,5 @@
       </div>
       <div class="footer_copyright">&#169; Camphub.com all rights reserved</div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-    <script>
-      var rellax = new Rellax(".rellax", {
-        speed: 7,
-        center: true,
-        vertical: true,
-        // horizontal: true,
-      });
-    </script>
   </body>
 </html>
