@@ -6,6 +6,7 @@
 /* Landing */
 
 .landing {
+  padding-top: 25px;
   background-color: var(--color-yellow-1);
   position: relative;
 }
@@ -688,6 +689,7 @@
   background-color: var(--color-green-1);
   color: #fff;
   text-transform: uppercase;
+
 }
 
 @media screen and (min-width: 1200px) {
