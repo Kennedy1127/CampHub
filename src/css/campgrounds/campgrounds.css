@@ -75,8 +75,11 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .landing_main_pic {
+  .landing {
     padding-top: 60px;
+  }
+
+  .landing_main_pic {
     height: 100vh;
   }
 
@@ -163,7 +166,7 @@
 
 .room {
   position: relative;
-  margin-bottom: 300px;
+  margin-bottom: 270px;
 }
 
 .room_header {
@@ -270,7 +273,7 @@
 
 @media screen and (min-width: 1200px) {
   .section-rooms {
-    padding: 150px 0;
+    padding: 50px 0 100px;
   }
 
   .rooms {
@@ -360,6 +363,11 @@
     margin-bottom: 20px;
   }
 
+  .room:last-child .room_content_pic {
+    margin-left: 0;
+    width: 100%;
+  }
+
   .room_content_pic picture,
   .room_content_pic picture img {
     height: 100%;
@@ -394,11 +402,8 @@
   }
 
   .room_content_text a {
-    margin-left: auto;
-  }
-
-  .room:last-child .room_content_text a {
-    margin-left: 0;
+    margin: 0;
+    margin-top: auto;
   }
 
   .room_content_text a:hover {
@@ -689,7 +694,6 @@
   background-color: var(--color-green-1);
   color: #fff;
   text-transform: uppercase;
-
 }
 
 @media screen and (min-width: 1200px) {

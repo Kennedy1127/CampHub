@@ -11,6 +11,7 @@
 
 .landing {
   position: relative;
+  height: 65vh;
 }
 
 .landing_logo {
@@ -19,34 +20,49 @@
   left: 0;
   z-index: 1;
 
-  width: 22%;
+  width: 30%;
   border-bottom-right-radius: 8px;
   background-color: var(--color-green-1);
-  box-shadow: var(--box-shadow-1);
 
-  height: 50%;
+  height: 30%;
 }
 
 .landing_logo_title {
   text-align: center;
   color: #fff;
   font-weight: 600;
-
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .landing_video {
   position: relative;
+  height: 100%;
+}
+
+.landing_video_frame {
+  height: 100%;
+  overflow: hidden;
+}
+
+.landing_video_frame iframe {
+  position: relative;
+  top: -12%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  transform: scale(3);
 }
 
 .landing_socials {
   position: absolute;
-  top: 25%;
-  right: calc(1%);
+  top: 20%;
+  right: 5px;
   z-index: 1;
 
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
 .landing_socials_icon {
@@ -58,10 +74,9 @@
   align-items: center;
   justify-content: center;
 
-  width: 20px;
-  height: 20px;
-  font-size: 10px;
-  margin-bottom: calc(25%);
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
 }
 
 .landing_socials_icon:nth-child(1) {
@@ -72,6 +87,9 @@
 }
 .landing_socials_icon:nth-child(4) {
   color: #00b900;
+}
+.landing_socials_icon:nth-child(5) {
+  color: #ff0000;
 }
 
 .landing_card {
@@ -85,16 +103,17 @@
   display: flex;
   align-items: center;
 
-  width: 65%;
+  width: 70%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
 
 .landing_card_text {
   flex-grow: 1;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
-  padding-left: 4%;
+  padding-left: 20px;
+  padding-right: 10px;
 }
 
 .landing_card_text a {
@@ -107,7 +126,7 @@
   flex-direction: column;
   align-items: center;
   border-left: 2px solid var(--color-green-1);
-  padding: 2.5% 4%;
+  padding: 10px;
 }
 
 .landing_card_link_icon {
@@ -118,15 +137,15 @@
   justify-content: center;
   color: #fff;
 
-  width: 15px;
-  height: 15px;
-  font-size: 8px;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
   margin-bottom: 3px;
 }
 
 .landing_card_link_text {
   font-weight: 500;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -137,7 +156,8 @@
   .landing_logo {
     width: 20%;
     height: 45%;
-    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 16px;
+    box-shadow: var(--box-shadow-1);
   }
 
   .landing_logo_title {
@@ -153,6 +173,14 @@
   .landing_video_frame {
     border-bottom-left-radius: calc(100px);
     overflow: hidden;
+    aspect-ratio: auto;
+  }
+
+  .landing_video_frame iframe {
+    top: -10%;
+    width: 100%;
+    height: 100vh;
+    transform: scale(1);
   }
 
   .landing_video_frame,
@@ -161,11 +189,15 @@
     height: 100%;
   }
 
+  .landing_socials {
+    right: 10px;
+    gap: 20px;
+  }
+
   .landing_socials_icon {
     width: 40px;
     height: 40px;
     font-size: 18px;
-    margin-bottom: calc(10px + 10%);
   }
 
   .landing_socials_icon i {
@@ -177,7 +209,7 @@
   }
 
   .landing_card {
-    width: 35%;
+    width: 40%;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
   }
@@ -269,8 +301,8 @@
 .concept_title span {
   display: block;
   color: var(--color-green-1);
-  font-size: 8px;
-  margin-bottom: 1.5%;
+  font-size: 10px;
+  margin-bottom: 10px;
 }
 
 .concept_content {
@@ -328,7 +360,7 @@
 }
 
 .concept_content_card_text {
-  font-size: 8px;
+  font-size: 9px;
   text-align: center;
 }
 
@@ -365,6 +397,7 @@
 
   .concept_title span {
     font-size: 14px;
+    margin-bottom: 20px;
   }
 
   .concept_content {
@@ -373,7 +406,7 @@
   }
 
   .concept_content_cards {
-    margin-top: 120px;
+    margin-top: 140px;
   }
 
   .concept_content_card {
@@ -382,8 +415,8 @@
 
   .concept_content_card_title {
     width: 100%;
-    padding: 10px 20px;
-    border-radius: 16px;
+    padding: 6px 12px;
+    border-radius: 12px;
     font-size: 12px;
     letter-spacing: 0.6px;
     opacity: 0;
@@ -462,7 +495,7 @@
 
 /* Rooms */
 .section-rooms {
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
 .room {
@@ -1297,7 +1330,7 @@
 }
 
 .tourism_content_card_pic {
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   border-radius: 8px;
   overflow: hidden;
 
@@ -1306,17 +1339,17 @@
 }
 
 .tourism_content_card_content_title {
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   font-weight: 500;
   color: var(--color-black-1);
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .tourism_content_card_content_text {
-  font-size: 10px;
-  text-align: center;
+  font-size: 9px;
+  text-align: left;
 }
 
 @media screen and (min-width: 1200px) {
@@ -1346,6 +1379,7 @@
 
   .tourism_content_card_content_title {
     font-size: 16px;
+    margin-bottom: 5px;
   }
 
   .tourism_content_card_content_text {
