@@ -96,6 +96,8 @@
   opacity: 0;
 
   transition: all 0.3s;
+
+  overflow: auto;
 }
 
 .navigation_overlay--show {
@@ -107,7 +109,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 70px 160px 1fr 1fr 160px;
+  grid-template-rows: 60px 180px 1fr 1fr 180px;
 }
 
 .navigation_item:first-child {
@@ -128,6 +130,11 @@
 .navigation_item:nth-child(5) {
   order: 1;
   grid-column: 1 / -1;
+}
+
+.navigation_item:nth-child(5) picture,
+.navigation_item:nth-child(5) picture img {
+  height: 100%;
 }
 
 .navigation_link {

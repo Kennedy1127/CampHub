@@ -7,24 +7,22 @@
 }
 
 .authentication_group input {
-  width: 70%;
+  width: 85%;
 }
 
 .authentication_group_forgotpassword {
-  width: 70%;
+  width: 85%;
   display: flex;
   justify-content: flex-end;
 }
 
 .authentication_group a {
   width: fit-content;
-
   font-weight: 500;
   color: var(--color-green-1);
-
   margin-top: 5px;
-
   position: relative;
+  font-size: 10px;
 }
 
 .authentication_group a::after {
@@ -43,9 +41,11 @@
 }
 
 .authentication_socials {
+  padding-top: 15px;
 }
 
 .authentication_social {
+  margin-bottom: 10px;
 }
 
 .authentication_social:last-child {
@@ -54,17 +54,16 @@
 
 .authentication_social_button {
   width: 100%;
-
   border-radius: 5px;
   border: 1px solid var(--color-grey-3);
   background-color: #fff;
-
   font-weight: 400;
   color: var(--color-grey-1);
-
   cursor: pointer;
-
   position: relative;
+
+  padding: 5px;
+  font-size: 14px;
 }
 
 .authentication_social_button i {
@@ -87,6 +86,10 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .authentication_group_forgotpassword {
+    width: 70%;
+  }
+
   .authentication_group a {
     font-size: 12px;
     letter-spacing: -0.2px;
@@ -106,12 +109,8 @@
     transform: scale(0);
   }
 
-  .authentication_socials {
-    padding-top: 15px;
-  }
-
-  .authentication_social {
-    margin-bottom: 10px;
+  .authentication_group input {
+    width: 70%;
   }
 
   .authentication_social_button {

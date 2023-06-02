@@ -309,6 +309,7 @@
 
 /* FAQ */
 .section-faq {
+  padding-bottom: 30px;
   background-color: var(--color-yellow-1);
 }
 
