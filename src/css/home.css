@@ -222,6 +222,7 @@
   }
 
   .landing_card_link {
+    padding: 10px 20px;
     border-left: 4px solid var(--color-green-1);
   }
 
@@ -258,6 +259,10 @@
 
   .landing_card_text {
     font-size: 22px;
+  }
+
+  .landing_card_link {
+    padding: 15px 30px;
   }
 
   .landing_card_link_icon {

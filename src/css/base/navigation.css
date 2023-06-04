@@ -273,6 +273,10 @@
     top: calc(48px / 4 * 2 + 4px);
   }
 
+  .navigation_overlay {
+    overflow: hidden;
+  }
+
   .navigation_list {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 100px 1fr 1fr;
@@ -366,6 +370,29 @@
   .navigation_button {
     width: 80px;
     height: 80px;
+  }
+
+  .navigation_button_bar {
+    height: 5px;
+  }
+
+  .navigation_button_bar:nth-child(1) {
+    top: calc(65px / 4);
+  }
+
+  .navigation_button_bar:nth-child(2) {
+    top: calc(65px / 4 * 2 + 5px);
+  }
+
+  .navigation_button_bar:nth-child(3) {
+    top: calc(65px / 4 * 3 + 10px);
+  }
+
+  .navigation_button.navigation_button--active
+    .navigation_button_bar:nth-child(1),
+  .navigation_button.navigation_button--active
+    .navigation_button_bar:nth-child(3) {
+    top: calc(65px / 4 * 2 + 5px);
   }
 
   .navigation_list {
