@@ -1,0 +1,13 @@
+.calendar {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+  width: calc(100% / 7);
+  height: 40px;
+  vertical-align: top;
+  padding-left: 2px;
+  border: 1px solid #000;
+}

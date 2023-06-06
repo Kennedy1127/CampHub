@@ -1,37 +1,12 @@
+import { calendarInit } from "./../../utilities/calendar.js";
+
 class CalendarView {
-  _setupFullCalendarArrive() {
-    document.addEventListener("DOMContentLoaded", function () {
-      const calendarEl = document.getElementById("calendarArrive");
-      const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: "dayGridMonth",
-
-        dateClick(info) {
-          console.log(info);
-        },
-      });
-      calendar.setOption("locale", "en");
-      calendar.render();
-    });
-  }
-
-  _setupFullCalendarCheckout() {
-    document.addEventListener("DOMContentLoaded", function () {
-      const calendarEl = document.getElementById("calendarCheckout");
-      const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: "dayGridMonth",
-
-        dateClick(info) {
-          console.log(info);
-        },
-      });
-      calendar.setOption("locale", "en");
-      calendar.render();
-    });
+  _createCalendar() {
+    calendarInit();
   }
 
   init() {
-    this._setupFullCalendarArrive();
-    this._setupFullCalendarCheckout();
+    this._createCalendar();
   }
 }
 

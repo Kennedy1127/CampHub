@@ -16,8 +16,8 @@
   flex: 1 0 100%;
 }
 
-.myCarousel_slide--5 {
-  flex-basis: calc((100% - 80px) / 4);
+.myCarousel_slide--2 {
+  flex-basis: calc((100% - 20px));
   margin: 0 10px;
 }
 
@@ -35,4 +35,11 @@
 
 .myCarousel_number--active {
   color: blue;
+}
+
+@media screen and (min-width: 1200px) {
+  .myCarousel_slide--2 {
+    flex-basis: calc((100% - 80px) / 4);
+    margin: 0 10px;
+  }
 }
