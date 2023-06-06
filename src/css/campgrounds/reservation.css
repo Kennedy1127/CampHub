@@ -591,15 +591,17 @@
 }
 
 .rental_content_card_header {
-  position: relative;
-  top: -8px;
   background-color: transparent;
   overflow: hidden;
+  min-height: 200px;
+  position: relative;
+  z-index: 1;
 }
 
 .rental_content_card_pic {
+  position: absolute;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  margin: 0 auto;
 }
 
 .rental_content_card_content {
