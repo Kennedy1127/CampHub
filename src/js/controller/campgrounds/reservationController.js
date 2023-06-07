@@ -1,10 +1,10 @@
 import navigationView from "../../views/navigationView.js";
-import calendarView from "../../views/reservation/calendarView.js";
+import reservationView from "../../views/reservation/reservationView.js";
 import rentalView from "../../views/reservation/rentalView.js";
 
 const init = () => {
   navigationView.init();
-  calendarView.init();
+  reservationView.init();
   rentalView.init();
 };
 init();

@@ -139,7 +139,19 @@
 }
 
 .reserve_intro_content_calenders {
-  display: none;
+  display: flex;
+  gap: 50px;
+}
+
+.reserve_intro_content_calender {
+  width: 100%;
+}
+
+.reserve_intro_content_calender_title {
+  font-weight: 600;
+  color: var(--color-green-1);
+  margin: 10px 0 5px;
+  font-size: 18px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -317,7 +329,10 @@
 }
 
 .reserve_payment_content_order_guest {
+  width: 100%;
+  border: none;
   position: relative;
+  outline: none;
 }
 
 .reserve_payment_content_order_date span:nth-child(1),
@@ -331,14 +346,6 @@
 .reserve_payment_content_order_date span:nth-child(2),
 .reserve_payment_content_order_guest span:nth-child(2) {
   font-size: 12px;
-}
-
-.reserve_payment_content_order_chevron {
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-
-  cursor: pointer;
 }
 
 .reserve_payment_content_submit {

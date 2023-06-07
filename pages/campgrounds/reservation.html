@@ -431,8 +431,19 @@
                     </p>
                   </div>
 
-                  <div class="reserve_intro_content_calender">
-                    <div class="myCalendar"></div>
+                  <div class="reserve_intro_content_calenders">
+                    <div class="reserve_intro_content_calender">
+                      <h3 class="reserve_intro_content_calender_title">
+                        Choose Arrive Date
+                      </h3>
+                      <div class="checkIn myCalendar"></div>
+                    </div>
+                    <div class="reserve_intro_content_calender">
+                      <h3 class="reserve_intro_content_calender_title">
+                        Choose Depart Date
+                      </h3>
+                      <div class="checkOut myCalendar"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -457,23 +468,24 @@
                     <div class="reserve_payment_content_order_dates">
                       <div class="reserve_payment_content_order_date">
                         <span>Check-in</span>
-                        <span>5/21/2023</span>
+                        <span class="reserve_checkInDate">5/21/2023</span>
                       </div>
                       <div class="reserve_payment_content_order_date">
                         <span>checkout</span>
-                        <span>5/26/2023</span>
-                        <div class="reserve_payment_content_order_chevron">
-                          <i class="fa-solid fa-chevron-down"></i>
-                        </div>
+                        <span class="reserve_checkOutDate">5/26/2023</span>
                       </div>
                     </div>
-                    <div class="reserve_payment_content_order_guest">
-                      <span>Guests</span>
-                      <span>1 guest</span>
-                      <div class="reserve_payment_content_order_chevron">
-                        <i class="fa-solid fa-chevron-down"></i>
-                      </div>
-                    </div>
+
+                    <select
+                      name="guests"
+                      id="reserve_guests"
+                      class="reserve_payment_content_order_guest"
+                    >
+                      <option value="1">1 Guest</option>
+                      <option value="2">2 Guests</option>
+                      <option value="3">3 Guests</option>
+                      <option value="4">4 Guests</option>
+                    </select>
                   </div>
                   <div class="reserve_payment_content_button">
                     <button class="reserve_payment_content_submit">
@@ -482,20 +494,20 @@
                   </div>
                   <div class="reserve_payment_content_price">
                     <div class="reserve_payment_content_price_item">
-                      <div class="reserve_payment_content_price_item_name">
-                        $99.99 x 5 nights
-                      </div>
-                      <div class="reserve_payment_content_price_item_subtotal">
-                        $499.95 USD
-                      </div>
+                      <div
+                        class="reserve_payment_content_price_item_name"
+                      ></div>
+                      <div
+                        class="reserve_payment_content_price_item_subtotal"
+                      ></div>
                     </div>
                     <div class="reserve_payment_content_price_subtotal">
-                      <div class="reserve_payment_content_price_subtotal_text">
-                        Subtotal before taxes
-                      </div>
-                      <div class="reserve_payment_content_price_subtotal_price">
-                        $499.95 USD
-                      </div>
+                      <div
+                        class="reserve_payment_content_price_subtotal_text"
+                      ></div>
+                      <div
+                        class="reserve_payment_content_price_subtotal_price"
+                      ></div>
                     </div>
                   </div>
                 </div>
