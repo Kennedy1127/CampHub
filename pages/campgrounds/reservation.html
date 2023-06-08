@@ -204,112 +204,7 @@
 
     <header class="header-landing">
       <div class="container">
-        <div class="landing">
-          <div class="landing_pic landing_pic--1">
-            <picture>
-              <source
-                media="min-width:1000px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-1-min.jpg
-                "
-              />
-              <source
-                media="min-width:300px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-1-min.webp
-                "
-              />
-              <img
-                src="./../../src/img/campgrounds/rooms/room-1/room-1-1-min.jpg"
-                alt="room-1-1"
-              />
-            </picture>
-          </div>
-
-          <div class="landing_pic landing_pic--2">
-            <picture>
-              <source
-                media="min-width:1000px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-2-min.jpg
-                "
-              />
-              <source
-                media="min-width:300px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-2-min.webp
-                "
-              />
-              <img
-                src="./../../src/img/campgrounds/rooms/room-1/room-1-2-min.jpg"
-                alt="room-1-2"
-              />
-            </picture>
-          </div>
-
-          <div class="landing_pic landing_pic--3">
-            <picture>
-              <source
-                media="min-width:1000px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-3-min.jpg
-                "
-              />
-              <source
-                media="min-width:300px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-3-min.webp
-                "
-              />
-              <img
-                src="./../../src/img/campgrounds/rooms/room-1/room-1-3-min.jpg"
-                alt="room-1-3"
-              />
-            </picture>
-          </div>
-
-          <div class="landing_pic landing_pic--4">
-            <picture>
-              <source
-                media="min-width:1000px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-4-min.jpg
-                "
-              />
-              <source
-                media="min-width:300px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-4-min.webp
-                "
-              />
-              <img
-                src="./../../src/img/campgrounds/rooms/room-1/room-1-4-min.jpg"
-                alt="room-1-4"
-              />
-            </picture>
-          </div>
-
-          <div class="landing_pic landing_pic--5">
-            <picture>
-              <source
-                media="min-width:1000px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-5-min.jpg
-                "
-              />
-              <source
-                media="min-width:300px"
-                srcset="
-                  ./../../src/img/campgrounds/rooms/room-1/room-1-5-min.webp
-                "
-              />
-              <img
-                src="./../../src/img/campgrounds/rooms/room-1/room-1-5-min.jpg"
-                alt="room-1-5"
-              />
-            </picture>
-          </div>
-        </div>
+        <div class="landing"></div>
       </div>
     </header>
 
@@ -430,31 +325,14 @@
                       area.
                     </p>
                   </div>
-
-                  <div class="reserve_intro_content_calenders">
-                    <div class="reserve_intro_content_calender">
-                      <h3 class="reserve_intro_content_calender_title">
-                        Choose Arrive Date
-                      </h3>
-                      <div class="checkIn myCalendar"></div>
-                    </div>
-                    <div class="reserve_intro_content_calender">
-                      <h3 class="reserve_intro_content_calender_title">
-                        Choose Depart Date
-                      </h3>
-                      <div class="checkOut myCalendar"></div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
 
             <div class="col-12 col-xl-5">
               <div class="reserve_payment">
-                <div class="reserve_intro_header">
-                  <h2 class="reserve_intro_header_title">Reservation</h2>
-                </div>
                 <div class="reserve_payment_header">
+                  <div class="reserve_payment_header_title">Reservation</div>
                   <div class="reserve_payment_header_price">
                     $99.99 <span>/ night</span>
                   </div>
@@ -466,27 +344,46 @@
                 <div class="reserve_payment_content">
                   <div class="reserve_payment_content_order">
                     <div class="reserve_payment_content_order_dates">
-                      <div class="reserve_payment_content_order_date">
+                      <div
+                        class="reserve_payment_content_order_date reserve_payment_content_order_date--checkIn"
+                      >
                         <span>Check-in</span>
                         <span class="reserve_checkInDate">5/21/2023</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <div
+                          class="reserve_payment_calendar reserve_payment_calendar--checkIn"
+                        >
+                          <h2>Choose Arrive Date</h2>
+                          <div class="checkIn myCalendar"></div>
+                        </div>
                       </div>
-                      <div class="reserve_payment_content_order_date">
+
+                      <div
+                        class="reserve_payment_content_order_date reserve_payment_content_order_date--checkOut"
+                      >
                         <span>checkout</span>
                         <span class="reserve_checkOutDate">5/26/2023</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <div
+                          class="reserve_payment_calendar reserve_payment_calendar--checkOut"
+                        >
+                          <h2>Choose Depart Date</h2>
+                          <div class="checkOut myCalendar"></div>
+                        </div>
                       </div>
                     </div>
 
-                    <select
-                      name="guests"
-                      id="reserve_guests"
-                      class="reserve_payment_content_order_guest"
-                    >
-                      <option value="1">1 Guest</option>
-                      <option value="2">2 Guests</option>
-                      <option value="3">3 Guests</option>
-                      <option value="4">4 Guests</option>
-                    </select>
+                    <div class="reserve_payment_content_order_guest">
+                      <span>Guests</span>
+                      <select name="guests" id="reserve_guests">
+                        <option value="1">1 guest</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                      </select>
+                    </div>
                   </div>
+                  <div class="reserve_payment_content_warning"></div>
                   <div class="reserve_payment_content_button">
                     <button class="reserve_payment_content_submit">
                       Reserve
@@ -502,12 +399,12 @@
                       ></div>
                     </div>
                     <div class="reserve_payment_content_price_subtotal">
-                      <div
-                        class="reserve_payment_content_price_subtotal_text"
-                      ></div>
-                      <div
-                        class="reserve_payment_content_price_subtotal_price"
-                      ></div>
+                      <div class="reserve_payment_content_price_subtotal_text">
+                        Subtotal before taxes:
+                      </div>
+                      <div class="reserve_payment_content_price_subtotal_price">
+                        $99.99 USD
+                      </div>
                     </div>
                   </div>
                 </div>

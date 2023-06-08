@@ -56,12 +56,26 @@ class CampgroundsView {
     // observer.observe(comment);
   }
 
+  _clickBookNowLink() {
+    const links = document.querySelectorAll(".room_content_link");
+
+    links.forEach((link) =>
+      link.addEventListener("click", (e) => {
+        sessionStorage.setItem(
+          "reservationTarget",
+          `${e.target.dataset.target}`
+        );
+      })
+    );
+  }
+
   init() {
     if (window.innerWidth <= 450) {
       this._setupClickCampgroundPic();
     }
 
     this._setupSectionsAnimation();
+    this._clickBookNowLink();
   }
 }
 
