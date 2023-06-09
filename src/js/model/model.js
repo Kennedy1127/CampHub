@@ -29,6 +29,38 @@ export const state = {
             "./../../src/img/campgrounds/rooms/room-1/room-1-5-min.webp",
         },
       ],
+      features: [
+        {
+          icon: "./../../src/img/logo/icon/camping.png",
+          text: "Tent is strictly essential",
+          alt: "camp",
+        },
+        {
+          icon: "./../../src/img/logo/icon/wood.png",
+          text: "Free woods provided",
+          alt: "wood",
+        },
+        {
+          icon: "./../../src/img/logo/icon/fire.png",
+          text: "Campfire is allowed",
+          alt: "fire",
+        },
+        {
+          icon: "./../../src/img/logo/icon/barbecue.png",
+          text: "BBQ Time",
+          alt: "barbecue",
+        },
+        {
+          icon: "./../../src/img/logo/icon/shower.png",
+          text: "Take the shower if you need",
+          alt: "shower",
+        },
+        {
+          icon: "./../../src/img/logo/icon/pawprint.png",
+          text: "Camping with pet",
+          alt: "pawprint",
+        },
+      ],
       price: 99.99,
       rate: 4.7,
       reviews: 3047,
@@ -60,6 +92,43 @@ export const state = {
           pic: "./../../src/img/campgrounds/rooms/room-2/room-2-5-min.jpg",
           picMobile:
             "./../../src/img/campgrounds/rooms/room-2/room-2-5-min.webp",
+        },
+      ],
+      features: [
+        {
+          icon: "./../../src/img/logo/icon/camping.png",
+          text: "Tent is strictly essential",
+          alt: "camp",
+        },
+        {
+          icon: "./../../src/img/logo/icon/car.png",
+          text: "Car is allowed",
+          alt: "car",
+        },
+        {
+          icon: "./../../src/img/logo/icon/wood.png",
+          text: "Free woods provided",
+          alt: "wood",
+        },
+        {
+          icon: "./../../src/img/logo/icon/fire.png",
+          text: "Campfire is allowed",
+          alt: "fire",
+        },
+        {
+          icon: "./../../src/img/logo/icon/barbecue.png",
+          text: "BBQ Time",
+          alt: "barbecue",
+        },
+        {
+          icon: "./../../src/img/logo/icon/shower.png",
+          text: "Take the shower if you need",
+          alt: "shower",
+        },
+        {
+          icon: "./../../src/img/logo/icon/pawprint.png",
+          text: "Camping with pet",
+          alt: "pawprint",
         },
       ],
       price: 129.99,

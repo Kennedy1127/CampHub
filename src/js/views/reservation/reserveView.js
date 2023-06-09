@@ -8,6 +8,8 @@ class ReserveView {
     this._checkOutYear = new Date().getFullYear();
     this._checkOutMonth = new Date().getMonth() + 1;
     this._checkOutDate = new Date().getDate();
+    this._roomData = null;
+    this._title = "Upper Valley";
     this._guests = 1;
     this._price = 99.99;
     this._subtotal = null;
@@ -26,9 +28,9 @@ class ReserveView {
       ".reserve_payment_content_price_subtotal_price"
     );
 
-    reserveName.textContent = `$${this._price} x 0 nights x 1 person`;
-    reservePrice.textContent = `$${this._price} USD`;
-    reserveTotal.textContent = `$${this._price} USD`;
+    reserveName.textContent = `$${this._roomData.price} x 0 nights x 1 person`;
+    reservePrice.textContent = `$${this._roomData.price} USD`;
+    reserveTotal.textContent = `$${this._roomData.price} USD`;
   }
 
   _renderReservePaymentDate(check, year, month, date) {
@@ -72,27 +74,28 @@ class ReserveView {
       ".reserve_payment_content_warning"
     );
 
+    const calculatePrice = () => {
+      return this._roomData.price * this._guests * (days < 1 ? 1 : days);
+    };
+
     if (days < 0) {
       reserveWarnText.innerHTML =
         "Please choose correct arrive and depart dates.";
       reserveName.innerHTML = `$99.99 x 0 nights x ${this._guests} person`;
-      reserveTotal.innerHTML = reservePrice.innerHTML = `${(
-        this._price * this._guests
-      ).toFixed(2)} USD`;
+      reserveTotal.innerHTML =
+        reservePrice.innerHTML = `${calculatePrice().toFixed(2)} USD`;
+
+      this._subtotal = calculatePrice();
       return;
     }
 
     reserveWarnText.innerHTML = "";
-    reserveName.innerHTML = `$${this._price} x ${days} nights x ${
+    reserveName.innerHTML = `$${this._roomData.price} x ${days} nights x ${
       this._guests
     } person${this._guests > 1 ? "s" : ""}`;
-    reserveTotal.innerHTML = reservePrice.innerHTML = `$${(this._price *
-      days *
-      this._guests ===
-    0
-      ? this._price * this._guests
-      : this._price * days * this._guests
-    ).toFixed(2)} USD`;
+    reserveTotal.innerHTML =
+      reservePrice.innerHTML = `$${calculatePrice().toFixed(2)} USD`;
+    this._subtotal = calculatePrice();
   }
 
   _changeGuests() {
@@ -114,7 +117,6 @@ class ReserveView {
 
     calendarBody.addEventListener("click", (e) => {
       const clickedDate = e.target.closest(".calendar-enable");
-      const calendars = document.querySelectorAll(".reserve_payment_calendar");
 
       if (calendar === ".checkIn") {
         this._checkInYear = clickedDate.dataset.year;
@@ -171,8 +173,86 @@ class ReserveView {
     });
   }
 
+  _submitReserveData() {
+    const reservePaymentSubmitButton = document.querySelector(
+      ".reserve_payment_content_submit"
+    );
+
+    const summaryProductsTableBody = document.querySelector(
+      ".summary_products_table_body"
+    );
+
+    reservePaymentSubmitButton.addEventListener("click", () => {
+      const days = this._calculateDays();
+      if (days < 0) {
+        sessionStorage.clear("reservePaymentData");
+        return;
+      }
+
+      const title = `${this._roomData.title} - ${
+        this._roomData.price
+      } x ${days} night${days > 1 ? "s" : ""}`;
+
+      const data = {
+        id: this._roomData.title,
+        title,
+        price: this._roomData.price,
+        quantity: this._guests,
+        subtotal: this._subtotal.toFixed(2),
+      };
+
+      const jsonData = JSON.stringify(data);
+      sessionStorage.setItem("reservePaymentData", jsonData);
+
+      const html = `
+        <tr>
+          <td>
+            <div class="summary_product_pic">
+              <picture>
+                <source
+                  media="(min-width:1000px)"
+                  srcset="
+                    ./../../src/img/campgrounds/rooms/room-1/room-1-2-min.jpg
+                  "
+                />
+                <source
+                  media="min-width:300px"
+                  srcset="
+                    ./../../src/img/campgrounds/rooms/room-1/room-1-2-min.webp
+                  "
+                />
+                <img
+                  src="./../../src/img/campgrounds/rooms/room-1/room-1-2-min.jpg"
+                  alt=""
+                />
+              </picture>
+            </div>
+            <span>Upper Valley - 499.95 USD / 5 nights</span>
+          </td>
+          <td>
+            <span>$499.95</span>
+          </td>
+          <td>
+            <span>3</span>
+          </td>
+          <td>
+            <span>$1499.85</span>
+          </td>
+          <td>
+            <span>
+              <i class="fa-solid fa-xmark"></i>
+            </span>
+          </td>
+        </tr>
+      `;
+
+      summaryProductsTableBody.insertAdjacentHTML("afterbegin", html);
+    });
+  }
+
   init(handler) {
-    this._price = handler().price;
+    this._roomData = handler();
+    this._subtotal = this._roomData.price;
 
     this._initReservePaymentPrice();
     this._showCalendar();
@@ -192,6 +272,7 @@ class ReserveView {
     this._calendarInit();
     this._selectCalendarDate(".checkIn");
     this._selectCalendarDate(".checkOut");
+    this._submitReserveData();
   }
 }
 

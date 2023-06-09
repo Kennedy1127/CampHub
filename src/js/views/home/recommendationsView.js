@@ -93,9 +93,55 @@ class RecommendationsView {
     galleryObserver.observe(tourismGallery);
   }
 
+  _recommendCardObservation() {
+    const cards = document.querySelectorAll(".recommend_card");
+    const introOrders = document.querySelectorAll(".recommend_intro_order");
+    const currentWindowWidth = window.innerWidth;
+
+    const removeActiveCard = () => {
+      cards.forEach((card, i) => {
+        card.classList.contains("recommend_card--active")
+          ? card.classList.remove("recommend_card--active")
+          : "";
+
+        introOrders[i].classList.contains("recommend_intro_order--active")
+          ? introOrders[i].classList.remove("recommend_intro_order--active")
+          : "";
+      });
+    };
+
+    cards.forEach((card, i) => {
+      const callback = (entries) => {
+        if (!entries[0].isIntersecting) return;
+        removeActiveCard();
+        entries[0].target.classList.add("recommend_card--active");
+        introOrders[i].classList.add("recommend_intro_order--active");
+      };
+
+      const option = {
+        root: null,
+        threshold: currentWindowWidth >= 1200 ? 0.4 : 0.8,
+      };
+
+      const observer = new IntersectionObserver(callback, option);
+      observer.observe(card);
+    });
+  }
+
+  _clickOrderCardScroll() {
+    const cards = document.querySelectorAll(".recommend_card");
+    const introOrders = document.querySelectorAll(".recommend_intro_order");
+
+    introOrders.forEach((introOrder, i) => {
+      introOrder.addEventListener("click", () => {
+        cards[i].scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  }
+
   init() {
-    // this._recommendCardObservation();
-    // this._clickOrderCardScroll();
+    this._recommendCardObservation();
+    this._clickOrderCardScroll();
     this._darwCurtains();
     this._removeOverflowClipOnBorders();
     this._setupCarAnimation();

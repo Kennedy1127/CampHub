@@ -1,4 +1,4 @@
-import * as model from "../../model.js";
+import * as model from "../../model/model.js";
 import navigationView from "../../views/navigationView.js";
 import reservationView from "../../views/reservation/reservationView.js";
 import reserveView from "../../views/reservation/reserveView.js";
@@ -14,4 +14,5 @@ const init = () => {
   reserveView.init(controllLoadSessionRoomTarget);
   rentalView.init();
 };
-init();
+
+window.addEventListener("load", init);

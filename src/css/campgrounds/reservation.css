@@ -112,7 +112,7 @@
   padding-left: 15px;
 }
 
-.reserve_intro_content_feature:nth-child(6) {
+.reserve_intro_content_feature:last-child {
   margin-bottom: 0;
 }
 
@@ -265,7 +265,7 @@
 .reserve_payment_header_title {
   width: 100%;
   margin-bottom: 5px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--color-orange-1);
   text-transform: uppercase;

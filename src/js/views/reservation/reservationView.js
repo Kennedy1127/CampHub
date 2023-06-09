@@ -6,6 +6,9 @@ class ReservationView {
     const reserveIntroHeaderTitle = document.querySelector(
       ".reserve_intro_header_title"
     );
+    const reserveIntroContentFeatures = document.querySelector(
+      ".reserve_intro_content_features"
+    );
     const reservePaymentHeaderPrice = document.querySelector(
       ".reserve_payment_header_price"
     );
@@ -34,6 +37,24 @@ class ReservationView {
      </div>`;
 
       landing.insertAdjacentHTML("beforeend", html);
+    });
+
+    roomData.features.forEach((feature) => {
+      const html = `
+        <div class="reserve_intro_content_feature">
+          <div class="reserve_intro_content_feature_icon">
+            <img
+              src="${feature.icon}"
+              alt="${feature.alt}"
+            />
+          </div>
+          <span class="reserve_intro_content_feature_text">
+            ${feature.text}
+          </span>
+        </div>
+      `;
+
+      reserveIntroContentFeatures.insertAdjacentHTML("beforeend", html);
     });
 
     reserveIntroHeaderTitle.textContent = roomData.title;

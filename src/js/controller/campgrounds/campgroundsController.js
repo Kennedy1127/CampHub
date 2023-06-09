@@ -7,4 +7,5 @@ const init = () => {
   campgroundsView.init();
   commentView.init();
 };
+
 init();
