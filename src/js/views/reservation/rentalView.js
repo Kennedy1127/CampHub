@@ -1,4 +1,74 @@
 class RentalView {
+  constructor() {
+    this._rentalSubtotal = 0;
+  }
+
+  renderRentalCards(data) {
+    const rentalContentCards = document.querySelector(".rental_content_cards");
+
+    data.forEach((card) => {
+      const html = `
+      <div class="myCarousel_slide myCarousel_slide--2" >
+        <div class="rental_content_card" data-card-id="${card.id}">
+          <div class="rental_content_card_header">
+            <div class="rental_content_card_pic">
+              <picture>
+                <source
+                  media="(min-width:1000px)"
+                  srcset="
+                    ${card.pic}
+                  "
+                />
+                <source
+                  media="(min-width:300px)"
+                  srcset="
+                    ${card.pic}
+                  "
+                />
+                <img
+                  src="${card.pic}"
+                  alt=""
+                />
+              </picture>
+            </div>
+          </div>
+
+          <div class="rental_content_card_content">
+            <h3 class="rental_content_card_title">
+              ${card.title}
+            </h3>
+            <p class="rental_content_card_text">
+              ${card.text}
+            </p>
+            <div class="rental_content_card_rent">
+              <div class="rental_content_card_rent_group">
+                <div class="rental_content_card_rent_price">
+                $${card.price}<span>/day</span>
+                </div>
+                <div class="rental_content_card_rent_quantity">
+                  <button
+                    class="rental_content_card_rent_quantity_button rental_content_card_rent_quantity_button--plus"
+                  >
+                  +
+                  </button>
+                  <input type="number" class="rental_content_card_rent_quantity_number" value = 1>
+                  <button
+                    class="rental_content_card_rent_quantity_button rental_content_card_rent_quantity_button--minus"
+                  >
+                  -
+                  </button>
+                </div>
+              </div>
+              <div class="rental_content_card_rent_button">Rent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+      rentalContentCards.insertAdjacentHTML("beforeend", html);
+    });
+  }
+
   createRentalCarousel() {
     const slider = document.querySelector(".myCarousel_slider");
     const slides = slider.querySelectorAll(".myCarousel_slide");
@@ -129,8 +199,184 @@ class RentalView {
     setupCarouselDrag();
   }
 
-  init() {
-    this.createRentalCarousel();
+  updateRentalProductQuantity() {
+    window.addEventListener("click", (e) => {
+      const rentalContentCardRentQuantityButton = e.target.classList.contains(
+        "rental_content_card_rent_quantity_button"
+      )
+        ? e.target
+        : null;
+      if (!rentalContentCardRentQuantityButton) return;
+      const inputNumber = rentalContentCardRentQuantityButton
+        .closest(".rental_content_card_rent_group")
+        .querySelector(".rental_content_card_rent_quantity_number");
+
+      rentalContentCardRentQuantityButton.classList.contains(
+        "rental_content_card_rent_quantity_button--plus"
+      )
+        ? inputNumber.value++
+        : inputNumber.value === "1"
+        ? ""
+        : inputNumber.value--;
+    });
+  }
+
+  submitRentalCard(data) {
+    const tableBody = document.querySelector(".summary_products_table_body");
+    const rentalContentCardRentButtons = document.querySelectorAll(
+      ".rental_content_card_rent_button"
+    );
+    const summaryCheckoutBody = document.querySelector(
+      ".summary_checkout_body_items"
+    );
+    const summaryCheckoutBodyTotalPrice = document.querySelector(
+      ".summary_checkout_body_total_price"
+    );
+
+    const { days, subtotal } = JSON.parse(
+      sessionStorage.getItem("reservePaymentData")
+    ) || { days: 1, subtotal: 0 };
+    this._rentalSubtotal = Number(subtotal || 0);
+
+    rentalContentCardRentButtons.forEach((button) =>
+      button.addEventListener("click", (e) => {
+        const card = e.target.closest(".rental_content_card");
+        if (!card) return;
+
+        const rentalProduct = data[card.dataset.cardId - 1];
+        const rentalProductQuantity = card.querySelector(
+          ".rental_content_card_rent_quantity_number"
+        );
+
+        const rentalProductHtml = `
+          <tr class="summary_product_rental" data-id=${rentalProduct.id}>
+            <td>
+              <div class="summary_product_pic">
+                <picture>
+                  <source
+                    media="(min-width:1000px)"
+                    srcset="
+                      ${rentalProduct.pic}
+                    "
+                  />
+                  <source
+                    media="min-width:300px"
+                    srcset="
+                    ${rentalProduct.pic}
+                    "
+                  />
+                  <img
+                    src=" ${rentalProduct.pic}"
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <span
+                >${rentalProduct.title} - ${rentalProduct.price} USD x ${
+          days || 1
+        } nights</span
+              >
+            </td>
+            <td>
+              <span>$${(rentalProduct.price * (days || 1)).toFixed(2)}</span>
+            </td>
+            <td>
+              <span>${rentalProductQuantity.value}</span>
+            </td>
+            <td>
+              <span>$${(
+                rentalProduct.price *
+                (days || 1) *
+                rentalProductQuantity.value
+              ).toFixed(2)}</span>
+            </td>
+            <td>
+              <span>
+                <i class="fa-solid fa-xmark"></i>
+              </span>
+            </td>
+          </tr>
+        `;
+
+        const summaryCheckoutItemHtml = `
+          <div class="summary_checkout_body_item" data-id=${rentalProduct.id}>
+            <div class="summary_checkout_body_item_name">
+            ${rentalProduct.title} - ${rentalProduct.price} USD x ${days} nights
+            </div>
+            <div class="summary_checkout_body_item_price">
+              $${(
+                rentalProduct.price *
+                (days || 1) *
+                rentalProductQuantity.value
+              ).toFixed(2)} USD
+            </div>
+          </div>
+        `;
+
+        const rentalProductRows = tableBody.querySelectorAll(
+          ".summary_product_rental"
+        );
+        const checkoutItems = document.querySelectorAll(
+          ".summary_checkout_body_item"
+        );
+
+        const indexOfRentalProductRow = [...rentalProductRows].findIndex(
+          (row) => row.dataset.id === rentalProduct.id
+        );
+        const indexOfCheckoutItem = [...checkoutItems].findIndex(
+          (item) => item.dataset.id === rentalProduct.id
+        );
+
+        indexOfRentalProductRow === -1
+          ? tableBody.insertAdjacentHTML("beforeend", rentalProductHtml)
+          : (rentalProductRows[indexOfRentalProductRow].innerHTML =
+              rentalProductHtml);
+
+        indexOfCheckoutItem === -1
+          ? summaryCheckoutBody.insertAdjacentHTML(
+              "beforeend",
+              summaryCheckoutItemHtml
+            )
+          : (checkoutItems[indexOfCheckoutItem].innerHTML = `            
+            <div class="summary_checkout_body_item_name">
+              ${rentalProduct.title} - ${
+              rentalProduct.price
+            } USD x ${days} nights
+              </div>
+              <div class="summary_checkout_body_item_price">
+                $${(
+                  rentalProduct.price *
+                  (days || 1) *
+                  rentalProductQuantity.value
+                ).toFixed(2)} USD
+            </div>
+          `);
+
+        const rentalData =
+          JSON.parse(sessionStorage.getItem("rentalData")) || [];
+
+        const rentalDataObj = {
+          days,
+          id: rentalProduct.id,
+          pic: rentalProduct.pic,
+          title: `${rentalProduct.title}`,
+          price: rentalProduct.price,
+          quantity: rentalProductQuantity.value,
+          subtotal:
+            rentalProduct.price * rentalProductQuantity.value * (days || 1),
+        };
+
+        const indexOfRentalDataObj = rentalData.findIndex(
+          (obj) => obj.id === rentalDataObj.id
+        );
+
+        indexOfRentalDataObj === -1
+          ? rentalData.push(rentalDataObj)
+          : (rentalData[indexOfRentalDataObj] = rentalDataObj);
+
+        sessionStorage.setItem("rentalData", JSON.stringify(rentalData));
+      })
+    );
   }
 }
 

@@ -1,7 +1,5 @@
 class ReservationView {
-  renderRoomData(handler) {
-    const roomData = handler();
-
+  renderRoomData(data) {
     const landing = document.querySelector(".landing");
     const reserveIntroHeaderTitle = document.querySelector(
       ".reserve_intro_header_title"
@@ -12,8 +10,11 @@ class ReservationView {
     const reservePaymentHeaderPrice = document.querySelector(
       ".reserve_payment_header_price"
     );
+    const reservePaymentHeaderRate = document.querySelector(
+      ".reserve_payment_header_rate"
+    );
 
-    roomData.imgs.forEach((img, i) => {
+    data.imgs.forEach((img, i) => {
       const html = `
       <div class="landing_pic landing_pic--${i + 1}">
         <picture>
@@ -39,7 +40,7 @@ class ReservationView {
       landing.insertAdjacentHTML("beforeend", html);
     });
 
-    roomData.features.forEach((feature) => {
+    data.features.forEach((feature) => {
       const html = `
         <div class="reserve_intro_content_feature">
           <div class="reserve_intro_content_feature_icon">
@@ -57,8 +58,11 @@ class ReservationView {
       reserveIntroContentFeatures.insertAdjacentHTML("beforeend", html);
     });
 
-    reserveIntroHeaderTitle.textContent = roomData.title;
-    reservePaymentHeaderPrice.innerHTML = `$${roomData.price} <span>/ night</span>`;
+    reserveIntroHeaderTitle.textContent = data.title;
+    reservePaymentHeaderPrice.innerHTML = `$${data.price} <span>/ night</span>`;
+    reservePaymentHeaderRate.innerHTML = `
+    <i class="fa-solid fa-star"></i> ${data.rate}
+    <span>- ${data.reviews} reviews</span>`;
   }
 }
 

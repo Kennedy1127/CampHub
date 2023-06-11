@@ -729,11 +729,42 @@
 .rental_content_card_rent_price {
   font-weight: 500;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .rental_content_card_rent_price span {
   font-weight: 400;
   font-size: 12px;
+}
+
+.rental_content_card_rent_quantity {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.rental_content_card_rent_quantity_button {
+  flex-basis: 50px;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 2px 0;
+}
+
+input[type="number"].rental_content_card_rent_quantity_number::-webkit-inner-spin-button,
+input[type="number"].rental_content_card_rent_quantity_number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.rental_content_card_rent_quantity_number {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
 }
 
 .rental_content_card_rent_button {
@@ -801,11 +832,32 @@
   .rental_content_card_rent {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+  }
+
+  .rental_content_card_rent_group {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
   }
 
   .rental_content_card_rent_price {
     font-size: 16px;
+  }
+
+  .rental_content_card_rent_quantity {
+    margin-bottom: auto;
+  }
+
+  .rental_content_card_rent_quantity_button {
+    flex-shrink: 0;
+    flex-basis: 20px;
+    font-size: 20px;
+    padding: 0;
+  }
+
+  .rental_content_card_rent_quantity_number {
+    font-size: 14px;
   }
 
   .rental_content_card_rent_button {
@@ -874,6 +926,7 @@
 
 .summary_products table {
   border-collapse: collapse;
+  width: 100%;
 }
 
 .summary_products thead {
@@ -1064,10 +1117,6 @@
   color: #fff;
   text-transform: uppercase;
   font-size: 18px;
-}
-
-.summary_checkout_body_items {
-  border-bottom: 1px solid var(--color-black-1);
 }
 
 .summary_checkout_body_item {

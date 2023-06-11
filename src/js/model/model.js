@@ -136,10 +136,121 @@ export const state = {
       reviews: 2215,
     },
   },
+  rentals: [
+    {
+      id: "1",
+      title: "MOJI 500 Rechargeable Camping Lantern",
+      text: `
+      The MOJI 500 Rechargeable Camping Lantern is a piece of
+      camping gear designed to provide bright and reliable
+      lighting while camping or in other outdoor settings.
+      <br />
+      <br />
+      This lantern features a rechargeable lithium-ion battery
+      that can provide up to 500 lumens of light for up to 22
+      hours on a single charge.
+    `,
+      price: 2.99,
+      pic: "./../../src/img/campgrounds/rental/rental-lantern.png",
+    },
+    {
+      id: "2",
+      title: "UNP-300 Camping Dome Tent",
+      text: `
+      The UNP-300 Camping Dome Tent is a type of camping gear
+      designed to provide shelter and comfort while camping.
+      <br />
+      <br />
+      This tent is designed to accommodate up to three people
+      and features a dome-shaped design, which provides plenty
+      of headroom and interior space.
+      `,
+      price: 6.99,
+      pic: "./../../src/img/campgrounds/rental/rental-tent.png",
+    },
+    {
+      id: "3",
+      title: "The VENTURE 4 Lightweight Sleeping Bag",
+      text: `
+      Lightweight Sleeping Bag is designed to keep you warm in various weather conditions.
+      <br />
+      <br />
+      The insulation material effectively retains body heat, while the draft tubes and drawstring hood help seal in warmth, preventing cold air from entering.
+      `,
+      price: 4.99,
+      pic: "./../../src/img/campgrounds/rental/rental-sleepingbag.png",
+    },
+    {
+      id: "4",
+      title: "Victoper 2 Pack LED Headlamp",
+      text: `
+      The headlamps are designed for optimal comfort and durability. 
+      <br />
+      <br />
+      They have an adjustable headband that fits securely and comfortably on your head, ensuring a stable and customized fit for every user.
+      `,
+      price: 5.99,
+      pic: "./../../src/img/campgrounds/rental/rental-head-flash.png",
+    },
+    {
+      id: "5",
+      title: "Camping Cookware Mess Kit",
+      text: `
+      High-quality, lightweight, and durable materials to ensure optimal performance and long-lasting use.
+      <br />
+      <br />
+      The set includes a variety of essential cooking and eating utensils, all neatly packed and nested together for easy storage and transportation.
+      `,
+      price: 7.29,
+      pic: "./../../src/img/campgrounds/rental/rental-cook.png",
+    },
+    {
+      id: "6",
+      title: "YKDIRECT Camping Sleeping Pad with Built-in Pump",
+      text: `
+      The ultimate solution for comfortable and convenient sleep during your outdoor adventures.
+      <br />
+      <br />
+      Designed with portability and comfort in mind, this sleeping pad is perfect for camping, hiking, backpacking, or any other outdoor activity that requires a good night's rest.
+      `,
+      price: 5.99,
+      pic: "./../../src/img/campgrounds/rental/rental-pad.png",
+    },
+    {
+      id: "7",
+      title: "Victoper LED Flashlight 2 Pack",
+      text: `
+      Flashlight is constructed with high-quality materials and features advanced LED technology, providing bright and efficient lighting that will last for years to come.
+      <br />
+      <br />
+      They have a durable aluminum alloy body that is both lightweight and resistant to impact, ensuring they can endure drops, bumps, and other outdoor hazards.
+      `,
+      price: 1.99,
+      pic: " ./../../src/img/campgrounds/rental/rental-flash.png",
+    },
+    {
+      id: "8",
+      title: "Battery Powered Fan with LED Lantern",
+      text: `
+      The fan is equipped with a high-performance motor that delivers a refreshing breeze to keep you cool during hot summer days or stuffy nights. 
+      <br />
+      <br />
+      With multiple speed settings, you can adjust the airflow to your desired level of comfort. 
+      `,
+      price: 3.69,
+      pic: "./../../src/img/campgrounds/rental/rental-fan.png",
+    },
+  ],
 };
 
 export const loadSessionRoom = () => {
   const reservationTarget = sessionStorage.getItem("reservationTarget");
   if (!reservationTarget) return state.rooms.upperValley;
   return state.rooms[reservationTarget];
+};
+
+export const loadSessionReserveData = () => {
+  const reserveRoom = JSON.parse(sessionStorage.getItem("reservePaymentData"));
+  const rentalData = JSON.parse(sessionStorage.getItem("rentalData"));
+  return { reserveRoom, rentalData };
 };
