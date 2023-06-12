@@ -1004,7 +1004,8 @@ input[type="number"].rental_content_card_rent_quantity_number::-webkit-outer-spi
   }
 
   .summary_products .summary_checkout_header,
-  .summary_products .summary_checkout_footer_button {
+  .summary_products .summary_checkout_footer_button,
+  .summary_products .summary_checkout_body_warning {
     display: none;
   }
 
@@ -1127,10 +1128,6 @@ input[type="number"].rental_content_card_rent_quantity_number::-webkit-outer-spi
   font-size: 12px;
 }
 
-.summary_checkout_body_item:last-child {
-  border-bottom: none;
-}
-
 .summary_checkout_body_item_name {
   width: 60%;
 }
@@ -1148,7 +1145,14 @@ input[type="number"].rental_content_card_rent_quantity_number::-webkit-outer-spi
   font-weight: 500;
 }
 
-.summary_checkout_body_total_price {
+.summary_checkout_body_warning {
+  text-align: center;
+  color: #d9534f;
+  font-size: 12px;
+}
+
+.summary_checkout_body_warning--hidden {
+  display: none;
 }
 
 .summary_checkout_footer_button {
@@ -1207,6 +1211,10 @@ input[type="number"].rental_content_card_rent_quantity_number::-webkit-outer-spi
 
   .summary_checkout_body_total_price {
     padding-left: 20px;
+  }
+
+  .summary_checkout_body_warning {
+    padding-bottom: 10px;
   }
 
   .summary_checkout_footer_button {

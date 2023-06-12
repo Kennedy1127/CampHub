@@ -152,6 +152,7 @@ export const state = {
     `,
       price: 2.99,
       pic: "./../../src/img/campgrounds/rental/rental-lantern.png",
+      picName: "rental-lantern",
     },
     {
       id: "2",
@@ -167,6 +168,7 @@ export const state = {
       `,
       price: 6.99,
       pic: "./../../src/img/campgrounds/rental/rental-tent.png",
+      picName: "rental-tent",
     },
     {
       id: "3",
@@ -179,6 +181,7 @@ export const state = {
       `,
       price: 4.99,
       pic: "./../../src/img/campgrounds/rental/rental-sleepingbag.png",
+      picName: "rental-sleepingbag",
     },
     {
       id: "4",
@@ -191,6 +194,7 @@ export const state = {
       `,
       price: 5.99,
       pic: "./../../src/img/campgrounds/rental/rental-head-flash.png",
+      picName: "rental-head-flash",
     },
     {
       id: "5",
@@ -203,6 +207,7 @@ export const state = {
       `,
       price: 7.29,
       pic: "./../../src/img/campgrounds/rental/rental-cook.png",
+      picName: "rental-cook",
     },
     {
       id: "6",
@@ -215,6 +220,7 @@ export const state = {
       `,
       price: 5.99,
       pic: "./../../src/img/campgrounds/rental/rental-pad.png",
+      picName: "rental-pad",
     },
     {
       id: "7",
@@ -227,6 +233,7 @@ export const state = {
       `,
       price: 1.99,
       pic: " ./../../src/img/campgrounds/rental/rental-flash.png",
+      picName: "rental-flash",
     },
     {
       id: "8",
@@ -239,6 +246,35 @@ export const state = {
       `,
       price: 3.69,
       pic: "./../../src/img/campgrounds/rental/rental-fan.png",
+      picName: "rental-fan",
+    },
+  ],
+  orders: [
+    {
+      id: "1",
+      subtotal: 1680.55,
+      reservationOrderRoom: {
+        id: "Upper Valley",
+        checkInDate: "5/21/2023",
+        checkOutDate: "5/26/2023",
+        guests: 4,
+        title: "Upper Valley - 99.99 USD x 5 nights x 3 persons",
+        subtotal: 1499.85,
+      },
+      reservationOrderRental: [
+        {
+          id: "3",
+          picName: "rental-tent",
+          title: "UNP-300 Camping Dome Tent - 34.95 USD x 3",
+          subtotal: 104.85,
+        },
+        {
+          id: "2",
+          picName: "rental-sleepingbag",
+          title: "VENTURE 4 Lightweight Sleeping Bag - 24.95 USD x 3",
+          subtotal: 74.85,
+        },
+      ],
     },
   ],
 };
@@ -253,4 +289,11 @@ export const loadSessionReserveData = () => {
   const reserveRoom = JSON.parse(sessionStorage.getItem("reservePaymentData"));
   const rentalData = JSON.parse(sessionStorage.getItem("rentalData"));
   return { reserveRoom, rentalData };
+};
+
+export const loadUserOrders = () => {
+  const sessionOrders = JSON.parse(sessionStorage.getItem("userOrders")) || [];
+  state.orders = [...sessionOrders, ...state.orders];
+
+  return state.orders;
 };

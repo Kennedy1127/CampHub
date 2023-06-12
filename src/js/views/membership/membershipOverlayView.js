@@ -39,7 +39,7 @@ class MembershipOverlayView {
     const stars = document.querySelectorAll(
       ".membership_overlay_card_rate .fa-star"
     );
-    console.log(stars);
+    // console.log(stars);
   }
 
   init() {

@@ -420,7 +420,8 @@
   font-weight: 500;
   color: #fff;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 5px;
 }
 
 .information_checkout_body_items {
@@ -455,6 +456,7 @@
   justify-content: flex-end;
   font-weight: 500;
   font-size: 14px;
+  padding: 10px 0;
 }
 
 .information_checkout_body_total_price {
@@ -505,10 +507,6 @@
 
   .information_checkout_body_item_price {
     font-size: 14px;
-  }
-
-  .information_checkout_body_total {
-    padding: 10px 0;
   }
 
   .information_checkout_body_total_price {

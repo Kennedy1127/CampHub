@@ -1,8 +1,4 @@
 class RentalView {
-  constructor() {
-    this._rentalSubtotal = 0;
-  }
-
   renderRentalCards(data) {
     const rentalContentCards = document.querySelector(".rental_content_cards");
 
@@ -229,19 +225,18 @@ class RentalView {
     const summaryCheckoutBody = document.querySelector(
       ".summary_checkout_body_items"
     );
-    const summaryCheckoutBodyTotalPrice = document.querySelector(
-      ".summary_checkout_body_total_price"
-    );
-
-    const { days, subtotal } = JSON.parse(
-      sessionStorage.getItem("reservePaymentData")
-    ) || { days: 1, subtotal: 0 };
-    this._rentalSubtotal = Number(subtotal || 0);
 
     rentalContentCardRentButtons.forEach((button) =>
       button.addEventListener("click", (e) => {
+        const summaryCheckoutBodyTotalPrice = document.querySelector(
+          ".summary_checkout_body_total_price"
+        );
         const card = e.target.closest(".rental_content_card");
         if (!card) return;
+
+        let { days, subtotal = 0 } = JSON.parse(
+          sessionStorage.getItem("reservePaymentData")
+        ) || { days: 1, subtotal: 0 };
 
         const rentalProduct = data[card.dataset.cardId - 1];
         const rentalProductQuantity = card.querySelector(
@@ -291,7 +286,7 @@ class RentalView {
               ).toFixed(2)}</span>
             </td>
             <td>
-              <span>
+              <span class="cancel">
                 <i class="fa-solid fa-xmark"></i>
               </span>
             </td>
@@ -301,14 +296,12 @@ class RentalView {
         const summaryCheckoutItemHtml = `
           <div class="summary_checkout_body_item" data-id=${rentalProduct.id}>
             <div class="summary_checkout_body_item_name">
-            ${rentalProduct.title} - ${rentalProduct.price} USD x ${days} nights
+            ${rentalProduct.title} - ${days || 1} night${
+          days > 1 ? "s" : ""
+        } x ${rentalProductQuantity.value} 
             </div>
             <div class="summary_checkout_body_item_price">
-              $${(
-                rentalProduct.price *
-                (days || 1) *
-                rentalProductQuantity.value
-              ).toFixed(2)} USD
+              $${(rentalProduct.price * (days || 1)).toFixed(2)} USD
             </div>
           </div>
         `;
@@ -339,9 +332,9 @@ class RentalView {
             )
           : (checkoutItems[indexOfCheckoutItem].innerHTML = `            
             <div class="summary_checkout_body_item_name">
-              ${rentalProduct.title} - ${
-              rentalProduct.price
-            } USD x ${days} nights
+              ${rentalProduct.title} - ${days || 1} night${
+              days > 1 ? "s" : ""
+            } x ${rentalProductQuantity.value} 
               </div>
               <div class="summary_checkout_body_item_price">
                 $${(
@@ -359,6 +352,7 @@ class RentalView {
           days,
           id: rentalProduct.id,
           pic: rentalProduct.pic,
+          picName: rentalProduct.picName,
           title: `${rentalProduct.title}`,
           price: rentalProduct.price,
           quantity: rentalProductQuantity.value,
@@ -375,6 +369,11 @@ class RentalView {
           : (rentalData[indexOfRentalDataObj] = rentalDataObj);
 
         sessionStorage.setItem("rentalData", JSON.stringify(rentalData));
+
+        rentalData.forEach((data) => (subtotal += data.subtotal));
+        summaryCheckoutBodyTotalPrice.textContent = `$${subtotal.toFixed(
+          2
+        )} USD`;
       })
     );
   }

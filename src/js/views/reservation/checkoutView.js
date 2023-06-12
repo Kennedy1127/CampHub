@@ -41,7 +41,7 @@ class CheckoutView {
         <span>$${Number(reserveRoom.subtotal).toFixed(2)}</span>
       </td>
       <td>
-        <span>
+        <span class="cancel">
           <i class="fa-solid fa-xmark"></i>
         </span>
       </td>
@@ -94,7 +94,7 @@ class CheckoutView {
         )}</span>
       </td>
       <td>
-        <span>
+        <span class="cancel">
           <i class="fa-solid fa-xmark"></i>
         </span>
       </td>
@@ -137,7 +137,7 @@ class CheckoutView {
       );
     }
 
-    let subtotal = Number(reserveRoom.subtotal || 0);
+    let subtotal = Number(reserveRoom?.subtotal || 0);
 
     if (!data.rentalData) return;
     rentalData.forEach((data) => {
@@ -169,16 +169,17 @@ class CheckoutView {
     const summaryCheckoutBody = document.querySelector(
       ".summary_checkout_body_items"
     );
-    const summaryCheckoutBodyTotalPrice = document.querySelector(
-      ".summary_checkout_body_total_price"
-    );
 
     window.addEventListener("click", (e) => {
+      const summaryCheckoutBodyTotalPrice = document.querySelector(
+        ".summary_checkout_body_total_price"
+      );
+
       let subtotal = Number(
         summaryCheckoutBodyTotalPrice.textContent.trim().slice(1, -4)
       );
 
-      const clickEl = e.target.closest("td span");
+      const clickEl = e.target.closest("td span.cancel");
       if (!clickEl) return;
 
       let reserveRoom = JSON.parse(
@@ -210,8 +211,78 @@ class CheckoutView {
 
       sessionStorage.setItem("reservePaymentData", JSON.stringify(reserveRoom));
       sessionStorage.setItem("rentalData", JSON.stringify(rentalData));
-      summaryCheckoutBodyTotalPrice.textContent = `${subtotal.toFixed(2)} USD`;
+      summaryCheckoutBodyTotalPrice.textContent = `$${subtotal.toFixed(2)} USD`;
     });
+  }
+
+  _goToCheckout() {
+    const summaryCheckoutFooterButtons = document.querySelectorAll(
+      ".summary_checkout_footer_button"
+    );
+    const summaryCheckoutBodyWarning = document.querySelectorAll(
+      ".summary_checkout_body_warning"
+    );
+
+    summaryCheckoutFooterButtons.forEach((button) =>
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        const reservationRoom = JSON.parse(
+          sessionStorage.getItem("reservePaymentData")
+        );
+        const rentalData =
+          JSON.parse(sessionStorage.getItem("rentalData")) || [];
+
+        if (!reservationRoom.id) {
+          summaryCheckoutBodyWarning.forEach((el) =>
+            el.classList.remove("summary_checkout_body_warning--hidden")
+          );
+          return;
+        }
+
+        let reservationOrderSubtotal = reservationRoom.subtotal;
+
+        const reservationOrderRoom = {
+          id: reservationRoom.id,
+          checkInDate: reservationRoom.checkInDate,
+          checkOutDate: reservationRoom.checkOutDate,
+          guests: reservationRoom.guests,
+          title: `${reservationRoom.title} x ${reservationRoom.guests} person${
+            reservationRoom.guests > 1 ? "s" : ""
+          }`,
+          subtotal: reservationRoom.subtotal,
+        };
+
+        const reservationOrderRental = [];
+
+        rentalData.forEach((data) => {
+          const obj = {
+            id: data.id,
+            picName: data.picName,
+            subtotal: data.subtotal,
+            title: `${data.title} - ${data.price * data.days} USD x ${
+              data.quantity
+            }`,
+          };
+
+          reservationOrderSubtotal += data.subtotal;
+          reservationOrderRental.push(obj);
+        });
+
+        const reservationOrder = {
+          id: Date.now().toString().slice(-7),
+          subtotal: reservationOrderSubtotal,
+          reservationOrderRoom,
+          reservationOrderRental,
+        };
+
+        sessionStorage.setItem(
+          "reservationOrder",
+          JSON.stringify(reservationOrder)
+        );
+
+        location.href = "./checkout.html";
+      })
+    );
   }
 
   init(handler) {
@@ -219,6 +290,7 @@ class CheckoutView {
     this._renderSummaryProduct(data);
     this._renderSummaryCheckout(data);
     this._deleteProduct();
+    this._goToCheckout();
   }
 }
 

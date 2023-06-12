@@ -183,6 +183,7 @@ class ReserveView {
     const summaryCheckoutBody = document.querySelector(
       ".summary_checkout_body_items"
     );
+
     const summaryCheckoutBodyTotalPrice = document.querySelector(
       ".summary_checkout_body_total_price"
     );
@@ -207,20 +208,7 @@ class ReserveView {
 
       const title = `${this._roomData.title} - ${
         this._roomData.price
-      } x ${days} night${days > 1 ? "s" : ""}`;
-
-      const data = {
-        id: this._roomData.title,
-        title,
-        price: this._roomData.price,
-        guests: this._guests,
-        subtotal: this._subtotal.toFixed(2),
-        days,
-        imgs: this._roomData.imgs,
-      };
-
-      const jsonData = JSON.stringify(data);
-      sessionStorage.setItem("reservePaymentData", jsonData);
+      } USD x ${days} night${days > 1 ? "s" : ""}`;
 
       const roomProductHtml = `
         <tr class="summary_product_room">
@@ -257,7 +245,7 @@ class ReserveView {
             <span>$${this._subtotal.toFixed(2)}</span>
           </td>
           <td>
-            <span>
+            <span class="cancel">
               <i class="fa-solid fa-xmark"></i>
             </span>
           </td>
@@ -292,16 +280,17 @@ class ReserveView {
         summaryCheckoutItemRoomHtml
       );
 
+      let summarySubTotal = this._subtotal;
+
       if (tableRows.length) {
         const rentalData = JSON.parse(sessionStorage.getItem("rentalData"));
 
-        if (!rentalData) return;
-        summaryProductsTableBody.innerHTML = "";
-        summaryCheckoutBody.innerHTML = "";
-        let summarySubtotal = this._subtotal;
+        if (rentalData) {
+          summaryProductsTableBody.innerHTML = "";
+          summaryCheckoutBody.innerHTML = "";
 
-        rentalData.forEach((data, i) => {
-          const rentalProductHtml = `
+          rentalData.forEach((data, i) => {
+            const rentalProductHtml = `
           <tr class="summary_product_rental" data-id=${data.id}>
             <td>
               <div class="summary_product_pic">
@@ -340,17 +329,20 @@ class ReserveView {
               )}</span>
             </td>
             <td>
-              <span>
+              <span class="cancel">
                 <i class="fa-solid fa-xmark"></i>
               </span>
             </td>
           </tr>
         `;
 
-          const summaryCheckoutItemHtml = `
+            const summaryCheckoutItemHtml = `
         <div class="summary_checkout_body_item" data-id=${data.id}>
           <div class="summary_checkout_body_item_name">
-          ${data.title} - ${data.price} USD x ${days} nights
+          ${data.title} - ${days} night${days > 1 ? "s" : ""} x ${
+              data.quantity
+            } 
+              
           </div>
           <div class="summary_checkout_body_item_price">
             $${(data.price * (days || 1) * data.quantity).toFixed(2)} USD
@@ -358,29 +350,60 @@ class ReserveView {
         </div>
       `;
 
+            summaryProductsTableBody.insertAdjacentHTML(
+              "beforeend",
+              rentalProductHtml
+            );
+            summaryCheckoutBody.insertAdjacentHTML(
+              "beforeend",
+              summaryCheckoutItemHtml
+            );
+
+            data.subtotal = (days || 1) * data.price * Number(data.quantity);
+            data.days = days;
+            summarySubTotal += data.subtotal;
+          });
+
+          sessionStorage.setItem("rentalData", JSON.stringify(rentalData));
           summaryProductsTableBody.insertAdjacentHTML(
-            "beforeend",
-            rentalProductHtml
+            "afterbegin",
+            roomProductHtml
           );
+
           summaryCheckoutBody.insertAdjacentHTML(
-            "beforeend",
-            summaryCheckoutItemHtml
+            "afterbegin",
+            summaryCheckoutItemRoomHtml
           );
-
-          data.days = days;
-        });
-
-        sessionStorage.setItem("rentalData", JSON.stringify(rentalData));
-        summaryProductsTableBody.insertAdjacentHTML(
-          "afterbegin",
-          roomProductHtml
-        );
-
-        summaryCheckoutBody.insertAdjacentHTML(
-          "afterbegin",
-          summaryCheckoutItemRoomHtml
-        );
+        }
       }
+
+      const summaryCheckoutBodyWarning = document.querySelectorAll(
+        ".summary_checkout_body_warning"
+      );
+
+      summaryCheckoutBodyWarning.forEach(
+        (el) =>
+          el.classList.contains("summary_checkout_body_warning--hidden") ||
+          el.classList.add("summary_checkout_body_warning--hidden")
+      );
+
+      summaryCheckoutBodyTotalPrice.textContent = `$${summarySubTotal.toFixed(
+        2
+      )} USD`;
+
+      const data = {
+        id: this._roomData.title,
+        title,
+        price: this._roomData.price,
+        guests: Number(this._guests),
+        subtotal: this._subtotal,
+        imgs: this._roomData.imgs,
+        days,
+        checkInDate: `${this._checkInMonth}/${this._checkInDate}/${this._checkInYear}`,
+        checkOutDate: `${this._checkOutMonth}/${this._checkOutDate}/${this._checkOutYear}`,
+      };
+      const jsonData = JSON.stringify(data);
+      sessionStorage.setItem("reservePaymentData", jsonData);
     });
   }
 
