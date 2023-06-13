@@ -1,28 +1,6 @@
 class MembershipBookingsView {
   _renderBookings(data) {
     const membershipBookings = document.querySelector(".membership_bookings");
-    const imgLinksUpperValley = [
-      {
-        pic: "./../../src/img/campgrounds/rooms/room-1/room-1-1-min.jpg",
-        picMobile: "./../../src/img/campgrounds/rooms/room-1/room-1-1-min.webp",
-      },
-      {
-        pic: "./../../src/img/campgrounds/rooms/room-1/room-1-2-min.jpg",
-        picMobile: "./../../src/img/campgrounds/rooms/room-1/room-1-2-min.webp",
-      },
-      {
-        pic: "./../../src/img/campgrounds/rooms/room-1/room-1-3-min.jpg",
-        picMobile: "./../../src/img/campgrounds/rooms/room-1/room-1-3-min.webp",
-      },
-      {
-        pic: "./../../src/img/campgrounds/rooms/room-1/room-1-4-min.jpg",
-        picMobile: "./../../src/img/campgrounds/rooms/room-1/room-1-4-min.webp",
-      },
-      {
-        pic: "./../../src/img/campgrounds/rooms/room-1/room-1-5-min.jpg",
-        picMobile: "./../../src/img/campgrounds/rooms/room-1/room-1-5-min.webp",
-      },
-    ];
 
     const generateLink = (id) => [
       {
@@ -60,7 +38,6 @@ class MembershipBookingsView {
     ];
 
     data.forEach((obj) => {
-      console.log(obj);
       const links = generateLink(obj.reservationOrderRoom.id);
       let bookingPicHtml = "";
       links.forEach((link) => {
@@ -87,10 +64,33 @@ class MembershipBookingsView {
         `;
       });
 
-      let membershipBookingInfoProduct = "";
+      let bookingProductHtml = "";
+
+      obj.reservationOrderRental.forEach((data) => {
+        bookingProductHtml += `
+        <div class="membership_booking_info_product">
+          <div class="membership_booking_info_product_title">
+            <div class="membership_booking_info_product_pic">
+              <img
+                src="./../../src/img/campgrounds/rental/${data.picName}.png"
+                alt="${data.picName}"
+              />
+            </div>
+            <div class="membership_booking_info_product_name">
+              ${data.title}
+            </div>
+          </div>
+          <div class="membership_booking_info_product_price">
+            $${data.subtotal.toFixed(2)} USD
+          </div>
+        </div>
+      `;
+      });
 
       const bookingHtml = `
-        <div class="membership_booking">
+        <div class="membership_booking" data-id="${
+          obj.reservationOrderRoom.id
+        }">
           <div class="membership_booking_gallery">
             ${bookingPicHtml}
           </div>
@@ -133,43 +133,11 @@ class MembershipBookingsView {
 
             <div class="membership_booking_info_rental">
               <h2 class="membership_booking_info_rental_title">
-                Rental Gear
+                ${bookingProductHtml ? "Rental Gear" : ""}
               </h2>
 
               <div class="membership_booking_info_products">
-                <div class="membership_booking_info_product">
-                  <div class="membership_booking_info_product_title">
-                    <div class="membership_booking_info_product_pic">
-                      <img
-                        src="./../../src/img/campgrounds/rental/rental-tent-min.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="membership_booking_info_product_name">
-                      UNP-300 Camping Dome Tent x3
-                    </div>
-                  </div>
-                  <div class="membership_booking_info_product_price">
-                    $108.85
-                  </div>
-                </div>
-
-                <div class="membership_booking_info_product">
-                  <div class="membership_booking_info_product_title">
-                    <div class="membership_booking_info_product_pic">
-                      <img
-                        src="./../../src/img/campgrounds/rental/rental-sleepingbag-min.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="membership_booking_info_product_name">
-                      VENTURE 4 Lightweight Sleeping Bag x3
-                    </div>
-                  </div>
-                  <div class="membership_booking_info_product_price">
-                    $74.85
-                  </div>
-                </div>
+                ${bookingProductHtml}          
               </div>
             </div>
 

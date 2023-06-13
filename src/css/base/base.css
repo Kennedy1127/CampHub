@@ -16,7 +16,7 @@
   --color-black-1: #291306;
 
   --color-grey-opacity-1: rgb(85, 85, 85, 0.5);
-  --color-green-opacity-1: rgba(137, 141, 102, 0.6);
+  --color-green-opacity-1: rgb(163, 168, 120);
   --color-green-opacity-2: rgba(137, 141, 102, 0.349);
   --color-orange-opacity-1: rgb(252, 151, 128, 0.8);
 
@@ -89,6 +89,10 @@ button {
   border-right: 8px solid transparent;
 
   border-top: 8px solid var(--color-orange-1);
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 @media screen and (min-width: 1600px) {

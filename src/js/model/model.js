@@ -277,6 +277,7 @@ export const state = {
       ],
     },
   ],
+  reviews: [{}],
 };
 
 export const loadSessionRoom = () => {

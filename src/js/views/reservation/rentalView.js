@@ -301,7 +301,11 @@ class RentalView {
         } x ${rentalProductQuantity.value} 
             </div>
             <div class="summary_checkout_body_item_price">
-              $${(rentalProduct.price * (days || 1)).toFixed(2)} USD
+              $${(
+                rentalProduct.price *
+                (days || 1) *
+                rentalProductQuantity.value
+              ).toFixed(2)} USD
             </div>
           </div>
         `;
