@@ -877,8 +877,12 @@ input[type="number"].rental_content_card_rent_quantity_number::-webkit-outer-spi
 }
 
 @media screen and (min-width: 1600px) {
+  .container {
+    max-width: 1700px;
+  }
+
   .rental_header {
-    margin-bottom: 350px;
+    margin-bottom: 100px;
   }
 
   .rental_title {
@@ -889,8 +893,8 @@ input[type="number"].rental_content_card_rent_quantity_number::-webkit-outer-spi
     font-size: 20px;
   }
 
-  .rental_content_card_pic {
-    top: -260px;
+  .rental_content_card_header {
+    min-height: 350px;
   }
 
   .rental_content_card_title {

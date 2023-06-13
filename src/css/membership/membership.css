@@ -76,12 +76,14 @@ body {
 
 @media screen and (min-width: 1200px) {
   .membership {
+    padding-top: 60px;
     display: flex;
   }
 
   .membership_navigation_wrapper {
     flex-shrink: 0;
     width: 20%;
+    margin-bottom: 0;
   }
 
   .membership_navigation {
@@ -96,6 +98,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
   }
 
   .membership_navigation_content {
@@ -154,9 +157,13 @@ body {
 }
 
 @media screen and (min-width: 1600px) {
+  .membership {
+    padding-top: 80px;
+  }
   .membership_navigation {
     padding-top: 80px;
   }
+
   .membership_navigation_content {
     padding-top: 60px;
   }
@@ -188,28 +195,9 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
-  .membership_content {
-    padding-top: 60px;
-  }
-
-  /* .membership_content::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-  .membership_content::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .membership_content::-webkit-scrollbar-thumb {
-    background-color: var(--color-grey-1);
-    border-radius: 8px;
-  } */
 }
 
 @media screen and (min-width: 1600px) {
-  .membership_content {
-    padding-top: 80px;
-  }
 }
 
 /* Profile */
@@ -900,7 +888,7 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 15px;
+  padding: 25px 15px 15px;
 }
 
 .membership_overlay_card_user-pic {
@@ -925,33 +913,38 @@ body {
   font-size: 16px;
 }
 
-.membership_overlay_card_rate {
+.membership_overlay_card_rate,
+.membership_overlay_card_rate--update {
   margin-left: 10px;
   display: flex;
   gap: 5px;
   font-size: 14px;
 }
 
-.membership_overlay_card_rate i {
+.membership_overlay_card_rate i,
+.membership_overlay_card_rate--update i {
   color: #fff;
   -webkit-text-stroke: 1px var(--color-black-1);
   cursor: pointer;
 }
 
-.membership_overlay_card_rate i.active {
+.membership_overlay_card_rate i.active,
+.membership_overlay_card_rate--update i.active {
   color: var(--color-orange-1);
 }
 
 .membership_overlay_card_content {
   height: 50%;
-  padding: 15px;
+  padding: 0 15px;
 }
 
-.membership_overlay_card_textarea {
+.membership_overlay_card_textarea,
+.membership_overlay_card_textarea--update {
   height: 100%;
 }
 
-.membership_overlay_card_textarea textarea {
+.membership_overlay_card_textarea textarea,
+.membership_overlay_card_textarea--update textarea {
   width: 100%;
   height: 100%;
 
@@ -969,7 +962,8 @@ body {
   overflow: hidden;
 }
 
-.membership_overlay_submit_button {
+.membership_overlay_submit_button,
+.membership_overlay_submit_button--update {
   width: 100%;
   background-color: var(--color-orange-1);
   font-weight: 600;
@@ -983,6 +977,7 @@ body {
 @media screen and (min-width: 1200px) {
   .membership_overlay_card {
     width: 40%;
+    height: 50%;
   }
 
   .membership_overlay_card_header_banner {
@@ -1012,7 +1007,8 @@ body {
     padding-right: 20px;
   }
 
-  .membership_overlay_card_rate {
+  .membership_overlay_card_rate,
+  .membership_overlay_card_rate--update {
     margin-top: 0;
     width: fit-content;
     font-size: 16px;
@@ -1031,13 +1027,15 @@ body {
     font-size: 14px;
   }
 
-  .membership_overlay_submit_button {
+  .membership_overlay_submit_button,
+  .membership_overlay_submit_button--update {
     padding: 6px 12px;
     transition: all 0.3s;
     font-size: 18px;
   }
 
-  .membership_overlay_submit_button:hover {
+  .membership_overlay_submit_button:hover,
+  .membership_overlay_submit_button--update {
     background-color: var(--color-orange-2);
   }
 }
@@ -1073,7 +1071,8 @@ body {
     font-size: 20px;
   }
 
-  .membership_overlay_submit_button {
+  .membership_overlay_submit_button,
+  .membership_overlay_submit_button--update {
     padding: 10px 20px;
     font-size: 28px;
   }
@@ -1091,7 +1090,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  gap: 60px;
+  gap: 40px;
 }
 
 .membership_review {
@@ -1099,8 +1098,8 @@ body {
   box-shadow: var(--box-shadow-1);
   background-color: #fff;
   position: relative;
-
-  padding: 15px;
+  padding: 10px;
+  width: 100%;
 }
 
 .membership_review_banner {
@@ -1111,14 +1110,14 @@ body {
   background-color: var(--color-green-1);
   color: #fff;
 
-  padding: 4px 8px;
+  padding: 2px 8px;
   font-size: 12px;
 }
 
 .membership_review_features {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 10px;
 }
 
 .membership_feature:nth-child(1) {
@@ -1139,6 +1138,7 @@ body {
   flex-wrap: wrap;
   margin-top: 10px;
   margin-bottom: 10px;
+  gap: 10px;
 }
 
 .membership_review_user-pic {
@@ -1150,21 +1150,18 @@ body {
   color: #fff;
   font-weight: 600;
 
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
-  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
 }
 
 .membership_review_user-name {
   font-weight: 500;
-  font-size: 12px;
-  padding-right: 15px;
+  font-size: 13px;
 }
 
 .membership_review_date {
-  font-size: 10px;
-  padding-right: 15px;
+  font-size: 11px;
 }
 
 .membership_reivew_rate {
@@ -1174,6 +1171,18 @@ body {
   font-size: 10px;
 }
 
+.membership_reivew_rate i,
+.membership_overlay_card_rate--update i {
+  color: #fff;
+  -webkit-text-stroke: 1px var(--color-black-1);
+  cursor: pointer;
+}
+
+.membership_reivew_rate i.active,
+.membership_overlay_card_rate--update i.active {
+  color: var(--color-orange-1);
+}
+
 .membership_review_text {
   font-size: 10px;
 }
@@ -1181,59 +1190,56 @@ body {
 @media screen and (min-width: 1200px) {
   .membership_reviews {
     padding: 40px;
+    gap: 60px;
   }
 
   .membership_reviews.membership_content--active {
-    gap: 60px;
+    padding: 40px;
   }
 
   .membership_review {
     border-radius: 10px;
-    width: 70%;
-    min-height: 250px;
+    width: 80%;
     padding: 30px;
   }
 
   .membership_review_banner {
     padding: 5px 20px;
-    font-size: 16px;
-  }
-
-  .membership_features {
-    top: 15%;
-    right: 5%;
-    gap: 15px;
-    font-size: 20px;
-  }
-
-  .membership_review_header {
-    margin-bottom: 20px;
-  }
-
-  .membership_review_user-pic {
-    width: 40px;
-    height: 40px;
-    margin-right: 30px;
-    font-size: 20px;
-  }
-
-  .membership_review_user-name {
-    font-size: 24px;
-    padding-right: 40px;
-  }
-
-  .membership_review_date {
-    font-size: 14px;
-    padding-right: 40px;
-  }
-
-  .membership_review_text {
     font-size: 14px;
   }
 
   .membership_review_features {
+    font-size: 20px;
     gap: 15px;
+  }
+
+  .membership_review_header {
+    margin-top: 0;
+    gap: 15px;
+  }
+
+  .membership_review_user-pic {
+    width: 35px;
+    height: 35px;
+
+    font-size: 20px;
+  }
+
+  .membership_review_user-name {
     font-size: 18px;
+  }
+
+  .membership_review_date {
+    font-size: 12px;
+  }
+
+  .membership_reivew_rate,
+  .membership_reivew_rate--update {
+    font-size: 14px;
+  }
+
+  .membership_review_text {
+    font-size: 12px;
   }
 }
 
@@ -1243,6 +1249,7 @@ body {
   }
 
   .membership_reviews.membership_content--active {
+    padding: 60px;
     gap: 80px;
   }
 
@@ -1251,7 +1258,6 @@ body {
   }
 
   .membership_review_banner {
-    padding: 10px 20px;
     font-size: 20px;
   }
 

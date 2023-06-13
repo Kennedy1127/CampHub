@@ -277,7 +277,26 @@ export const state = {
       ],
     },
   ],
-  reviews: [{}],
+  reviews: [
+    {
+      id: "2",
+      userName: "USER001",
+      userIcon: "default",
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus eius pariatur ipsa reiciendis quaerat nobis sequi doloribus nemo alias odit.",
+      date: "5/21/2023",
+      rates: 4,
+      banner: "Upper Valley",
+    },
+    {
+      id: "1",
+      userName: "USER001",
+      userIcon: "default",
+      text: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus eius pariatur.`,
+      date: "5/11/2023",
+      rates: 5,
+      banner: "Sunset Lodge",
+    },
+  ],
 };
 
 export const loadSessionRoom = () => {
@@ -297,4 +316,11 @@ export const loadUserOrders = () => {
   state.orders = [...sessionOrders, ...state.orders];
 
   return state.orders;
+};
+
+export const loadUserReviews = () => {
+  const sessionReviews =
+    JSON.parse(sessionStorage.getItem("userReviews")) || [];
+  state.reviews = [...sessionReviews, ...state.reviews];
+  return state.reviews;
 };
