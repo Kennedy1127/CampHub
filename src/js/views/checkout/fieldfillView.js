@@ -120,7 +120,8 @@ class FieldfillView {
         sessionStorage.removeItem("reservePaymentData");
         sessionStorage.removeItem("rentalData");
         sessionStorage.removeItem("reservationOrder");
-        location.href = "https://kennedy1127.github.io/CampHub/";
+        location.href =
+          "https://kennedy1127.github.io/CampHub/pages/membership/membership.html";
       })
     );
   }
